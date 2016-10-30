@@ -1,9 +1,9 @@
 <?php
 session_start();
 require_once('ajax/Database.php');
-if (isset($_SESSION['firma_id']))
+if (isset($_SESSION['uid']))
 {
-  $id=$_SESSION['firma_id'];
+  $id=$_SESSION['uid'];
   $dbb="ajax/db".$dbb.".php";
   require_once("$dbb");
 }else{
