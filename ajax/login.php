@@ -32,11 +32,4 @@ if($x==1)
 }else{
   $_SESSION['logerr']=1;
 }
-
-print_r($_SESSION['uid']);
-print_r($_SESSION['login']);
-print_r($_SESSION['imie']);
-print_r($_SESSION['nazwisko']);
-print_r($_SESSION['email']);
-print_r($_SESSION['phone']);
 ?>
