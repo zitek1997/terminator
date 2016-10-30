@@ -1,19 +1,13 @@
 <?php
 include("config.php");
 
-$con = mysqli_connect('sql.itcave.nazwa.pl','itcave_2','Perseusz20^!','itcave_2');
-//$login=$_POST['mail'];
-//$pass=$_POST['pass'];
-//$imie=$_POST['imie'];
-//$nazw=$_POST['nazwisko'];
-
 $data = json_decode(file_get_contents("php://input"));
-$fname = mysqli_real_escape_string($con, $data->fname);
-$lname = mysqli_real_escape_string($con, $data->lname);
-$login = mysqli_real_escape_string($con, $data->login);
-$pass = mysqli_real_escape_string($con, $data->pass);
-$email = mysqli_real_escape_string($con, $data->email);
-$phone = mysqli_real_escape_string($con, $data->phone);
+$fname = $data->fname;
+$lname = $data->lname;
+$login = $data->login;
+$pass = $data->pass;
+$email =  $data->email;
+$phone = $data->phone;
 
 if (isset($_POST['przychodnia']))
 {
