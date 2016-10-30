@@ -1,12 +1,13 @@
 <?php
 include("config.php");
-// $login=$_POST['login'];
-// $pass=$_POST['pass'];
 
 $data = json_decode(file_get_contents("php://input"));
-$con = mysqli_connect('sql.itcave.nazwa.pl','itcave_2','Perseusz20^!','itcave_2');
-$login = mysqli_real_escape_string($con, $data->login);
-$pass = mysqli_real_escape_string($con, $data->pass);
+// $con = mysqli_connect('sql.itcave.nazwa.pl','itcave_2','Perseusz20^!','itcave_2');
+// $login = mysqli_real_escape_string($con, $data->login);
+// $pass = mysqli_real_escape_string($con, $data->pass);
+
+$login=$data->login;
+$pass=$data->pass;
 
 $array=array("LOGIN"=>$login);
 $sql="SELECT * FROM users WHERE LOGIN = :LOGIN";
