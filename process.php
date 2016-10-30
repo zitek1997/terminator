@@ -1,9 +1,9 @@
 <?php
-include('config.php');
+include('ajax/config.php');
 // include('ajax/confi.php');
 
-// $type = $_POST['type'];
-$type='fetch';
+$type = $_POST['type'];
+// $type='fetch';
 
 if($type == 'new')
 {

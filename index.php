@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("ajax/config.php");
 if (isset($_SESSION['uid']))
 {
 include("archiwum/index.html");
