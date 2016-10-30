@@ -1,5 +1,5 @@
 <?php
-include("conf.php");
+include("config.php");
 
 $con = mysqli_connect('sql.itcave.nazwa.pl','itcave_2','Perseusz20^!','itcave_2');
 //$login=$_POST['mail'];
