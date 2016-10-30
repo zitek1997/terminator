@@ -1,5 +1,5 @@
 <?php
-include('ajax/config.php');
+include('config.php');
 // include('ajax/confi.php');
 
 // $type = $_POST['type'];

@@ -7,7 +7,7 @@ $con = mysqli_connect('sql.itcave.nazwa.pl','itcave_2','Perseusz20^!','itcave_2'
 //$imie=$_POST['imie'];
 //$nazw=$_POST['nazwisko'];
 
-$data = json_decode(file_get_contents("php://input")); 
+$data = json_decode(file_get_contents("php://input"));
 $fname = mysqli_real_escape_string($con, $data->fname);
 $lname = mysqli_real_escape_string($con, $data->lname);
 $login = mysqli_real_escape_string($con, $data->login);
