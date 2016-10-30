@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href='assets/css/fullcalendar.css' rel='stylesheet' />
 <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='assets/js/moment.min.js'></script>
@@ -9,6 +10,7 @@
 <script src='assets/js/jquery-ui.min.js'></script>
 <script src='assets/js/fullcalendar.min.js'></script>
 <script src='assets/js/locale-all.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
 
 	$(document).ready(function() {
@@ -119,7 +121,13 @@
 		    },
 		    eventClick: function(event, jsEvent, view) {
 		    	console.log(event.id);
-		          var title = prompt('Event Title:', event.title, { buttons: { Ok: true, Cancel: false} });
+							$('#modal').modal('show');
+							var itile1=event.title;
+							document.forms.modal.ev.value=title1;
+							document.forms.modal.startdate.value=event.title;
+							document.forms.modal.enddate.value=event.title;
+							itile1=
+		          // var title = prompt('Event Title:', event.title, { buttons: { Ok: true, Cancel: false} });
 		          if (title){
 		              event.title = title;
 		              console.log('type=changetitle&title='+title+'&eventid='+event.id);
@@ -309,5 +317,29 @@ function draggable() {
 		<xspan class="tt"></xspan>
 
 	</div>
+	<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edycja wydarzenia</h4>
+      </div>
+      <div class="modal-body">
+<form name='modal'>
+Event:<input type="text" name="ev" value=""></input><br>
+Data rozpoczęcia:<input type="date" name="startdate" value=""></input><br>
+Data zakończenia:<input type="date" name="enddate" value=""></input><br>
+Opis:<br><input type="textarea" name="opis" value=""></input>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>
