@@ -1,5 +1,5 @@
 <?php
-include("conf.php");
+include("config.php");
 // $login=$_POST['login'];
 // $pass=$_POST['pass'];
 $array=array("LOGIN"=>$login);

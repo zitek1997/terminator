@@ -1,0 +1,38 @@
+<html ng-app="crudApp">
+<head>
+<title>Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<script src="assets/js/jQuery/jquery.min.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/angular-script.js"></script>
+</head>
+<body>
+<div class="container wrapper" ng-controller="DbController">
+<form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="getInfo(empInfo);">
+<h3 class="text-center">Logowanie do systemu</h3>
+	<div class="form-group">
+		<label for="Login">Login:</label>
+		<input type="text" name="emp_login" class="form-control" placeholder="Wpisz login" ng-model="empInfo.login" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.emp_login.$invalid && empList.emp_login.$dirty">Błąd</p>
+	</div>
+	
+	<div class="form-group">
+		<label for="Pass">Hasło:</label>
+		<input type="password" name="emp_pass" class="form-control" placeholder="Wpisz hasło" ng-model="empInfo.pass" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.emp_pass.$invalid && empList.emp_pass.$dirty">Błąd</p>
+	</div>
+	<div class="form-group">
+            <button  class="btn btn-warning" ng-disabled="empList.$invalid">Dodaj</button>
+	</div>
+</form>
+</div>
+</body>
+</html>
