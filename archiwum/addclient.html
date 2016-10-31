@@ -1,0 +1,62 @@
+<html ng-app="crudApp">
+<head>
+<title>Rejestracja</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<script src="/assets/js/jQuery/jquery.min.js"></script>
+<script src="/lib/angular/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/assets/js/angular-script.js"></script>
+</head>
+<body>
+<div class="container wrapper" ng-controller="DbController">
+<form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="addClient(empInfo);">
+<h3 class="text-center">Dodaj pracownika do bazy danych</h3>
+	<div class="form-group">
+		<label for="Imie">Imie:</label>
+		<input type="text" name="emp_fname" class="form-control" placeholder="Wpisz Imię" ng-model="empInfo.fname" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.emp_fname.$invalid && empList.emp_fname.$dirty">Błąd</p>
+	</div>
+	
+	<div class="form-group">
+		<label for="Nazwisko">Nazwisko:</label>
+		<input type="text" name="emp_lname" class="form-control" placeholder="Wpisz Nazwisko" ng-model="empInfo.lname" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.emp_lname.$invalid && empList.emp_lname.$dirty">Błąd</p>
+	</div>
+	<div class="form-group">
+		<label for="Adres">Adres:</label>
+		<input type="text" name="emp_adres" class="form-control" placeholder="Wpisz login" ng-model="empInfo.adres" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.emp_adres.$invalid && empList.emp_adres.$dirty">Błąd</p>
+	</div>
+
+        <div class="form-group">
+		<label for="Email">Email:</label>
+		<input type="email" name="emp_email" class="form-control" placeholder="Wpisz email" ng-model="empInfo.email" autofocus required />
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.emp_email.$invalid && empList.emp_email.$dirty">Błąd</p>
+	</div>
+	
+	<div class="form-group">
+		<label for="Phone">Telefon:</label>
+		<input type="text" name="emp_phone" class="form-control" placeholder="Wpisz numer" ng-model="empInfo.phone" autofocus required />		
+	</div>
+	<div class="form-group">
+		<p class="text-danger" ng-show="empList.emp_phone.$invalid && empList.emp_phone.$dirty">Błąd</p>
+	</div>
+	<div class="form-group">
+            <button class="btn btn-warning" ng-disabled="empList.$invalid">Dodaj</button>
+	</div>
+</form>
+</div>
+</body>
+</html>
