@@ -7,25 +7,36 @@ $type = $_POST['type'];
 
 if($type == 'new')
 {
-	$startdate = $_POST['startdate'].'+'.$_POST['zone'];
+	$startdate = $_POST['startdate'];
+	$startdate = strtotime($startdate);
+	$enddate = strtotime("+1 hour", $startdate);
+	$startdate = date("Y-m-d H:i",$startdate);
+	$enddate = date("Y-m-d H:i",$enddate);
 	$title = $_POST['title'];
 	$array = array(
 		"title" => $title,
 		"startdate" => $startdate,
-		"enddate" => $startdate,
-		"allDay" => "false"
+		"enddate" => $enddate,
+		"allDay" => "false",
+		"opis" => " "
 	);
 	$db->insert('calendar', $array);
 	$lastId = $db->lastInsertId();
 	echo json_encode(array('status'=>'success','eventid'=>$lastId));
 }
 
-if($type == 'changetitle')
+if($type == 'change')
 {
 	$eventid = $_POST['eventid'];
 	$title = $_POST['title'];
+	$startdate = $_POST['startdate'];
+	$enddate = $_POST['enddate'];
+	$opis = $_POST['opis'];
 	$array = array(
 		'title' => $title,
+		'startdate' => $startdate,
+		'enddate' => $enddate,
+		'opis' => $opis,
 	);
 	$where = "id = $eventid";
 	$update = $db->update('calendar', $array, $where);
@@ -80,29 +91,26 @@ if($type == 'fetch')
 
 	    $allday = ($fetch['allDay'] == "true") ? true : false;
 	    $e['allDay'] = $allday;
+			$e['opis'] = $fetch['opis'];
 
 	    array_push($events, $e);
 	}
-
-
-	// $query = mysqli_query($con, "SELECT * FROM calendar");
-
-	// while($fetch = mysqli_fetch_array($query,MYSQLI_ASSOC))
-	// {
-	// $e = array();
-  //   $e['id'] = $fetch['id'];
-  //   $e['title'] = $fetch['title'];
-  //   $e['start'] = $fetch['startdate'];
-  //   $e['end'] = $fetch['enddate'];
-	//
-  //   $allday = ($fetch['allDay'] == "true") ? true : false;
-  //   $e['allDay'] = $allday;
-	//
-  //   array_push($events, $e);
-	// }
 	echo json_encode($events);
-	// print_r($eve);
 }
 
+if ($type== 'update')
+{
+	if($_POST['eventid']!="undefined")
+	{
+		$id=$_POST['eventid'];
+		$sql = "SELECT enddate, opis FROM calendar WHERE id = :id";
+		$array=array("id"=>$id);
+		$ids = $db->select($sql, $array);
+		$end['enddate'] = $ids[0]['enddate'];
+		$end['opis'] = $ids[0]['opis'];
+
+	  echo json_encode($end);
+	}
+}
 
 ?>

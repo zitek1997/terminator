@@ -8,14 +8,16 @@
 <script src='assets/js/moment.min.js'></script>
 <script src='assets/js/jquery.min.js'></script>
 <script src='assets/js/jquery-ui.min.js'></script>
-<script src='assets/js/fullcalendar.min.js'></script>
+<script src='assets/js/fullcalendar.js'></script>
 <script src='assets/js/locale-all.js'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
 
+var evenement;
+
 	$(document).ready(function() {
 
-		var zone = "05:30";  //Change this to your timezone
+		// var zone = "05:30";  //Change this to your timezone
 
 	$.ajax({
 		url: 'process.php',
@@ -82,10 +84,10 @@
 			slotDuration: '00:15:00',
 			eventReceive: function(event){
 				var title = event.title;
-				var start = event.start.format("YYYY-MM-DD[T]HH:mm:SS");
+				var start = event.start.format("YYYY-MM-DD HH:mm:SS");
 				$.ajax({
 		    		url: 'process.php',
-		    		data: 'type=new&title='+title+'&startdate='+start+'&zone='+zone,
+		    		data: 'type=new&title='+title+'&startdate='+start,
 		    		type: 'POST',
 		    		dataType: 'json',
 		    		success: function(response){
@@ -122,29 +124,12 @@
 		    eventClick: function(event, jsEvent, view) {
 		    	console.log(event.id);
 							$('#modal').modal('show');
-							var itile1=event.title;
-							document.forms.modal.ev.value=title1;
-							document.forms.modal.startdate.value=event.title;
-							document.forms.modal.enddate.value=event.title;
-							itile1=
-		          // var title = prompt('Event Title:', event.title, { buttons: { Ok: true, Cancel: false} });
-		          if (title){
-		              event.title = title;
-		              console.log('type=changetitle&title='+title+'&eventid='+event.id);
-		              $.ajax({
-				    		url: 'process.php',
-				    		data: 'type=changetitle&title='+title+'&eventid='+event.id,
-				    		type: 'POST',
-				    		dataType: 'json',
-				    		success: function(response){
-				    			if(response.status == 'success')
-		              				$('#calendar').fullCalendar('updateEvent',event);
-				    		},
-				    		error: function(e){
-				    			alert('Error processing your request: '+e.responseText);
-				    		}
-				    	});
-		          }
+							evenement = event;
+							document.forms.modal.id.value=event.id;
+							document.forms.modal.ev.value=event.title;
+							document.forms.modal.startdate.value=event.start.format("YYYY-MM-DD HH:mm:SS");
+							document.forms.modal.enddate.value=event.end.format("YYYY-MM-DD HH:mm:SS");
+							document.forms.modal.opis.value=event.opis;
 			},
 			eventResize: function(event, delta, revertFunc) {
 				console.log(event);
@@ -232,6 +217,29 @@ function draggable() {
 		 $('#lista').html(data);
 	 }
  });
+}
+function save(){
+
+			event = evenement;
+	    id = document.forms.modal.id.value;
+			title = document.forms.modal.ev.value;
+			start = document.forms.modal.startdate.value;
+			end = document.forms.modal.enddate.value;
+			opis = document.forms.modal.opis.value;
+			event.end = end;
+	    $.ajax({
+		url: 'process.php',
+		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,
+		type: 'POST',
+		dataType: 'json',
+		success: function(response){
+			if(response.status == 'success'){
+	    				$('#calendar').fullCalendar('updateEvent',event);}
+		},
+		error: function(e){
+			alert('Error processing your request: '+e.responseText);
+		}
+	});
 }
 </script>
 <style>
@@ -328,14 +336,16 @@ function draggable() {
       </div>
       <div class="modal-body">
 <form name='modal'>
-Event:<input type="text" name="ev" value=""></input><br>
-Data rozpoczęcia:<input type="date" name="startdate" value=""></input><br>
-Data zakończenia:<input type="date" name="enddate" value=""></input><br>
-Opis:<br><input type="textarea" name="opis" value=""></input>
+ID:<input type="text" name="id" class="form-control" value="" disabled></input><br>
+Event:<input type="text" name="ev" class="form-control" value=""></input><br>
+Data rozpoczęcia:<input type="datetime" class="form-control" name="startdate" value=""></input><br>
+Data zakończenia:<input type="datetime" class="form-control" name="enddate" value=""></input><br>
+Opis:<br><input type="textarea" class="form-control" name="opis" value=""></input>
+<input type="hidden" name="evenement" value=""></input>
 </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="save()">Zapisz</button>
       </div>
     </div>
 
