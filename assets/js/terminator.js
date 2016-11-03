@@ -53,3 +53,42 @@ function save(){
 		}
 	});
 }
+
+
+function uEdit(id){
+	$.ajax({
+url: 'ajax/uEdit.php',
+data: 'id='+id,
+type: 'POST',
+dataType: 'json',
+success: function(response){
+user: JSON.parse(response);
+var uid=user.id;
+document.forms.modalClient.id.value=user.id;
+document.forms.modalClient.imie.value=user.imie;
+document.forms.modalClient.nazwisko.value=user.nazwisko;
+document.forms.modalClient.tel.value=user.tel;
+document.forms.modalClient.email.value=user.email;
+document.forms.modalClient.adres.value=user.adres;
+$('#modalClient').modal('show');
+}
+});}
+
+function uSave(){
+	$.ajax({
+url: 'ajax/uSave.php',
+data: 'id='+id,
+type: 'POST',
+dataType: 'json',
+success: function(){
+	draggable();
+}
+});}
+
+function uDel(id){
+	$.ajax({
+url: 'ajax/uDel.php',
+data: 'id='+id,
+type: 'POST',
+dataType: 'json',
+});}
