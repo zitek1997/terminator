@@ -10,7 +10,7 @@ O
 
 D
 ##-plan dnia po kliknieciu na dzień
-##-edycja klienta
-##-usuwanie klienta
+##-edycja klienta ✓
+##-usuwanie klienta ✓
 ##-naprawić all-day event (jednak miałeś rację)
 ##-wyszukiwarka klientów ✓
