@@ -90,6 +90,7 @@ data: 'id='+id+'&imie='+im+'&nazwisko='+na+'&tel='+te+'&email='+em+'&adres='+ad,
 type: 'POST',
 dataType: 'json',
 success: function(){
+// draggable();
 $('#modalClient').modal('hide');
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
@@ -97,7 +98,7 @@ $('#modalClient').modal('hide');
 	document.forms.modalClient.tel.value="";
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
-	draggable();
+	setTimeout(draggable(), 3000);
 }
 });}
 
@@ -109,6 +110,7 @@ data: 'id='+id,
 type: 'POST',
 dataType: 'json',
 success: function(){
+// draggable();
 $('#modalClient').modal('hide');
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
@@ -116,6 +118,6 @@ $('#modalClient').modal('hide');
 	document.forms.modalClient.tel.value="";
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
-	draggable();
+	setTimeout(draggable(), 3000);
 }
 });}
