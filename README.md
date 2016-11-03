@@ -5,9 +5,7 @@ http://projekt.itcave.pl/
 #TO DO
 
 O
-##-wyszukiwarka klientów
-##-pasek administratora:
-dodaj/usuń pracownika, dodaj/usuń terminarz
+##-pasek administratora: dodaj/usuń pracownika, dodaj/usuń terminarz
 ##-podział terminarza
 
 D
@@ -15,3 +13,4 @@ D
 ##-edycja klienta
 ##-usuwanie klienta
 ##-naprawić all-day event (jednak miałeś rację)
+##-wyszukiwarka klientów ✓
