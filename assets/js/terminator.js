@@ -79,7 +79,7 @@ $('#modalClient').modal('show');
 
 function cSave(){
 	id=document.forms.modalClient.id.value;
-	im=document.forms.modalClient.imie.valuee;
+	im=document.forms.modalClient.imie.value;
 	na=document.forms.modalClient.nazwisko.value;
 	te=document.forms.modalClient.tel.value;
 	em=document.forms.modalClient.email.value;
