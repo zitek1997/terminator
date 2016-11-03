@@ -11,6 +11,7 @@
 <script src='assets/js/fullcalendar.js'></script>
 <script src='assets/js/locale-all.js'></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/list.js"></script>
 <script src="assets/js/terminator.js"></script>
 <script src="assets/js/draw-calendar.js"></script>
 
@@ -78,9 +79,11 @@
 	<div id='wrap'>
 
 		<div id='external-events'>
-			<h4>Draggable Events</h4>
-				<div id="lista"></div>
-
+			<!-- <h4>Draggable Events</h4><br> -->
+			<div id="clients">
+			<input class="search form-control" placeholder="Wyszukaj" />
+				<div id="lista" class="list"></div>
+			</div>
 			<p>
 				<img src="assets/img/trashcan.png" id="trash" alt="">
 			</p>

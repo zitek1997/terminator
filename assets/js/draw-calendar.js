@@ -2,7 +2,7 @@
 var evenement;
 
 	$(document).ready(function() {
-draggable();
+
 		// var zone = "05:30";  //Change this to your timezone
 
 	$.ajax({

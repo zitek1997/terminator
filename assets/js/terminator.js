@@ -21,6 +21,12 @@ function draggable() {
 			 });
 
 		 });
+		 var options = {
+		   valueNames: [ 'name' ]
+		 };
+
+		 var userList = new List('clients', options);
+
 	 }
  });
 }
