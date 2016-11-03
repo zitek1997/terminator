@@ -61,16 +61,20 @@ url: 'ajax/uEdit.php',
 data: 'id='+id,
 type: 'POST',
 dataType: 'json',
-success: function(response){
-user: JSON.parse(response);
+success: function(r){
+
+// user = JSON.parse(r);
+user = r;
+
 var uid=user.id;
+$('#modalClient').modal('show');
 document.forms.modalClient.id.value=user.id;
 document.forms.modalClient.imie.value=user.imie;
 document.forms.modalClient.nazwisko.value=user.nazwisko;
 document.forms.modalClient.tel.value=user.tel;
 document.forms.modalClient.email.value=user.email;
 document.forms.modalClient.adres.value=user.adres;
-$('#modalClient').modal('show');
+
 }
 });}
 

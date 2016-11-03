@@ -13,5 +13,6 @@ $u = array(
   "email" => $usr['EMAIL'],
   "adres" => $usr['ADRES'],
 );
+
 echo json_encode($u);
 ?>
