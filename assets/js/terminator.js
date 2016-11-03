@@ -89,18 +89,18 @@ url: 'ajax/cSave.php',
 data: 'id='+id+'&imie='+im+'&nazwisko='+na+'&tel='+te+'&email='+em+'&adres='+ad,
 type: 'POST',
 dataType: 'json',
-success: function(){
-// draggable();
-$('#modalClient').modal('hide');
+success: function(){}});
+draggable();
+// $('#modalClient').modal('hide');
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
 	document.forms.modalClient.nazwisko.value="";
 	document.forms.modalClient.tel.value="";
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
-	setTimeout(draggable(), 3000);
+	// setTimeout(draggable(), 3000);
+
 }
-});}
 
 function cDel(){
 	id=document.forms.modalClient.id.value;
@@ -109,15 +109,15 @@ url: 'ajax/cDel.php',
 data: 'id='+id,
 type: 'POST',
 dataType: 'json',
-success: function(){
-// draggable();
-$('#modalClient').modal('hide');
+success: function(){}});
+draggable();
+// $('#modalClient').modal('hide');
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
 	document.forms.modalClient.nazwisko.value="";
 	document.forms.modalClient.tel.value="";
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
-	setTimeout(draggable(), 3000);
+	// setTimeout(draggable(), 3000);
+
 }
-});}
