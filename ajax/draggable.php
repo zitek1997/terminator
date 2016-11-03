@@ -12,7 +12,7 @@ for($x=0;$x<$l;$x++)
   $text = $users[$x]['LNAME']." ".$users[$x]['FNAME'];
 print <<<KOD
 <div><button onClick="cEdit('$id');" class="btn btn-primary btn-xs">✎</button></div>
-<div class='fc-event'>
+<div class='fc-event' id="$id">
 <div class="name">
 
   $text

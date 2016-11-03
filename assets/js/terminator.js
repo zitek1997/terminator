@@ -10,6 +10,7 @@ function draggable() {
 			 // store data so the calendar knows to render an event upon drop
 			 $(this).data('event', {
 				 title: $.trim($(this).text()), // use the element's text as the event title
+				 idc: $(this).attr("id"),
 				 stick: true // maintain when user navigates (see docs on the renderEvent method)
 			 });
 
@@ -54,7 +55,6 @@ function save(){
 	});
 }
 
-
 function cEdit(id){
 	$.ajax({
 url: 'ajax/cEdit.php',
@@ -65,7 +65,6 @@ success: function(r){
 
 // user = JSON.parse(r);
 user = r;
-
 document.forms.modalClient.id.value=user.id;
 document.forms.modalClient.imie.value=user.imie;
 document.forms.modalClient.nazwisko.value=user.nazwisko;
@@ -106,12 +105,13 @@ function cDel(){
 	id=document.forms.modalClient.id.value;
 	$.ajax({
 url: 'ajax/cDel.php',
-data: 'id='+id,
+data: 'id='+id+'&idc='+id,
 type: 'POST',
 dataType: 'json',
 success: function(){}});
 draggable();
 // $('#modalClient').modal('hide');
+	cliid=""
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
 	document.forms.modalClient.nazwisko.value="";
@@ -119,5 +119,14 @@ draggable();
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
 	// setTimeout(draggable(), 3000);
-
-}
+	$.ajax({
+		url: 'process.php',
+				type: 'POST', // Send post data
+				data: 'type=fetch',
+				async: false,
+				success: function(s){
+					freshevents = s;
+				}
+	});
+	$('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
+	}

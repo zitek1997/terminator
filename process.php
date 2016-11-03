@@ -13,7 +13,9 @@ if($type == 'new')
 	$startdate = date("Y-m-d H:i",$startdate);
 	$enddate = date("Y-m-d H:i",$enddate);
 	$title = $_POST['title'];
+	$idc = $_POST['idc'];
 	$array = array(
+		"idc" => $idc,
 		"title" => $title,
 		"startdate" => $startdate,
 		"enddate" => $enddate,
@@ -92,6 +94,7 @@ if($type == 'fetch')
 	    $allday = ($fetch['allDay'] == "true") ? true : false;
 	    $e['allDay'] = $allday;
 			$e['opis'] = $fetch['opis'];
+			$e['idc'] = $fetch['idc'];
 
 	    array_push($events, $e);
 	}

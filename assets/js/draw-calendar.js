@@ -56,9 +56,10 @@ draggable();
 			eventReceive: function(event){
 				var title = event.title;
 				var start = event.start.format("YYYY-MM-DD HH:mm:SS");
+				var idc = event.idc;
 				$.ajax({
 		    		url: 'process.php',
-		    		data: 'type=new&title='+title+'&startdate='+start,
+		    		data: 'type=new&title='+title+'&startdate='+start+'&idc='+idc,
 		    		type: 'POST',
 		    		dataType: 'json',
 		    		success: function(response){
