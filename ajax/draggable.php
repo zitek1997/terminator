@@ -11,7 +11,7 @@ for($x=0;$x<$l;$x++)
   $id = $users[$x]['ID'];
   $text = $users[$x]['LNAME']." ".$users[$x]['FNAME'];
 print <<<KOD
-<div><button onClick="uEdit('$id');" class="btn btn-primary btn-xs">✎</button></div>
+<div><button onClick="cEdit('$id');" class="btn btn-primary btn-xs">✎</button></div>
 <div class='fc-event'>
 <div class="name">
 

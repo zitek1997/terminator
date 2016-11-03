@@ -55,9 +55,9 @@ function save(){
 }
 
 
-function uEdit(id){
+function cEdit(id){
 	$.ajax({
-url: 'ajax/uEdit.php',
+url: 'ajax/cEdit.php',
 data: 'id='+id,
 type: 'POST',
 dataType: 'json',
@@ -66,33 +66,56 @@ success: function(r){
 // user = JSON.parse(r);
 user = r;
 
-var uid=user.id;
-$('#modalClient').modal('show');
 document.forms.modalClient.id.value=user.id;
 document.forms.modalClient.imie.value=user.imie;
 document.forms.modalClient.nazwisko.value=user.nazwisko;
 document.forms.modalClient.tel.value=user.tel;
 document.forms.modalClient.email.value=user.email;
 document.forms.modalClient.adres.value=user.adres;
+$('#modalClient').modal('show');
 
 }
 });}
 
-function uSave(){
+function cSave(){
+	id=document.forms.modalClient.id.value;
+	im=document.forms.modalClient.imie.valuee;
+	na=document.forms.modalClient.nazwisko.value;
+	te=document.forms.modalClient.tel.value;
+	em=document.forms.modalClient.email.value;
+	ad=document.forms.modalClient.adres.value;
 	$.ajax({
-url: 'ajax/uSave.php',
-data: 'id='+id,
+url: 'ajax/cSave.php',
+data: 'id='+id+'&imie='+im+'&nazwisko='+na+'&tel='+te+'&email='+em+'&adres='+ad,
 type: 'POST',
 dataType: 'json',
 success: function(){
+$('#modalClient').modal('hide');
+	document.forms.modalClient.id.value="";
+	document.forms.modalClient.imie.value="";
+	document.forms.modalClient.nazwisko.value="";
+	document.forms.modalClient.tel.value="";
+	document.forms.modalClient.email.value="";
+	document.forms.modalClient.adres.value="";
 	draggable();
 }
 });}
 
-function uDel(id){
+function cDel(){
+	id=document.forms.modalClient.id.value;
 	$.ajax({
-url: 'ajax/uDel.php',
+url: 'ajax/cDel.php',
 data: 'id='+id,
 type: 'POST',
 dataType: 'json',
+success: function(){
+$('#modalClient').modal('hide');
+	document.forms.modalClient.id.value="";
+	document.forms.modalClient.imie.value="";
+	document.forms.modalClient.nazwisko.value="";
+	document.forms.modalClient.tel.value="";
+	document.forms.modalClient.email.value="";
+	document.forms.modalClient.adres.value="";
+	draggable();
+}
 });}
