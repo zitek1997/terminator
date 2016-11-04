@@ -3,6 +3,7 @@
 <head>
 <meta charset='utf-8' />
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link href='assets/css/terminator.css' rel='stylesheet' />
 <link href='assets/css/fullcalendar.css' rel='stylesheet' />
 <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <script src='assets/js/moment.min.js'></script>
@@ -17,12 +18,10 @@
 
 <style>
 
-	body {
-		margin-top: 40px;
-		text-align: center;
-		font-size: 14px;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-	}
+        .body {
+    display: table;
+    background-color: green;
+}
 
 	#trash{
 		width:32px;
@@ -39,10 +38,10 @@
 
 	#external-events {
 		float: left;
-		width: 150px;
 		padding: 0 10px;
-		border: 1px solid #ccc;
-		background: #eee;
+                min-height: 800px;
+                width:100%;
+		background: #34495E;
 		text-align: left;
 	}
 
@@ -60,7 +59,7 @@
 	#external-events p {
 		margin: 1.5em 0;
 		font-size: 11px;
-		color: #666;
+		color: #3498db;
 	}
 
 	#external-events p input {
@@ -69,17 +68,32 @@
 	}
 
 	#calendar {
-		float: right;
-		width: 900px;
+                margin-top: 22px;
+                margin-right: 22px;
+		float: left;
+                max-height: 700px;
+                
 	}
 
 </style>
 </head>
-<body>
-	<div id='wrap'>
+    <body>
 
-		<div id='external-events'>
-			<!-- <h4>Draggable Events</h4><br> -->
+<div style="height:80px; background-color: whitesmoke">
+<div class="row">
+    <div class="col-md-2 ">
+        <div style="height:80px; background-color: #2C3E50"><p>
+				<img src="assets/img/testlog.svg" alt="">
+			</p></div>
+    </div>
+    <div class="col-md-10"></div>
+</div>
+</div>
+        
+
+        <div style="min-height:100%;" class="row">
+            <div style="display: table-cell;" class="col-md-2">
+                		<div id='external-events'>
 
 			<div id="clients">
 				<br>
@@ -90,42 +104,19 @@
 				<img src="assets/img/trashcan.png" id="trash" alt="">
 			</p>
 		</div>
-
-		<div id='calendar'></div>
-
-		<div style='clear:both'></div>
-
-		<xspan class="tt"></xspan>
-
-	</div>
-	<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edycja wydarzenia</h4>
-      </div>
-      <div class="modal-body">
-<form name='modal'>
-ID:<input type="text" name="id" class="form-control" value="" disabled></input><br>
-Event:<input type="text" name="ev" class="form-control" value=""></input><br>
-Data rozpoczęcia:<input type="datetime" class="form-control" name="startdate" value=""></input><br>
-Data zakończenia:<input type="datetime" class="form-control" name="enddate" value=""></input><br>
-Opis:<br><input type="textarea" class="form-control" name="opis" value=""></input>
-<input type="hidden" name="evenement" value=""></input>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" onClick="save()">Zapisz</button>
-      </div>
-    </div>
-
-  </div>
+            </div>
+            <div style="display: table-cell;" class="col-md-10">
+                <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wybierz terminarz
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Publiczny</a></li>
+    <li><a href="#">Własny</a></li>
+  </ul>
 </div>
-
-
+                <div id='calendar'></div>
+            </div>
+        </div>
 
 <div id="modalClient" class="modal fade" role="dialog">
 <div class="modal-dialog">
@@ -154,5 +145,6 @@ Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
 
 </div>
 </div>
+
 </body>
 </html>

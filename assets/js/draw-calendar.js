@@ -35,6 +35,8 @@ draggable();
 		-----------------------------------------------------------------*/
 
 		$('#calendar').fullCalendar({
+                        height: 700,
+                        fixedWeekCount: false,
                         eventLimit: true, // for all non-agenda views
                          views: {
                             agenda: {
