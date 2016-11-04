@@ -7,10 +7,10 @@ http://projekt.itcave.pl/
 O
 ##-pasek administratora: dodaj/usuń pracownika, dodaj/usuń terminarz
 ##-podział terminarza
+##-naprawić all-day event (jednak miałeś rację)
 
 D
-##-plan dnia po kliknieciu na dzień
+##-plan dnia po kliknieciu na dzień ✓
 ##-edycja klienta ✓
 ##-usuwanie klienta ✓
-##-naprawić all-day event (jednak miałeś rację)
 ##-wyszukiwarka klientów ✓
