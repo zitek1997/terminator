@@ -123,6 +123,15 @@ draggable();
 					}
 				});
 		    },
+				dayClick: function(date, jsEvent, view) {
+
+    var ajandamodu=view.name;
+    if(ajandamodu=='month')
+    {
+			$('#calendar').fullCalendar('gotoDate',date);
+      $('#calendar').fullCalendar('changeView','agendaDay');
+    }
+},
 			eventDragStop: function (event, jsEvent, ui, view) {
 			    if (isElemOverDiv()) {
 			    	var con = confirm('Are you sure to delete this event permanently?');
@@ -146,6 +155,7 @@ draggable();
 					}
 				}
 			}
+
 		});
 
 	function getFreshEvents(){
@@ -178,5 +188,7 @@ draggable();
         }
         return false;
     }
+
+
 
 	});
