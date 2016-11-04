@@ -98,7 +98,7 @@ draggable();
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
 	// setTimeout(draggable(), 3000);
-$('#calendar').fullCalendar( 'refetchEvents' );
+// $('#calendar').fullCalendar( 'refetchEvents' );
 }
 
 function cDel(){
@@ -128,6 +128,6 @@ draggable();
 					freshevents = s;
 				}
 	});
-	$('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
+	// $('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
 	$('#calendar').fullCalendar( 'refetchEvents' );
 	}
