@@ -118,16 +118,17 @@ draggable();
 	document.forms.modalClient.tel.value="";
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
+	// $('#calendar').fullCalendar( 'destroy' );
+
 	// setTimeout(draggable(), 3000);
-	$.ajax({
-		url: 'process.php',
-				type: 'POST', // Send post data
-				data: 'type=fetch',
-				async: false,
-				success: function(s){
-					freshevents = s;
-				}
-	});
+	// $.ajax({
+	// 	url: 'process.php',
+	// 			type: 'POST', // Send post data
+	// 			data: 'type=fetch',
+	// 			async: false,
+	// 			success: function(s){
+	// 				freshevents = s;
+	// 			}
+	// });
 	// $('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
-	$('#calendar').fullCalendar( 'refetchEvents' );
 	}
