@@ -5,5 +5,5 @@ $where = "ID = $id";
 $db->delete('clients', $where);
 $idc=$_POST['idc'];
 $where = "idc = $idc";
-$db->delete('calendar', $where);
+$db->deleteALL('calendar', $where);
 ?>
