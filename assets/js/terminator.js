@@ -9,7 +9,7 @@ function getFreshEvents(){
 				}
 	});
 	$('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
-	alert("getFreshEvents");
+	// alert("getFreshEvents");
 }
 
 
