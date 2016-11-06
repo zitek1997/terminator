@@ -7,7 +7,7 @@ http://projekt.itcave.pl/
 O
 ##-podstawowy bootstrap ✓
 ##-pasek administratora: dodaj/usuń pracownika, dodaj/usuń terminarz
-##-podział terminarza - x/✓
+##-podział terminarza - ✓
 ##-naprawić all-day event (jednak miałeś rację)
 
 D
