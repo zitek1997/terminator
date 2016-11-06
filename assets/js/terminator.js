@@ -71,6 +71,18 @@ function termlist() {
 	 }
  });
 }
+function pickTerm(id){
+    	$.ajax({
+	 type: "POST",
+         url: "ajax/pickterm.php",
+         data: 'id='+id,
+         dataType: 'json',
+	 success: function(){
+		 $('#calendar').fullCalendar('removeEvents');
+                    getFreshEvents();
+	 }
+ });
+}
 function save(){
 
 			event = evenement;

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('ajax/config.php');
 // include('ajax/confi.php');
 
@@ -14,13 +15,15 @@ if($type == 'new')
 	$enddate = date("Y-m-d H:i",$enddate);
 	$title = $_POST['title'];
 	$idc = $_POST['idc'];
+        $timetab_id = $_SESSION['timetab_id'];
 	$array = array(
 		"idc" => $idc,
 		"title" => $title,
 		"startdate" => $startdate,
 		"enddate" => $enddate,
 		"allDay" => "false",
-		"opis" => " "
+		"opis" => " ",
+                "timetab_id" => $timetab_id
 	);
 	$db->insert('calendar', $array);
 	$lastId = $db->lastInsertId();
@@ -79,9 +82,11 @@ if($type == 'remove')
 }
 
 if($type == 'fetch')
-{
+{       if(isset($_SESSION['timetab_id'])){$id=$_SESSION['timetab_id'];}  else {$id = $_SESSION['uid'];}
 	$events = array();
-	$eve = $db-> selecto('select * from calendar');
+        $arr = array("timetab_id" => $id);
+        $sql= "select * from calendar WHERE timetab_id = :timetab_id";
+	$eve = $db-> select($sql, $arr);
 
 	foreach ($eve as $key => $fetch)
 	{
