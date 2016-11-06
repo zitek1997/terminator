@@ -31,6 +31,24 @@ else
   $_SESSION['listerr']=1;
 }
 
-print_r($usr);
+$l=count($usr);
+print <<<KOD
+
+KOD;
+for($x=0;$x<$l;$x++)
+{
+  $id = $usr[$x]['timetab_id'];
+  $title = $usr[$x]['title'];
+  $color = $usr[$x]['color'];
+  
+print <<<KOD
+
+    <li style="background-color:$color" onClick="newFetch('$id');"><a href="#">$title</a></li>
+
+KOD;
+}
+print <<<KOD
+
+KOD;
 
 ?>

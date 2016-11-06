@@ -62,6 +62,15 @@ function draggable() {
 	 }
  });
 }
+function termlist() {
+	$.ajax({
+	 type: "POST",
+	 url: "ajax/termlist.php",
+	 success: function(data){
+		 $('#termlist').html(data);
+	 }
+ });
+}
 function save(){
 
 			event = evenement;

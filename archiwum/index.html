@@ -15,7 +15,9 @@
 <script src="assets/js/list.js"></script>
 <script src="assets/js/terminator.js"></script>
 <script src="assets/js/draw-calendar.js"></script>
-
+<script>
+termlist();
+</script>
 <style>
 
         .body {
@@ -109,9 +111,8 @@
                 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wybierz terminarz
   <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Publiczny</a></li>
-    <li><a href="#">Własny</a></li>
+  <ul id="termlist" class="dropdown-menu">
+
   </ul>
 </div>
                 <div id='calendar'></div>
