@@ -1,0 +1,161 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+
+  background-color: green;
+}
+
+	#trash{
+		width:50px;
+		height:55px;
+		float:left;
+		padding-bottom: 15px;
+		position: relative;
+	}
+
+	#wrap {
+		width: 1100px;
+		margin: 0 auto;
+	}
+
+	#external-events {
+		float: left;
+                min-height: 800px;
+                width:100%;
+		background: #34495E;
+		text-align: left;
+	}
+
+	#external-events h4 {
+		font-size: 16px;
+		margin-top: 0;
+		padding-top: 1em;
+	}
+
+	#external-events .fc-event {
+		margin: 10px 0;
+		cursor: pointer;
+	}
+
+	#external-events p {
+		margin: 1.5em 0;
+		font-size: 11px;
+		color: #3498db;
+	}
+
+	#external-events p input {
+		margin: 0;
+		vertical-align: middle;
+	}
+
+	#calendar {
+                margin-top: 22px;
+                margin-right: 22px;
+		float: left;
+                max-height: 700px;
+
+	}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+.brand {
+  padding-left: 0px !important; 
+  padding-right: 0px !important; 
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background: #34495E;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+    top: 80px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}

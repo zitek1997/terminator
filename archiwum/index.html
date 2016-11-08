@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+        <!-- Custom styles for this template -->
+    <link href="/assets/theme/dashboard.css" rel="stylesheet">
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/assets/theme/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/assets/theme/ie-emulation-modes-warning.js"></script>
 <meta charset='utf-8' />
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link href='assets/css/terminator.css' rel='stylesheet' />
@@ -18,83 +32,23 @@
 <script>
 termlist();
 </script>
-<style>
-
-        .body {
-    display: table;
-    background-color: green;
-}
-
-	#trash{
-		width:50px;
-		height:55px;
-		float:left;
-		padding-bottom: 15px;
-		position: relative;
-	}
-
-	#wrap {
-		width: 1100px;
-		margin: 0 auto;
-	}
-
-	#external-events {
-		float: left;
-		padding: 0 10px;
-                min-height: 800px;
-                width:100%;
-		background: #34495E;
-		text-align: left;
-	}
-
-	#external-events h4 {
-		font-size: 16px;
-		margin-top: 0;
-		padding-top: 1em;
-	}
-
-	#external-events .fc-event {
-		margin: 10px 0;
-		cursor: pointer;
-	}
-
-	#external-events p {
-		margin: 1.5em 0;
-		font-size: 11px;
-		color: #3498db;
-	}
-
-	#external-events p input {
-		margin: 0;
-		vertical-align: middle;
-	}
-
-	#calendar {
-                margin-top: 22px;
-                margin-right: 22px;
-		float: left;
-                max-height: 700px;
-
-	}
-
-</style>
 </head>
     <body>
-
-<div style="height:80px; background-color: whitesmoke">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
 <div class="row">
-    <div class="col-md-2 ">
+    <div class="col-sm-3 col-md-2 brand">
         <div style="height:80px; background-color: #2C3E50"><p>
 				<img src="assets/img/testlog.svg" alt="">
 			</p></div>
     </div>
-    <div class="col-md-10"></div>
+    <div class="col-sm-9 col-md-10"></div>
 </div>
 </div>
-
-
-        <div style="min-height:100%;" class="row">
-            <div style="display: table-cell;" class="col-md-2">
+</nav>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
                 		<div id='external-events'>
 
 			<div id="clients">
@@ -107,7 +61,7 @@ termlist();
 			</div>
 		</div>
             </div>
-            <div style="display: table-cell;" class="col-md-10">
+            <div class="col-sm-9 col-md-10 main">
                 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wybierz terminarz
   <span class="caret"></span></button>
@@ -118,6 +72,7 @@ termlist();
                 <div id='calendar'></div>
             </div>
         </div>
+</div>
 
 <div id="modalClient" class="modal fade" role="dialog">
 <div class="modal-dialog">
