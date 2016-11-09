@@ -49,7 +49,8 @@ function draggable() {
 			 $(this).draggable({
 				 zIndex: 999,
 				 revert: true,      // will cause the event to go back to its
-				 revertDuration: 0  //  original position after the drag
+				 revertDuration: 0,  //  original position after the drag
+				 containment: "body"
 			 });
 
 		 });
