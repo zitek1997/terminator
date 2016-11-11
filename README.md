@@ -16,7 +16,6 @@ D
 ##-edycja klienta ✓
 ##-usuwanie klienta ✓
 ##-wyszukiwarka klientów ✓
-
 ##-naprawić kosz ✓
 ##-opcja long eventów
 (to ma chyba związek z nie działającym all-day, tak jak masz na https://fullcalendar.io)
