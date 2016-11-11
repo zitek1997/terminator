@@ -16,10 +16,7 @@ var evenement;
 	});
 
 
-	var currentMousePos = {
-	    x: -1,
-	    y: -1
-	};
+
 		jQuery(document).on("mousemove", function (event) {
         currentMousePos.x = event.pageX;
         currentMousePos.y = event.pageY;

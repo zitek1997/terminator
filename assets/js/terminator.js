@@ -1,3 +1,7 @@
+var currentMousePos = {
+		x: -1,
+		y: -1
+};
 function getFreshEvents(){
 	$.ajax({
 		url: 'process.php',
@@ -24,6 +28,7 @@ function isElemOverDiv() {
 
 			if (currentMousePos.x >= x1 && currentMousePos.x <= x2 &&
 					currentMousePos.y >= y1 && currentMousePos.y <= y2) {
+
 					return true;
 			}
 			return false;
