@@ -3,6 +3,7 @@ var currentMousePos = {
 		y: -1
 };
 function getFreshEvents(){
+	$('#calendar').fullCalendar('removeEvents');
 	$.ajax({
 		url: 'process.php',
 				type: 'POST', // Send post data
@@ -82,7 +83,6 @@ function pickTerm(id){
          data: 'id='+id,
          dataType: 'json',
 	 success: function(){
-		 $('#calendar').fullCalendar('removeEvents');
                     getFreshEvents();
 	 }
  });
@@ -168,7 +168,7 @@ dataType: 'json',
 // success: function(){}
 });
 
-$('#calendar').fullCalendar('removeEvents');
+
 getFreshEvents();
 // $('#modalClient').modal('hide');
 	cliid=""

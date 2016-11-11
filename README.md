@@ -26,4 +26,4 @@ D
 może być jakiś blank event na liście który po dodaniu woła o nazwę)
 ##-spróbujmy dodać linię zaznaczającą godzinę
 (nie mam pomysłu jak, ale można spróbować, nie jest jakoś super konieczne, https://site.uplabs.com/posts/task-page-calendar-view)
-##-naprawić all-day event (jednak miałeś rację)
+##-naprawić all-day event (jednak miałeś rację) ✓

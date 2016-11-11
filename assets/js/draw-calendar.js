@@ -72,6 +72,7 @@ draggable();
 		    	});
 				$('#calendar').fullCalendar('updateEvent',event);
 				console.log(event);
+				getFreshEvents();
 			},
 			eventDrop: function(event, delta, revertFunc) {
 		        var title = event.title;
@@ -143,7 +144,6 @@ draggable();
 				    		success: function(response){
 				    			console.log(response);
 				    			if(response.status == 'success'){
-				    				$('#calendar').fullCalendar('removeEvents');
             						getFreshEvents();
             					}
 				    		},
