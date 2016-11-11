@@ -2,19 +2,9 @@
  * Base structure
  */
 
-/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-
-  background-color: green;
+body{
+    background: #ecf0f1;
 }
-
-	#trash{
-		width:50px;
-		height:55px;
-		float:left;
-		padding-bottom: 15px;
-		position: relative;
-	}
 
 	#wrap {
 		width: 1100px;
@@ -23,9 +13,8 @@ body {
 
 	#external-events {
 		float: left;
-                min-height: 800px;
                 width:100%;
-		background: #34495E;
+		background: #293A4B;
 		text-align: left;
 	}
 
@@ -36,8 +25,9 @@ body {
 	}
 
 	#external-events .fc-event {
-		margin: 10px 0;
 		cursor: pointer;
+                position: fixed;
+                width: 11%;
 	}
 
 	#external-events p {
@@ -53,10 +43,11 @@ body {
 
 	#calendar {
                 margin-top: 22px;
-                margin-right: 22px;
 		float: left;
                 max-height: 700px;
-
+                border-radius: 7px 7px 7px 7px;
+                background: whitesmoke;
+                box-shadow: 0px 0px 72px -15px rgba(0,0,0,0.78);
 	}
 
 /*
@@ -85,8 +76,13 @@ body {
   display: none;
 }
 .brand {
-  padding-left: 0px !important; 
-  padding-right: 0px !important; 
+  padding-left: 0px; 
+  padding-right: 0px;
+  background: #3498db
+}
+.nav {
+  height:80px; 
+  background: #3498db;
 }
 @media (min-width: 768px) {
   .sidebar {
@@ -99,8 +95,7 @@ body {
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background: #34495E;
-    border-right: 1px solid #eee;
+    background: #293A4B;
   }
 }
 
@@ -125,9 +120,13 @@ body {
 /*
  * Main content
  */
-
+.brandlogo {
+    display: block;
+    margin: auto;
+}
 .main {
   padding: 20px;
+  float: right;
 }
 @media (min-width: 768px) {
   .main {

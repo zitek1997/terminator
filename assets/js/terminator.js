@@ -12,7 +12,6 @@ function getFreshEvents(){
 	// alert("getFreshEvents");
 }
 
-
 function isElemOverDiv() {
 			var trashEl = jQuery('#trash');
 
@@ -50,7 +49,6 @@ function draggable() {
 				 zIndex: 999,
 				 revert: true,      // will cause the event to go back to its
 				 revertDuration: 0,  //  original position after the drag
-				 containment: "body"
 			 });
 
 		 });
