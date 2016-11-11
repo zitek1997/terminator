@@ -10,8 +10,6 @@ O
 ##-podział terminarza - ✓
 ##-opis eventu po najechaniu na niego
 ##-CSS
-
-
 D
 ##-plan dnia po kliknieciu na dzień ✓
 ##-edycja klienta ✓
