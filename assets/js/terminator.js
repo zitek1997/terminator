@@ -170,7 +170,6 @@ dataType: 'json',
 
 
 getFreshEvents();
-// $('#modalClient').modal('hide');
 	cliid=""
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
@@ -178,17 +177,6 @@ getFreshEvents();
 	document.forms.modalClient.tel.value="";
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
-	// $('#calendar').fullCalendar( 'destroy' );
 draggable();
-	// setTimeout(draggable(), 3000);
-	// $.ajax({
-	// 	url: 'process.php',
-	// 			type: 'POST', // Send post data
-	// 			data: 'type=fetch',
-	// 			async: false,
-	// 			success: function(s){
-	// 				freshevents = s;
-	// 			}
-	// });
-	// $('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
+
 	}
