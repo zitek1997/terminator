@@ -27,7 +27,18 @@ body{
 	#external-events .fc-event {
 		cursor: pointer;
                 position: fixed;
-                width: 11%;
+                width: 9.8%;
+                margin: 0px; 
+                border: 2px solid #3a87ad; 
+                line-height: 2; 
+                font-size: 12px;
+	}
+        
+        #external-events .btn-xs {
+                position: fixed;
+                line-height: 2; 
+                border: 1px solid #3a87ad; 
+                font-size: 12px;
 	}
 
 	#external-events p {
@@ -74,7 +85,17 @@ body{
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
+  padding-left: 0px;
 }
+
+.events {
+  height: 28px;
+}
+
+.serach-sidebar {
+  width: 100%;
+}
+
 .brand {
   padding-left: 0px; 
   padding-right: 0px;
@@ -85,8 +106,20 @@ body{
   background: #3498db;
 }
 @media (min-width: 768px) {
-  .sidebar {
+.head-menu {
+    width:15%;
+    height:80px;
+    float: left;
+}
+.head-brand{
+    height:80px;
+    background-color: #2980b9;
+    width: 85%;
+    float: left;
+}
+.sidebar-menu {
     position: fixed;
+    width: 2.4999999%;
     top: 80px;
     bottom: 0;
     left: 0;
@@ -94,8 +127,23 @@ body{
     display: block;
     padding: 20px;
     overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    overflow-y: auto;
     background: #293A4B;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+  .sidebar {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    left: 2.499999%;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #293A4B;
+    width: 14.1666666%;
   }
 }
 

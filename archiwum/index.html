@@ -39,7 +39,8 @@ termlist();
 <div class="container-fluid">
 <div class="row">
     <div class="col-sm-3 col-md-2 brand">
-        <div style="height:80px; background-color: #2980b9"><p>
+        <div class="head-menu"></div>
+        <div class="head-brand"><p>
 				<img class="brandlogo" src="assets/img/terminator.svg" alt="">
 			</p></div>
     </div>
@@ -48,31 +49,25 @@ termlist();
 </div>
 </nav>
 <div class="container-fluid">
-        <div class="row" id="terminator">
-            <div class="col-sm-3 col-md-2 sidebar">
-                		<div id='external-events'>
-
-			<div id="clients">
-				<br>
-			<input class="search form-control" placeholder="Wyszukaj" />
-				<div id="lista" class="list"></div>
-			</div>
-                                    			<!-- <div >
-				<img id="trash" style="width: 100px; height: 100px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Antu_user-trash.svg/2000px-Antu_user-trash.svg.png" alt="">
-			</div> -->
+    <div class="row" id="terminator">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <div class="sidebar-menu"></div>
+            <div id='external-events'>
+                <div id="clients">
+                    <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
+                        <div id="lista" class="list"></div>
 		</div>
             </div>
-            <div class="col-sm-9 col-md-10 main">
-                <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wybierz terminarz
-  <span class="caret"></span></button>
-  <ul id="termlist" class="dropdown-menu">
-
-  </ul>
-</div>
-                <div id='calendar'></div>
-            </div>
         </div>
+        <div class="col-sm-9 col-md-10 main">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wybierz terminarz
+                    <span class="caret"></span></button>
+                        <ul id="termlist" class="dropdown-menu"></ul>
+            </div>
+                <div id='calendar'></div>
+        </div>
+    </div>
 </div>
 
 <div id="modalClient" class="modal fade" role="dialog">
