@@ -32,6 +32,7 @@
 <script src="assets/js/draw-calendar.js"></script>
 <script>
 termlist();
+userDetail();
 </script>
 </head>
     <body>
@@ -39,29 +40,30 @@ termlist();
 <div class="container-fluid">
 <div class="row">
     <div class="col-sm-3 col-md-2 brand">
-        <div class="head-menu"><span class="glyphicon glyphicon-menu-hamburger menu-icon" aria-hidden="true"></span></div>
-        <div class="head-brand"><p>
+        <div id="menu-toggle" class="head-menu"><span class="glyphicon glyphicon-menu-hamburger menu-icon" aria-hidden="true"></span></div>
+        <div id="head-brand-toggle" class="head-brand"><p>
 				<img class="brandlogo" src="assets/img/terminator.svg" alt="">
 			</p></div>
     </div>
     <div class="col-sm-9 col-md-10 nav">
         <div class="user-menu">
+            <div id="user-detail" class="user-menu-detail"></div>
             <div class="user-menu-av"></div>
-            <div class="user-menu-detail"></div>
         </div>
     </div>
 </div>
 </div>
 </nav>
 <div class="container-fluid">
-    <div class="row" id="terminator">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <div class="sidebar-menu">
+    <div class="sidebar-menu">
                 <div class="menu-in"><span class="glyphicon glyphicon-user menu-icon" aria-hidden="true"></span></div>
                 <div class="menu-in"><span class="glyphicon glyphicon-calendar menu-icon" aria-hidden="true"></span></div>
                 <div class="menu-in"><span class="glyphicon glyphicon-bell menu-icon" aria-hidden="true"></span></div>
                 <div style="position:absolute; bottom: 0.2em;" class="menu-in"><span class="glyphicon glyphicon-cog menu-icon" aria-hidden="true"></span></div>
             </div>
+    <div class="row" id="terminator">
+        <div id="sidebar-toggle" class="col-sm-3 col-md-2 sidebar">
+            
             <div id='external-events'>
                 <div id="clients">
                     <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
@@ -69,7 +71,7 @@ termlist();
 		</div>
             </div>
         </div>
-        <div class="col-sm-9 col-md-10 main">
+        <div id="main-toggle" class="col-sm-9 col-md-10 main">
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wybierz terminarz
                     <span class="caret"></span></button>

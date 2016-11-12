@@ -1,6 +1,11 @@
-/*
- * Base structure
- */
+@font-face {
+    font-family: montserratR;
+    src: url(Montserrat-Regular.otf);
+}
+@font-face {
+    font-family: montserratT;
+    src: url(Montserrat-Thin.otf);
+}
 
 body{
     background: #ecf0f1;
@@ -88,9 +93,9 @@ body{
   padding-left: 0px;
 }
 .menu-icon{
-    font-size: 25px;
+    font-size: 20px;
     color: whitesmoke;
-    line-height: 3.3;
+    line-height: 4;
 }
 .menu-in{
     height:80px;
@@ -110,7 +115,14 @@ body{
 .serach-sidebar {
   width: 100%;
 }
-
+.hidden{
+    animation: disapear 1s;
+}
+.togglemain{
+    margin-left: 2.8%;
+    margin-right: 2.7%;
+    width: 92%;
+}
 .brand {
   padding-left: 0px; 
   padding-right: 0px;
@@ -130,26 +142,43 @@ body{
     padding-right: 2.5%;
 }
 .user-menu-av{
-    width: 50px;
-    height: 50px; 
+width: 17%;
+    height: 0;
+    padding-bottom: 17%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background: #4679BD;
     float: left;
-    border-radius: 200px 200px 200px 200px;
+    border-radius: 50%;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     background: url(/assets/img/testav.png) no-repeat;
     background-size: cover;
+    cursor: pointer;
 }
 .user-menu-detail{
-    width: 50px;
-    height: 50px; 
+    height: 50px;
+    width: 80%;
     float: left;
     border-radius: 200px 200px 200px 200px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    background: url(/assets/img/testav.png) no-repeat;
-    background-size: cover;
+    padding: 2%;
+}
+.user-detail{
+    font-size: 100%;
+    margin: 0px;
+    color: white;
+    text-align: end;
+}
+.flname{
+    font-family: montserratR; 
+}
+.usrname{
+    font-family: montserratT;
+    font-weight: bold;
 }
 .head-menu {
     width:15%;

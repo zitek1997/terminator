@@ -2,6 +2,14 @@ var currentMousePos = {
 		x: -1,
 		y: -1
 };
+$(document).ready(function(){
+    $("#menu-toggle").click(function(){       
+        $("#head-brand-toggle").animate({width: 'toggle'});
+        $("#sidebar-toggle").animate({width: 'toggle'});
+        $("#lista").toggleClass( "hidden" );
+        $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" );
+    });
+});
 function getFreshEvents(){
 	$('#calendar').fullCalendar('removeEvents');
 	$.ajax({
@@ -73,6 +81,15 @@ function termlist() {
 	 url: "ajax/termlist.php",
 	 success: function(data){
 		 $('#termlist').html(data);
+	 }
+ });
+}
+function userDetail() {
+	$.ajax({
+	 type: "POST",
+	 url: "ajax/user-detail.php",
+	 success: function(data){
+		 $('#user-detail').html(data);
 	 }
  });
 }
