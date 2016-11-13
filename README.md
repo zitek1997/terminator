@@ -8,6 +8,7 @@ O
 ##-podstawowy bootstrap ✓
 ##-pasek administratora: dodaj/usuń pracownika, dodaj/usuń terminarz
 ##-podział terminarza - ✓
+##-opcja long eventów ✓
 ##-opis eventu po najechaniu na niego
 ##-CSS
 D
@@ -22,8 +23,6 @@ D
 (nie mam pomysłu jak, ale można spróbować, nie jest jakoś super konieczne, https://site.uplabs.com/posts/task-page-calendar-view)
 ##-naprawić all-day event (jednak miałeś rację) ✓
 
-##-opcja long eventów
-(to ma chyba związek z nie działającym all-day, tak jak masz na https://fullcalendar.io)
 
 ##-opcja dodawania eventów customowych
 (powiązanych z klientami np. pani halinka chce zapisać sobie że w środę ma podlać kwiatki,
