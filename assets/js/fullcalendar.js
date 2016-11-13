@@ -13186,12 +13186,14 @@ fcViews.agenda = {
 
 fcViews.agendaDay = {
 	type: 'agenda',
-	duration: { days: 1 }
+	duration: { days: 1 },
+	defaults: { nowIndicator: true }
 };
 
 fcViews.agendaWeek = {
 	type: 'agenda',
-	duration: { weeks: 1 }
+	duration: { weeks: 1 },
+	defaults: { nowIndicator: true }
 };
 ;;
 
