@@ -56,10 +56,10 @@ userDetail();
 </nav>
 <div class="container-fluid">
     <div class="sidebar-menu">
-                <div class="menu-in"><span class="glyphicon glyphicon-user menu-icon" aria-hidden="true"></span></div>
-                <div class="menu-in"><span class="glyphicon glyphicon-calendar menu-icon" aria-hidden="true"></span></div>
-                <div class="menu-in"><span class="glyphicon glyphicon-bell menu-icon" aria-hidden="true"></span></div>
-                <div style="position:absolute; bottom: 0.2em;" class="menu-in"><span class="glyphicon glyphicon-cog menu-icon" aria-hidden="true"></span></div>
+                <div id="clients-toggle" class="menu-in"><span class="glyphicon glyphicon-user menu-icon" aria-hidden="true"></span></div>
+                <div id="terms-toggle" class="menu-in"><span class="glyphicon glyphicon-calendar menu-icon" aria-hidden="true"></span></div>
+                <div id="notify-toggle" class="menu-in"><span class="glyphicon glyphicon-bell menu-icon" aria-hidden="true"></span></div>
+                <div id="options-toggle" style="position:absolute; bottom: 0.2em;" class="menu-in"><span class="glyphicon glyphicon-cog menu-icon" aria-hidden="true"></span></div>
             </div>
     <div class="row" id="terminator">
         <div id="sidebar-toggle" class="col-sm-3 col-md-2 sidebar">
@@ -69,14 +69,19 @@ userDetail();
                     <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
                         <div id="lista" class="list"></div>
 		</div>
+                <div id="terms">
+                    <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
+                        <div id="termlist" ></div>
+		</div>
+                <div id="notify">
+                    <div class="termlist_in" >Powiadomienia</div>
+		</div>
+                <div id="options">
+                    <div class="termlist_in" >Opcje</div>
+		</div>
             </div>
         </div>
         <div id="main-toggle" class="col-sm-9 col-md-10 main">
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Wybierz terminarz
-                    <span class="caret"></span></button>
-                        <ul id="termlist" class="dropdown-menu"></ul>
-            </div>
                 <div id='calendar'></div>
         </div>
     </div>

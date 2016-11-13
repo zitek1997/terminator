@@ -43,7 +43,7 @@ for($x=0;$x<$l;$x++)
   
 print <<<KOD
 
-    <li style="background-color:$color" onClick="pickTerm($id);">$title</li>
+    <div class="termlist_in" style="background-color:$color" onClick="pickTerm($id);">$title</div>
 
 KOD;
 }

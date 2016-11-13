@@ -123,6 +123,24 @@ body{
     margin-right: 2.7%;
     width: 92%;
 }
+.chosen{
+    border-right: 2px solid #2f91d1
+}
+#termlist{
+    margin-top: 15px;
+}
+.termlist_in{
+    margin-bottom: 10px;
+    height: 28px;
+    border-radius: 3px;
+    border: 2px solid rgba(255, 255, 255, 0.22);
+    cursor: pointer;
+    padding: 2px;
+    text-align: -webkit-center;
+    font-size: 1vw;
+    color: white;
+    text-shadow: 1px 1px #949494;
+}
 .brand {
   padding-left: 0px; 
   padding-right: 0px;
