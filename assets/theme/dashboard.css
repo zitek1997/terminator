@@ -152,6 +152,18 @@ body{
   padding-right: 0px;
 }
 @media (min-width: 768px) {
+td.fc-today span{
+    display: block;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background-color: rgb(52, 152, 219);
+    text-align: -webkit-center;
+    color: aliceblue;
+    margin: 2px;
+}
 .user-menu {
     width:20%;
     height:100%;
