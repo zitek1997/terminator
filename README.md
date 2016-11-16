@@ -27,3 +27,13 @@ D
 ##-opcja dodawania eventów customowych
 (powiązanych z klientami np. pani halinka chce zapisać sobie że w środę ma podlać kwiatki,
 może być jakiś blank event na liście który po dodaniu woła o nazwę)
+
+##-alert przy błędnym logowaniu
+
+##-usuń event w modalu edycji eventu
+
+##-wyszukiwanie w liście terminarzy
+
+##-datetime-picker
+
+##-funkcja wylogowania, do użycia przez onClick dla buttona
