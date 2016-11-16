@@ -2,8 +2,18 @@ var crudApp = angular.module('crudApp',[]);
 crudApp.controller("DbController",['$scope','$http', function($scope,$http){
 
 $scope.getInfo = function(info){
-$http.post('/ajax/login.php',{"login":info.login,"pass":info.pass}).success(function(data){
-window.location.replace("http://projekt.itcave.pl");
+$http.post('/ajax/login.php',{"login":info.login,"pass":info.pass})
+.success(function(data)
+{
+  if(data==0)
+  {
+    window.location.replace("http://projekt.itcave.pl");
+  }else{
+    info.login="";
+    info.pass="";
+    alert("Błędne dane logowania");
+  }
+
 });
 }
 
