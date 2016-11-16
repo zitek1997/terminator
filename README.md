@@ -23,12 +23,12 @@ D
 (nie mam pomysłu jak, ale można spróbować, nie jest jakoś super konieczne, https://site.uplabs.com/posts/task-page-calendar-view)
 ##-naprawić all-day event (jednak miałeś rację) ✓
 ##-alert przy błędnym logowaniu ✓
+##-usuń event w modalu edycji eventu ✓
+
 
 ##-opcja dodawania eventów customowych
 (powiązanych z klientami np. pani halinka chce zapisać sobie że w środę ma podlać kwiatki,
 może być jakiś blank event na liście który po dodaniu woła o nazwę)
-
-##-usuń event w modalu edycji eventu
 
 ##-wyszukiwanie w liście terminarzy
 

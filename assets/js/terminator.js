@@ -5,16 +5,16 @@ var currentMousePos = {
 $(document).ready(function(){
         $("#clients-toggle").addClass( "chosen" );
         $("#clients").show();
-        $("#terms").hide();       
+        $("#terms").hide();
         $("#notify").hide();
         $("#options").hide();
-    $("#clients-toggle").click(function(){ 
+    $("#clients-toggle").click(function(){
         $("#clients-toggle").addClass( "chosen" );
         $("#terms-toggle").removeClass( "chosen" );
         $("#notify-toggle").removeClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
         $("#clients").show();
-        $("#terms").hide();       
+        $("#terms").hide();
         $("#notify").hide();
         $("#options").hide();
         if ($("#lista").hasClass("hidden")) {
@@ -24,13 +24,13 @@ $(document).ready(function(){
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
-    $("#terms-toggle").click(function(){ 
+    $("#terms-toggle").click(function(){
         $("#clients-toggle").removeClass( "chosen" );
         $("#terms-toggle").addClass( "chosen" );
         $("#notify-toggle").removeClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
         $("#clients").hide();
-        $("#terms").show();      
+        $("#terms").show();
         $("#notify").hide();
         $("#options").hide();
         if ($("#lista").hasClass("hidden")) {
@@ -45,8 +45,8 @@ $(document).ready(function(){
         $("#terms-toggle").removeClass( "chosen" );
         $("#notify-toggle").addClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
-        $("#clients").hide();  
-        $("#terms").hide();       
+        $("#clients").hide();
+        $("#terms").hide();
         $("#notify").show();
         $("#options").hide();
         if ($("#lista").hasClass("hidden")) {
@@ -56,13 +56,13 @@ $(document).ready(function(){
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
-    $("#options-toggle").click(function(){ 
+    $("#options-toggle").click(function(){
         $("#clients-toggle").removeClass( "chosen" );
         $("#terms-toggle").removeClass( "chosen" );
         $("#notify-toggle").removeClass( "chosen" );
         $("#options-toggle").addClass( "chosen" );
         $("#clients").hide();
-        $("#terms").hide();       
+        $("#terms").hide();
         $("#notify").hide();
         $("#options").show();
         if ($("#lista").hasClass("hidden")) {
@@ -72,7 +72,7 @@ $(document).ready(function(){
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
-    $("#menu-toggle").click(function(){       
+    $("#menu-toggle").click(function(){
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
         $("#lista").toggleClass( "hidden" );
@@ -242,6 +242,26 @@ draggable();
 	document.forms.modalClient.adres.value="";
 	// setTimeout(draggable(), 3000);
 // $('#calendar').fullCalendar( 'refetchEvents' );
+}
+
+function weDel()
+{
+	id = document.forms.modal.id.value;
+	$.ajax({
+		url: 'process.php',
+		data: 'type=remove&eventid='+id,
+		type: 'POST',
+		dataType: 'json',
+		success: function(response){
+			console.log(response);
+			if(response.status == 'success'){
+				getFreshEvents();
+			}
+		},
+		error: function(e){
+			alert('Error processing your request: '+e.responseText);
+		}
+	});
 }
 
 function cDel(){
