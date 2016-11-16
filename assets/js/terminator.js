@@ -274,12 +274,7 @@ dataType: 'json',
 // success: function(){}
 });
 
-function logOut()
-{
-	$.ajax({
-		url: 'ajax/cDel.php',
-	});
-}
+
 
 getFreshEvents();
 	cliid=""
@@ -292,3 +287,15 @@ getFreshEvents();
 draggable();
 
 	}
+
+
+
+function logOut()
+{
+	$.ajax({
+		url: 'ajax/logout.php',
+		success: function(data){
+			window.location.replace("http://projekt.itcave.pl");
+		}
+	});
+}
