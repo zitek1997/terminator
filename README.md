@@ -24,6 +24,7 @@ D
 ##-naprawić all-day event (jednak miałeś rację) ✓
 ##-alert przy błędnym logowaniu ✓
 ##-usuń event w modalu edycji eventu ✓
+##-unkcja wylogowania, do użycia przez onClick dla buttona ✓
 
 
 ##-opcja dodawania eventów customowych
@@ -33,5 +34,3 @@ może być jakiś blank event na liście który po dodaniu woła o nazwę)
 ##-wyszukiwanie w liście terminarzy
 
 ##-datetime-picker
-
-##-funkcja wylogowania, do użycia przez onClick dla buttona

@@ -274,6 +274,12 @@ dataType: 'json',
 // success: function(){}
 });
 
+function logOut()
+{
+	$.ajax({
+		url: 'ajax/cDel.php',
+	});
+}
 
 getFreshEvents();
 	cliid=""
