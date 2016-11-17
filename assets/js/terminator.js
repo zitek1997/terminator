@@ -3,6 +3,13 @@ var currentMousePos = {
 		y: -1
 };
 $(document).ready(function(){
+        $("#popover-av").clickover({
+        global_close: true,
+        html : true, 
+        content: function() {
+          return $("#popover-av-content").html();
+        }
+    });
         $("#clients-toggle").addClass( "chosen" );
         $("#clients").show();
         $("#terms").hide();
@@ -159,6 +166,15 @@ function userDetail() {
 	 url: "ajax/user-detail.php",
 	 success: function(data){
 		 $('#user-detail').html(data);
+	 }
+ });
+}
+function popoverDetail() {
+	$.ajax({
+	 type: "POST",
+	 url: "ajax/popover-detail.php",
+	 success: function(data){
+		 $('#popover-detail').html(data);
 	 }
  });
 }

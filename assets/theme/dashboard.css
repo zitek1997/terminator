@@ -69,7 +69,76 @@ body{
 /*
  * Global add-ons
  */
-
+.popover{
+        width: 20%;
+    height: 300%;
+    border-radius: 3px;
+    background-color: #0f5684;
+        border-radius: 6px;
+}
+.popover-av-p{
+    text-align: center;
+    width: 90%;
+    color: white;
+    font-family: montserratR;
+    margin-top: 0.8em;
+    font-size: 1.1em;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-75%);
+}
+.popover-content{
+    padding: 0;
+}
+.popover-av-content-in-in{
+    height: 140px;
+}
+.popover-av-av{
+    width: 40%;
+    height: 0;
+    padding-bottom: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url(/assets/img/testav.png) no-repeat;
+    background-size: cover;
+    float: left;
+    border-radius: 50%;
+    position: relative;
+}
+.popover.bottom .arrow:after {
+  border-bottom-color: #0f5684;
+}
+.lft-popover-button{
+    position: absolute;
+    bottom: 0px;
+    width: 50%;
+    background-color: #3498db;
+    left: 0;
+    height: 15%;
+    border-radius: 0px 0px 0px 4px;
+    text-align: center;
+    cursor: pointer;
+}
+.rgt-popover-button{
+    position: absolute;
+    bottom: 0px;
+    width: 50%;
+    background-color: #db3434;
+    right: 0;
+    height: 15%;
+    border-radius: 0px 0px 4px 0px;
+    text-align: center;
+    cursor: pointer;
+    
+}
+.popover_p{
+    color: white;
+    font-family: montserratR;
+    margin-top: 0.8em;
+    font-size: 0.8em;
+}
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
