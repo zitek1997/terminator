@@ -156,7 +156,6 @@ draggable();
 			},
                         eventAfterRender: function(event, element) {
                             element.clickover({
-                                title: event.id,
                                 global_close: true,
                                 placement: 'top',
                                 html : true, 
