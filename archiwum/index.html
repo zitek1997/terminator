@@ -148,8 +148,15 @@ Opis:<br><input type="textarea" class="form-control" name="opis" value=""></inpu
 <div id="popover-av-content" class="hidden">
   <div class="popover-av-content-in">
       <div class="popover-av-content-in-in"><div class="popover-av-av"></div><p id="popover-detail" class="popover-av-p"></p></div>
-      <div class="lft-popover-button" onclick=""><p class="popover_p">Edycja konta</p></div>
-      <div class="rgt-popover-button" onclick="logOut()"><p class="popover_p">Wyloguj się</p></div>
+      <div class="popover-button av left" onclick=""><p class="popover_p">Edycja konta</p></div>
+      <div class="popover-button av right" onclick="logOut()"><p class="popover_p">Wyloguj się</p></div>
+  </div>
+</div>
+<div id="popover-event-content" class="hidden">
+  <div class="popover-event-content-in">
+      <div class="popover-event-content-in-in"><p id="popover-detail" class="popover-event-p"></p></div>
+      <div class="popover-button event left" onclick="editEvent()"><p class="popover_p">Edycja eventu</p></div>
+      <div class="popover-button event right" onclick=""><p class="popover_p">Usuń event</p></div>
   </div>
 </div>
 </body>

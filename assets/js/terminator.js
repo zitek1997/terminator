@@ -6,6 +6,7 @@ $(document).ready(function(){
         $("#popover-av").clickover({
         global_close: true,
         html : true, 
+        container: '.nav',
         content: function() {
           return $("#popover-av-content").html();
         }
@@ -118,6 +119,16 @@ function isElemOverDiv() {
 			// }
 			return false;
 	}
+function editEvent(event, jsEvent, view) {
+		    	console.log(event.id);
+							$('#modal').modal('show');
+							evenement = event;
+							document.forms.modal.id.value=event.id;
+							document.forms.modal.ev.value=event.title;
+							document.forms.modal.startdate.value=event.start.format("YYYY-MM-DD HH:mm:SS");
+							document.forms.modal.enddate.value=event.end.format("YYYY-MM-DD HH:mm:SS");
+							document.forms.modal.opis.value=event.opis;
+			}
 
 function draggable() {
 	$.ajax({

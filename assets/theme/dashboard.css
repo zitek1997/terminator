@@ -71,12 +71,31 @@ body{
  */
 .popover{
         width: 20%;
-    height: 300%;
     border-radius: 3px;
     background-color: #0f5684;
         border-radius: 6px;
+        display: table !important;
 }
 .popover-av-p{
+    text-align: center;
+    width: 90%;
+    color: white;
+    font-family: montserratR;
+    margin-top: 0.8em;
+    font-size: 1.1em;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-75%);
+}
+.popover-av-content-in{
+    height: 240px;
+}
+.popover-event-content-in{
+    height: 150px;
+    width: 400px;
+}
+.popover-event-p{
     text-align: center;
     width: 90%;
     color: white;
@@ -92,6 +111,9 @@ body{
     padding: 0;
 }
 .popover-av-content-in-in{
+    height: 140px;
+}
+.popover-event-content-in-in{
     height: 140px;
 }
 .popover-av-av{
@@ -110,28 +132,31 @@ body{
 .popover.bottom .arrow:after {
   border-bottom-color: #0f5684;
 }
-.lft-popover-button{
+.popover.top .arrow:after {
+  border-top-color: #0f5684;
+}
+.popover-button{
     position: absolute;
     bottom: 0px;
     width: 50%;
-    background-color: #3498db;
-    left: 0;
-    height: 15%;
-    border-radius: 0px 0px 0px 4px;
     text-align: center;
     cursor: pointer;
 }
-.rgt-popover-button{
-    position: absolute;
-    bottom: 0px;
-    width: 50%;
-    background-color: #db3434;
-    right: 0;
+.event{
+    height: 25%;
+}
+.av{
     height: 15%;
+}
+.left{
+    left: 0; 
+    background-color: #3498db;
+    border-radius: 0px 0px 0px 4px;
+}
+.right{
+    right: 0;
+    background-color: #db3434;
     border-radius: 0px 0px 4px 0px;
-    text-align: center;
-    cursor: pointer;
-    
 }
 .popover_p{
     color: white;
