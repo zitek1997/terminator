@@ -5,7 +5,7 @@ var currentMousePos = {
 $(document).ready(function(){
         $("#popover-av").clickover({
         global_close: true,
-        html : true, 
+        html : true,
         container: '.nav',
         content: function() {
           return $("#popover-av-content").html();
@@ -264,6 +264,7 @@ draggable();
 
 function weDel(id)
 {
+	$("#popover-event-content").popover('hide');
 	$.ajax({
 		url: 'process.php',
 		data: 'type=remove&eventid='+id,
