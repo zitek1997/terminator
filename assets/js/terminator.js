@@ -264,7 +264,7 @@ draggable();
 
 function weDel(id)
 {
-	$("#popover-event-content").popover('hide');
+	$("#popover-event-content").hide();
 	$.ajax({
 		url: 'process.php',
 		data: 'type=remove&eventid='+id,

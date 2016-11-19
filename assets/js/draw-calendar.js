@@ -155,8 +155,8 @@ draggable();
 				}
 			},
         eventAfterRender: function(event, element) {
-					events[id] = event;
 					id = event.id;
+					events[id] = event;
 					title = event.title;
 					start = event.start.format("YYYY-MM-DD HH:mm:SS");
 					end = event.end.format("YYYY-MM-DD HH:mm:SS")
@@ -179,9 +179,9 @@ draggable();
 	});
 
 		    function editEvent(ev) {
-					$("#popover-event-content").popover('hide');
+					$("#popover-event-content").hide();
             event = events[ev];
-		    	console.log(event);
+		    	// console.log(event);
 							$('#modal').modal('show');
 							evenement = event;
 							document.forms.modal.id.value=event.id;
