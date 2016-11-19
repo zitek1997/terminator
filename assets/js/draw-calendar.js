@@ -56,6 +56,7 @@ draggable();
 				var title = event.title;
 				var start = event.start.format("YYYY-MM-DD HH:mm:SS");
 				var idc = event.idc;
+
 				$.ajax({
 		    		url: 'process.php',
 		    		data: 'type=new&title='+title+'&startdate='+start+'&idc='+idc,
@@ -159,8 +160,11 @@ draggable();
 					events[id] = event;
 					title = event.title;
 					start = event.start.format("YYYY-MM-DD HH:mm:SS");
-					end = event.end.format("YYYY-MM-DD HH:mm:SS")
+
 					desc = event.opis;
+					if(event.end != null){
+							end = event.end.format("YYYY-MM-DD HH:mm:SS")
+					}
           element.clickover({
           	global_close: true,
             placement: 'top',
