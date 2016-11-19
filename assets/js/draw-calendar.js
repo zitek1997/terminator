@@ -1,6 +1,6 @@
 
 var evenement;
-
+var events = new Array();
 	$(document).ready(function() {
 
 		// var zone = "05:30";  //Change this to your timezone
@@ -154,19 +154,24 @@ draggable();
 					}
 				}
 			},
-                        eventAfterRender: function(event, element) {
-                            element.clickover({
-                                global_close: true,
-                                placement: 'top',
-                                html : true, 
-                                container: 'body',
-                                class: 'event',
-                                content: '<div id="popover-event-content"><div class="popover-event-content-in"><div class="popover-event-content-in-in"><p id="popover-detail" class="popover-event-p"></p></div><div class="popover-button event left" id="editEvent" onclick="editEvent('+event.id+')"><p class="popover_p">Edycja eventu</p></div><div class="popover-button event right" onclick="weDel('+event.id+')"><p class="popover_p">Usuń event</p></div></div></div>'
-
-                            })
-                            ;}   
+        eventAfterRender: function(event, element) {
+					id = event.id;
+					events[id] = event;
+					title = event.title;
+					start = event.start.format("YYYY-MM-DD HH:mm:SS");
+					end = event.end.format("YYYY-MM-DD HH:mm:SS")
+					desc = event.opis;
+          element.clickover({
+          	global_close: true,
+            placement: 'top',
+            html : true,
+            container: 'body',
+          	class: 'event',
+          	content: '<div id="popover-event-content"><div class="popover-event-content-in"><div class="popover-event-content-in-in"><p id="popover-detail" class="popover-event-p"></p></div><div class="popover-button event left" id="editEvent" onclick="editEvent('+event.id+')"><p class="popover_p">Edycja eventu</p></div><div class="popover-button event right" onclick="weDel('+event.id+')"><p class="popover_p">Usuń event</p></div></div></div>'
+					});
+				}
                             });
-                
+
 
 
 
@@ -174,7 +179,7 @@ draggable();
 	});
 
 		    function editEvent(ev) {
-                        ev = event.id;
+            event = events[ev];
 		    	console.log(event);
 							$('#modal').modal('show');
 							evenement = event;
