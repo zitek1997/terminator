@@ -15,19 +15,19 @@ if($type == 'new')
 	$enddate = date("Y-m-d H:i",$enddate);
 	$title = $_POST['title'];
 	$idc = $_POST['idc'];
-        $timetab_id = $_SESSION['timetab_id'];
+  $timetab_id = $_SESSION['timetab_id'];
 	$array = array(
-		"idc" => $idc,
 		"title" => $title,
 		"startdate" => $startdate,
 		"enddate" => $enddate,
 		"allDay" => "false",
 		"opis" => " ",
-                "timetab_id" => $timetab_id
+    "timetab_id" => $timetab_id,
+		"idc" => $idc,
 	);
 	$db->insert('calendar', $array);
 	$lastId = $db->lastInsertId();
-	echo json_encode(array('status'=>'success','eventid'=>$lastId));
+	echo json_encode(array('status'=>'success','eventid'=>$lastId, 'enddate'=>$enddate));
 }
 
 if($type == 'change')

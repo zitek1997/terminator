@@ -62,18 +62,19 @@ draggable();
 		    		data: 'type=new&title='+title+'&startdate='+start+'&idc='+idc,
 		    		type: 'POST',
 		    		dataType: 'json',
+						async: false,
 		    		success: function(response){
 		    			event.id = response.eventid;
-		    			$('#calendar').fullCalendar('updateEvent',event);
-							pickService(event.id);
-		    		},
+							event.end = response.enddate;
+						},
 		    		error: function(e){
 		    			console.log(e.responseText);
-
 		    		}
 		    	});
 				$('#calendar').fullCalendar('updateEvent',event);
 				console.log(event);
+				id=event.id;
+				pickService(id);
 				getFreshEvents();
 			},
 			eventDrop: function(event, delta, revertFunc) {
@@ -161,10 +162,11 @@ draggable();
 					events[id] = event;
 					title = event.title;
 					start = event.start.format("YYYY-MM-DD HH:mm");
-
 					desc = event.opis;
 					if(event.end != null){
-							end = event.end.format("YYYY-MM-DD HH:mm")
+						end = event.end.format("YYYY-MM-DD HH:mm");
+					}else{
+						end = "";
 					}
           element.clickover({
           	global_close: true,
@@ -200,6 +202,8 @@ draggable();
 			function editEventNew(ev) {
 					$("#popover-event-content").hide();
 					$('#modal').modal('show');
+					event = events[ev];
+					evenement = event;
 					$.ajax({
 						url: 'ajax/eventChange.php',
 						data: 'id='+ev,

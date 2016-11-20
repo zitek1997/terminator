@@ -7,7 +7,7 @@ $usl=$db->selecto($sql1);
 print <<<KOD
 <form name="eSvc">
 Usługa:<br>
-<select name="cSvc" onchange="cDesc(this);">
+<select class="form-control" name="cSvc" onchange="cDesc(this);">
 <option value="new" selected>Nowa usługa</option>
 KOD;
 foreach($usl as $key => $svice)
@@ -20,10 +20,9 @@ KOD;
 
 print <<<KOD
 </select><br>
-<input type="hidden" name="sDesc" id="sDesc" value="" disabled><br>
-<input type="text" name="nName" id="nName" value=""><br>
-<input type="textarea" name="nDesc" id="nDesc" value=""><br>
-
+<input class="form-control" type="hidden" name="sDesc" id="sDesc" value="" disabled><br>
+<input class="form-control" type="text" name="nName" id="nName" value="" placeholder="Nazwa usługi"><br>
+<input class="form-control" type="textarea" name="nDesc" id="nDesc" value="" placeholder="Opis usługi"><br>
 </form>
 <script>
 function cDesc(s)
@@ -31,11 +30,11 @@ function cDesc(s)
   svc = s.value;
   if(svc=="new")
   {
-    getElementById("sDesc").type = "hidden";
-    getElementById("nName").type = "text";
-    getElementById("nDesc").type = "textarea";
-    getElementById("sDesc").value = "";
-    getElementById("sService").onclick = crService($id);
+    document.getElementById("sDesc").type = "hidden";
+    document.getElementById("nName").type = "text";
+    document.getElementById("nDesc").type = "textarea";
+    document.getElementById("sDesc").value = "";
+    document.getElementById("sservice").onclick = function() {crservice($id);};
   }
 KOD;
 foreach($usl as $key => $svice)
@@ -45,11 +44,11 @@ foreach($usl as $key => $svice)
 print <<<KOD
 if(svc=="$name")
 {
-  getElementById("sDesc").type = "textarea";
-  getElementById("nName").type = "hidden";
-  getElementById("nDesc").type = "hidden";
-  getElementById("sDesc").value = "$desc";
-  getElementById("sService").onclick = chService($id);
+  document.getElementById("sDesc").type = "textarea";
+  document.getElementById("nName").type = "hidden";
+  document.getElementById("nDesc").type = "hidden";
+  document.getElementById("sDesc").value = "$desc";
+  document.getElementById("sservice").onclick = function() {chservice($id);};
 }
 KOD;
 }

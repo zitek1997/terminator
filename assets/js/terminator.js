@@ -334,6 +334,7 @@ function pickDate(){
 }
 
 function pickService(id){
+	alert("pi, id:"+id);
 	$('#modalService').modal('show');
 	$.ajax({
 		url: 'ajax/eventService.php',
@@ -341,11 +342,13 @@ function pickService(id){
 		type: 'POST',
 		success: function(data){
 			$("#eventService").html(data);
+
 		}
 	});
 }
 
-function chService(id){
+function chservice(id){
+	alert("ch, id:"+id);
 	name = document.forms.eSvc.cSvc.value;
 	opis = document.forms.eSvc.sDesc.value;
 	opt = "ch";
@@ -356,19 +359,22 @@ function chService(id){
 	});
 }
 
-function crService(id, e = 0){
-	if(e==0)
-	{
-		name = document.forms.eSvc.nName.value;
-		opis = document.forms.eSvc.nDesc.value;
-	}else{
-		name = document.forms.modal.nName.value;
-		opis = document.forms.modal.nDesc.value;
+function crservice(id, e = 0){
+	alert("cr, id:"+id+", e:"+e);
+	if(id!="e"){
+		if(e==0)
+		{
+			name = document.forms.eSvc.nName.value;
+			opis = document.forms.eSvc.nDesc.value;
+		}else{
+			name = document.forms.modal.nName.value;
+			opis = document.forms.modal.nDesc.value;
+		}
+		opt = "cr";
+		$.ajax({
+			url: 'ajax/c-Service.php',
+			data: 'name='+name+'&opis='+opis+'&opt='+opt+'&id='+id,
+			type: 'POST',
+		});
 	}
-	opt = "cr";
-	$.ajax({
-		url: 'ajax/c-Service.php',
-		data: 'name='+name+'&opis='+opis+'&opt='+opt+'&id='+id,
-		type: 'POST',
-	});
 }

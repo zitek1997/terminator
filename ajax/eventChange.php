@@ -1,8 +1,8 @@
 <?php
 include("config.php");
 $id=$_POST["id"];
-$array = array("idc"=>$id);
-$sql = "SELECT * FROM calendar WHERE idc = :idc";
+$array = array("id"=>$id);
+$sql = "SELECT * FROM calendar WHERE id = :id";
 $event = $db->select($sql,$array);
 $event = $event[0];
 
@@ -23,13 +23,14 @@ Data rozpoczęcia:<br>
 Data zakończenia:<br>
 <input type="button" class="btn btn-success" name="enddate" id="enddate" value="$enddate"></input><br>
 Usługa:<br>
-<select name="cSvc" onchange="cDesc(this);">
+<select class="form-control" name="cSvc" onchange="cDesc(this);">
 <option value="new">Nowa usługa</option>
 KOD;
+
 foreach($usl as $key => $svice)
 {
   $name=$svice['name'];
-  if($nazwa==$desc)
+  if($name==$desc)
   {
 print <<<KOD
 <option value="$name" selected>$name</option>
@@ -42,10 +43,10 @@ KOD;
 }
 print <<<KOD
 </select><br>
-<input type="textarea" name="sDesc" id="seDesc" value="" disabled><br>
-<input type="hidden" name="nName" id="neName" value=""><br>
-<input type="hidden" name="nDesc" id="neDesc" value=""><br>
-
+<input class="form-control" type="textarea" name="sDesc" id="seDesc" value="" disabled><br>
+<input class="form-control" type="hidden" name="nName" id="neName" value="" placeholder="Nazwa usługi"><br>
+<input class="form-control" type="hidden" name="nDesc" id="neDesc" value="" placeholder="Opis usługi"><br>
+<input type="hidden" name="id" value="$id"><br>
 </form>
 <script>
 function cDesc(s)
@@ -53,11 +54,11 @@ function cDesc(s)
   svc = s.value;
   if(svc=="new")
   {
-    getElementById("seDesc").type = "hidden";
-    getElementById("neName").type = "text";
-    getElementById("neDesc").type = "textarea";
-    getElementById("seDesc").value = "";
-    getElementById("saWe").onclick = getElementById("saWe").onclick+" crService($id, 1);";
+    document.getElementById("seDesc").type = "hidden";
+    document.getElementById("neName").type = "text";
+    document.getElementById("neDesc").type = "textarea";
+    document.getElementById("seDesc").value = "";
+    document.getElementById("sawe").onclick = function() {save(); crservice($id, 1);};
   }
 KOD;
 foreach($usl as $key => $svice)
@@ -67,11 +68,11 @@ foreach($usl as $key => $svice)
 print <<<KOD
 if(svc=="$name")
 {
-  getElementById("seDesc").type = "textarea";
-  getElementById("neName").type = "hidden";
-  getElementById("neDesc").type = "hidden";
-  getElementById("seDesc").value = "$desc";
-  getElementById("saWe").onclick = "save();";
+  document.getElementById("seDesc").type = "textarea";
+  document.getElementById("neName").type = "hidden";
+  document.getElementById("neDesc").type = "hidden";
+  document.getElementById("seDesc").value = "$desc";
+  document.getElementById("sawe").onclick = function() {save();};
 }
 KOD;
 }

@@ -22,7 +22,7 @@ if($opt == "ch")
     "name" => $name,
     "opis" => $opis,
   );
-  $db->insert('services', $array);
+  if($name!=""){$db->insert('services', $array);}
 }
 
 
