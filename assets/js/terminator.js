@@ -334,7 +334,6 @@ function pickDate(){
 }
 
 function pickService(id){
-	alert("pi, id:"+id);
 	$('#modalService').modal('show');
 	$.ajax({
 		url: 'ajax/eventService.php',
@@ -348,7 +347,6 @@ function pickService(id){
 }
 
 function chservice(id){
-	alert("ch, id:"+id);
 	name = document.forms.eSvc.cSvc.value;
 	opis = document.forms.eSvc.sDesc.value;
 	opt = "ch";
@@ -360,7 +358,6 @@ function chservice(id){
 }
 
 function crservice(id, e = 0){
-	alert("cr, id:"+id+", e:"+e);
 	if(id!="e"){
 		if(e==0)
 		{
