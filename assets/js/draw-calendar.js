@@ -65,6 +65,7 @@ draggable();
 		    		success: function(response){
 		    			event.id = response.eventid;
 		    			$('#calendar').fullCalendar('updateEvent',event);
+							pickService(event.id);
 		    		},
 		    		error: function(e){
 		    			console.log(e.responseText);
@@ -171,7 +172,7 @@ draggable();
             html : true,
             container: 'body',
           	class: 'event',
-          	content: '<div id="popover-event-content"><div class="popover-event-content-in"><p>'+id+'</p><p>'+title+'</p><p>'+start+'</p><p>'+end+'</p><p>'+desc+'</p><div class="popover-event-content-in-in"><p id="popover-detail" class="popover-event-p"></p></div><div class="popover-button event left" id="editEvent" onclick="editEvent('+event.id+')"><p class="popover_p">Edycja eventu</p></div><div class="popover-button event right" onclick="weDel('+event.id+')"><p class="popover_p">Usuń event</p></div></div></div>'
+          	content: '<div id="popover-event-content"><div class="popover-event-content-in"><p>'+id+'</p><p>'+title+'</p><p>'+start+'</p><p>'+end+'</p><p>'+desc+'</p><div class="popover-event-content-in-in"><p id="popover-detail" class="popover-event-p"></p></div><div class="popover-button event left" id="editEvent" onclick="editEventNew('+event.id+')"><p class="popover_p">Edycja eventu</p></div><div class="popover-button event right" onclick="weDel('+event.id+')"><p class="popover_p">Usuń event</p></div></div></div>'
 					});
 				}
       });

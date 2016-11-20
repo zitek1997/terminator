@@ -119,6 +119,7 @@ Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
 
 </div>
 </div>
+
 <div id="modal" class="modal fade" role="dialog">
 <div class="modal-dialog">
 
@@ -129,23 +130,30 @@ Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
       <h4 class="modal-title">Edycja wydarzenia</h4>
     </div>
     <div class="modal-body" id="eventChange">
-      <form name='modal'>
-      Event:<input type="text" name="ev" class="form-control" value=""></input><br>
-      Data rozpoczęcia:<br>
-      <input type="button" class="btn btn-success" name="startdate" id="startdate" value=""></input><br>
-      Data zakończenia:<br>
-      <input type="button" class="btn btn-success" name="enddate" id="enddate" value=""></input><br>
-      Opis:<br><input type="textarea" class="form-control" name="opis" value=""></input><br>
-      <input type="hidden" name="id" class="form-control" value="" disabled></input>
-      </form>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal" onClick="save()">Zapisz</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal" id="saWe" onclick="save();">Zapisz</button>
     </div>
   </div>
+</div>
+</div>
 
+<div id="modalService" class="modal fade" role="dialog">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Wybierz usługę</h4>
+    </div>
+    <div class="modal-body" id="eventService">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" id="sService" onClick="crService();">Zapisz</button>
+    </div>
+  </div>
 </div>
 </div>
+
 <div id="popover-av-content" class="hidden">
   <div class="popover-av-content-in">
       <div class="popover-av-content-in-in"><div class="popover-av-av"></div><p id="popover-detail" class="popover-av-p"></p></div>

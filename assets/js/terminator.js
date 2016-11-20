@@ -198,7 +198,7 @@ function save(){
 			title = document.forms.modal.ev.value;
 			start = document.forms.modal.startdate.value;
 			end = document.forms.modal.enddate.value;
-			opis = document.forms.modal.opis.value;
+			opis = document.forms.modal.cSvc.value;
 			event.title = title;
 			event.start = start;
 			event.end = end;
@@ -330,5 +330,45 @@ function pickDate(){
 	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
 	{
 		$('#enddate').bootstrapMaterialDatePicker('setMinDate', date);
+	});
+}
+
+function pickService(id){
+	$('#modalService').modal('show');
+	$.ajax({
+		url: 'ajax/eventService.php',
+		data: 'id='+id,
+		type: 'POST',
+		success: function(data){
+			$("#eventService").html(data);
+		}
+	});
+}
+
+function chService(id){
+	name = document.forms.eSvc.cSvc.value;
+	opis = document.forms.eSvc.sDesc.value;
+	opt = "ch";
+	$.ajax({
+		url: 'ajax/c-Service.php',
+		data: 'name='+name+'&opis='+opis+'&opt='+opt+'&id='+id,
+		type: 'POST',
+	});
+}
+
+function crService(id, e = 0){
+	if(e==0)
+	{
+		name = document.forms.eSvc.nName.value;
+		opis = document.forms.eSvc.nDesc.value;
+	}else{
+		name = document.forms.modal.nName.value;
+		opis = document.forms.modal.nDesc.value;
+	}
+	opt = "cr";
+	$.ajax({
+		url: 'ajax/c-Service.php',
+		data: 'name='+name+'&opis='+opis+'&opt='+opt+'&id='+id,
+		type: 'POST',
 	});
 }
