@@ -199,7 +199,10 @@ function save(){
 			start = document.forms.modal.startdate.value;
 			end = document.forms.modal.enddate.value;
 			opis = document.forms.modal.opis.value;
+			event.title = title;
+			event.start = start;
 			event.end = end;
+			event.opis = opis;
 	    $.ajax({
 		url: 'process.php',
 		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,

@@ -174,7 +174,7 @@ draggable();
           	content: '<div id="popover-event-content"><div class="popover-event-content-in"><p>'+id+'</p><p>'+title+'</p><p>'+start+'</p><p>'+end+'</p><p>'+desc+'</p><div class="popover-event-content-in-in"><p id="popover-detail" class="popover-event-p"></p></div><div class="popover-button event left" id="editEvent" onclick="editEvent('+event.id+')"><p class="popover_p">Edycja eventu</p></div><div class="popover-button event right" onclick="weDel('+event.id+')"><p class="popover_p">Usuń event</p></div></div></div>'
 					});
 				}
-                            });
+      });
 
 
 
@@ -194,4 +194,18 @@ draggable();
 							document.forms.modal.enddate.value=event.end.format("YYYY-MM-DD HH:mm");
 							document.forms.modal.opis.value=event.opis;
 							pickDate();
-			};
+			}
+
+			function editEventNew(ev) {
+					$("#popover-event-content").hide();
+					$('#modal').modal('show');
+					$.ajax({
+						url: 'ajax/eventChange.php',
+						data: 'id='+ev,
+						type: 'POST',
+						success: function(data){
+							$("#eventChange").html(data);
+							pickDate();
+						}
+					});
+			}
