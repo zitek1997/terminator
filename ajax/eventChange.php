@@ -6,7 +6,7 @@ $sql = "SELECT * FROM calendar WHERE id = :id";
 $event = $db->select($sql,$array);
 $event = $event[0];
 
-$id = $event['idc'];
+$id = $event['id'];
 $title = $event['title'];
 $startdate = $event['startdate'];
 $enddate = $event['enddate'];
