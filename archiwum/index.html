@@ -21,6 +21,7 @@
 <link href='assets/css/terminator.css' rel='stylesheet' />
 <link href='assets/css/fullcalendar.css' rel='stylesheet' />
 <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+<link href='assets/css/bootstrap-material-datetimepicker.css' rel='stylesheet' />
 <script src='assets/js/moment.min.js'></script>
 <script src='assets/js/jquery.min.js'></script>
 <script src='assets/js/jquery-ui.min.js'></script>
@@ -31,6 +32,7 @@
 <script src="assets/js/terminator.js"></script>
 <script src="assets/js/draw-calendar.js"></script>
 <script src="assets/js/bootstrapx-clickover.js"></script>
+<script src="assets/js/bootstrap-material-datetimepicker.js"></script>
 <script>
 termlist();
 userDetail();
@@ -130,8 +132,10 @@ Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
 <form name='modal'>
 
 Event:<input type="text" name="ev" class="form-control" value=""></input><br>
-Data rozpoczęcia:<input type="datetime" class="form-control" name="startdate" value=""></input><br>
-Data zakończenia:<input type="datetime" class="form-control" name="enddate" value=""></input><br>
+Data rozpoczęcia:<br>
+<input type="button" class="btn btn-success" name="startdate" id="startdate" value=""></input><br>
+Data zakończenia:<br>
+<input type="button" class="btn btn-success" name="enddate" id="enddate" value=""></input><br>
 Opis:<br><input type="textarea" class="form-control" name="opis" value=""></input><br>
 <input type="hidden" name="evenement" value=""></input>
 <input type="hidden" name="id" class="form-control" value="" disabled></input>

@@ -54,7 +54,7 @@ draggable();
 			slotDuration: '00:15:00',
 			eventReceive: function(event){
 				var title = event.title;
-				var start = event.start.format("YYYY-MM-DD HH:mm:SS");
+				var start = event.start.format("YYYY-MM-DD HH:mm");
 				var idc = event.idc;
 
 				$.ajax({
@@ -159,11 +159,11 @@ draggable();
 					id = event.id;
 					events[id] = event;
 					title = event.title;
-					start = event.start.format("YYYY-MM-DD HH:mm:SS");
+					start = event.start.format("YYYY-MM-DD HH:mm");
 
 					desc = event.opis;
 					if(event.end != null){
-							end = event.end.format("YYYY-MM-DD HH:mm:SS")
+							end = event.end.format("YYYY-MM-DD HH:mm")
 					}
           element.clickover({
           	global_close: true,
@@ -190,7 +190,8 @@ draggable();
 							evenement = event;
 							document.forms.modal.id.value=event.id;
 							document.forms.modal.ev.value=event.title;
-							document.forms.modal.startdate.value=event.start.format("YYYY-MM-DD HH:mm:SS");
-							document.forms.modal.enddate.value=event.end.format("YYYY-MM-DD HH:mm:SS");
+							document.forms.modal.startdate.value=event.start.format("YYYY-MM-DD HH:mm");
+							document.forms.modal.enddate.value=event.end.format("YYYY-MM-DD HH:mm");
 							document.forms.modal.opis.value=event.opis;
+							pickDate();
 			};

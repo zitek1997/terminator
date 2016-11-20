@@ -317,3 +317,15 @@ function logOut()
 		}
 	});
 }
+
+function pickDate(){
+	starto = document.forms.modal.startdate.value;
+	endo = document.forms.modal.enddate.value;
+
+	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm", lang : 'pl'});
+
+	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
+	{
+		$('#enddate').bootstrapMaterialDatePicker('setMinDate', date);
+	});
+}
