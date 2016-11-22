@@ -206,8 +206,20 @@ body{
     text-align: center;
     cursor: pointer;
 }
-.menu-in:hover{
+.mclients:hover{
     background: #17436e;
+    cursor: pointer;
+}
+.mterms:hover{
+    background: #176e5e;
+    cursor: pointer;
+}
+.mnotify:hover{
+    background: #17526e;
+    cursor: pointer;
+}
+.moptions:hover{
+    background: #176e36;
     cursor: pointer;
 }
 .events {
