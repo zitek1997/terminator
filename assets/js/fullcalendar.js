@@ -13168,7 +13168,7 @@ var AGENDA_ALL_DAY_EVENT_LIMIT = 5;
 var AGENDA_STOCK_SUB_DURATIONS = [
 	{ hours: 1 },
 	{ minutes: 30 },
-	{ minutes: 15 },
+	{ minutes: 10 },
 	{ seconds: 30 },
 	{ seconds: 15 }
 ];
@@ -13177,9 +13177,9 @@ fcViews.agenda = {
 	'class': AgendaView,
 	defaults: {
 		allDaySlot: true,
-		slotDuration: '00:30:00',
-		minTime: '00:00:00',
-		maxTime: '24:00:00',
+		slotDuration: '00:10:00',
+		minTime: '08:00:00',
+		maxTime: '18:00:00',
 		slotEventOverlap: true // a bad name. confused with overlap/constraint system
 	}
 };
