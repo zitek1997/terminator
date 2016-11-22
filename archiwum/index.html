@@ -162,6 +162,21 @@ Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
 </div>
 </div>
 
+<div id="modalWH" class="modal fade" role="dialog">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Godziny pracy</h4>
+    </div>
+    <div class="modal-body" id="workHours"></div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal" id="shours" onclick="saveHours();">Zapisz</button>
+    </div>
+  </div>
+</div>
+</div>
+
 <div id="popover-av-content" class="hidden">
   <div class="popover-av-content-in">
       <div class="popover-av-content-in-in"><div class="popover-av-av"></div><p id="popover-detail" class="popover-av-p"></p></div>

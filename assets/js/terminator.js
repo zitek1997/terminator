@@ -2,6 +2,7 @@ var currentMousePos = {
 		x: -1,
 		y: -1
 };
+var pno;var pnc;var wto;var wtc;var sro;var src;var czo;var czc;var pto;var ptc;var sbo;var sbc;
 $(document).ready(function(){
         $("#popover-av").clickover({
         global_close: true,
@@ -161,20 +162,6 @@ function getFreshEvents(){
 }
 
 function isElemOverDiv() {
-			// var trashEl = jQuery('#trash');
-			//
-			// // var ofs = trashEl.offset();
-			//
-			// var x1 = ofs.left;
-			// // var x2 = ofs.left + trashEl.outerWidth(true);
-			// var y1 = ofs.top;
-			// // var y2 = ofs.top + trashEl.outerHeight(true);
-			//
-			// if (currentMousePos.x >= x1 && currentMousePos.x <= x2 &&
-			// 		currentMousePos.y >= y1 && currentMousePos.y <= y2) {
-			//
-			// 		return true;
-			// }
 			return false;
 	}
 
@@ -432,4 +419,50 @@ function crservice(id, e = 0){
 			type: 'POST',
 		});
 	}
+}
+
+function saveHours(){
+	$.ajax({
+		url: 'ajax/saveHours.php',
+		data: 'id='+id,
+		type: 'POST',
+		success: function(data){
+			$('#calendar').fullCalendar( 'destroy' );
+			drawCallendar();
+		}
+	});
+}
+
+function setHours(){
+	$('#modalWH').modal('show');
+	$.ajax({
+		url: 'ajax/setHours.php',
+		type: 'POST',
+		success: function(data){
+			$("#workHours").html(data);
+		}
+	});
+}
+
+function reciveHours(){
+	$.ajax({
+		url: 'ajax/reciveHours.php',
+		type: 'POST',
+		async: false,
+		success: function(h){
+			hours = JSON.parse(h);
+			pno = hours[0];
+			pnc = hours[1];
+			wto = hours[2];
+			wtc = hours[3];
+			sro = hours[4];
+			src = hours[5];
+			czo = hours[6];
+			czc = hours[7];
+			pto = hours[8];
+			ptc = hours[9];
+			sbo = hours[10];
+			sbc = hours[11];
+		}
+	});
 }

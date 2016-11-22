@@ -1,9 +1,8 @@
 
 var evenement;
 var events = new Array();
-	$(document).ready(function() {
-
-		// var zone = "05:30";  //Change this to your timezone
+function drawCallendar(){
+	reciveHours();
 
 	$.ajax({
 		url: 'process.php',
@@ -31,6 +30,7 @@ draggable();
 		/* initialize the calendar
 		-----------------------------------------------------------------*/
 
+
 		$('#calendar').fullCalendar({
                         height: 700,
                         fixedWeekCount: false,
@@ -52,21 +52,43 @@ draggable();
 			editable: true,
 			droppable: true,
 			slotDuration: '00:10:00',
-			minTime: '08:00:00',
-			maxTime: '18:00:00',
+			// minTime: '08:00:00',
+			// maxTime: '18:00:00',
+			scrollTime: '08:00:00',
 			navLinks: true,
-			// businessHours: [ // specify an array instead
-    	// 	{
-      //   	dow: [ 1, 2, 3 ], // Monday, Tuesday, Wednesday
-      //   	start: '08:00' // 8am
-      //   	end: '18:00' // 6pm
-    	// 	},
-    	// 	{
-      //   	dow: [ 4, 5 ], // Thursday, Friday
-      //   	start: '10:00', // 10am
-      //   	end: '16:00' // 4pm
-    	// 	}
-			// ]
+			hiddenDays: [7],
+			businessHours: [ // specify an array instead
+    		{
+        	dow: [ 1 ],
+        	start: pno,
+        	end: pnc
+    		},
+				{
+        	dow: [ 2 ],
+        	start: wto,
+        	end: wtc
+    		},
+				{
+			  	dow: [ 3 ],
+			  	start: sro,
+			  	end: src
+				},
+				{
+			  	dow: [ 4 ],
+			  	start: czo,
+			  	end: czc
+				},
+				{
+			  	dow: [ 5 ],
+			  	start: pto,
+			  	end: ptc
+				},
+				{
+			  	dow: [ 6 ],
+					start: sbo,
+			  	end: sbc
+				},
+			],
 			eventReceive: function(event){
 				var title = event.title;
 				var start = event.start.format("YYYY-MM-DD HH:mm");
@@ -190,12 +212,8 @@ draggable();
 					});
 				}
       });
-
-
-
-
-
-	});
+}
+	$(document).ready(function() {drawCallendar(); });
 
 		    function editEvent(ev) {
 					$("#popover-event-content").hide();
