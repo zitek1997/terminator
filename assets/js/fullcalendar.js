@@ -13168,7 +13168,7 @@ var AGENDA_ALL_DAY_EVENT_LIMIT = 5;
 var AGENDA_STOCK_SUB_DURATIONS = [
 	{ hours: 1 },
 	{ minutes: 30 },
-	{ minutes: 15 },
+	{ minutes: 10 },
 	{ seconds: 30 },
 	{ seconds: 15 }
 ];

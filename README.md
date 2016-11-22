@@ -4,6 +4,24 @@ http://projekt.itcave.pl/
 
 #TO DO
 
+##-poprawić Jquery dla paska bocznego
+##-poprawic podział terminarzy
+##-dodac menu klientów oczekujacych
+##-dodać menu listy wolnych terminow
+##-w opcjach dodać:
+-możliwość zmiany godzin pracy
+-możliwość dodania pracownika
+-dodawania dni wolnych
+##-dodać przyciski dodawania klienta
+##-dodać przyciski dodawania użytkownika
+##-modal edycji konta
+-edycja hasła
+-edycja telefonu
+-edycja avatara
+-edycja maila
+##-dodać zegar
+##-i jeszcze fciul innych tasków pobocznych...
+
 O
 ##-podstawowy bootstrap ✓
 ##-pasek administratora: dodaj/usuń pracownika, dodaj/usuń terminarz
@@ -25,12 +43,11 @@ D
 ##-alert przy błędnym logowaniu ✓
 ##-usuń event w modalu edycji eventu ✓
 ##-unkcja wylogowania, do użycia przez onClick dla buttona ✓
-
+##-datetime-picker ✓
+##-widok dnia po kliknięciu na numer dnia ✓
 
 ##-opcja dodawania eventów customowych
 (powiązanych z klientami np. pani halinka chce zapisać sobie że w środę ma podlać kwiatki,
 może być jakiś blank event na liście który po dodaniu woła o nazwę)
 
 ##-wyszukiwanie w liście terminarzy
-
-##-datetime-picker

@@ -51,7 +51,22 @@ draggable();
 			},
 			editable: true,
 			droppable: true,
-			slotDuration: '00:15:00',
+			slotDuration: '00:10:00',
+			minTime: '08:00:00',
+			maxTime: '18:00:00',
+			navLinks: true,
+			// businessHours: [ // specify an array instead
+    	// 	{
+      //   	dow: [ 1, 2, 3 ], // Monday, Tuesday, Wednesday
+      //   	start: '08:00' // 8am
+      //   	end: '18:00' // 6pm
+    	// 	},
+    	// 	{
+      //   	dow: [ 4, 5 ], // Thursday, Friday
+      //   	start: '10:00', // 10am
+      //   	end: '16:00' // 4pm
+    	// 	}
+			// ]
 			eventReceive: function(event){
 				var title = event.title;
 				var start = event.start.format("YYYY-MM-DD HH:mm");
@@ -126,15 +141,12 @@ draggable();
 					}
 				});
 		    },
-				dayClick: function(date, jsEvent, view) {
+				navLinkDayClick: function(date, jsEvent) {
 
-    var ajandamodu=view.name;
-    if(ajandamodu=='month')
-    {
 			$('#calendar').fullCalendar('gotoDate',date);
       $('#calendar').fullCalendar('changeView','agendaDay');
-    }
-},
+
+			},
 			eventDragStop: function (event, jsEvent, ui, view) {
 			    if (isElemOverDiv()) {
 			    	var con = confirm('Are you sure to delete this event permanently?');
