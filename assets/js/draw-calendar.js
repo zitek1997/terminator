@@ -51,7 +51,9 @@ draggable();
 			},
 			editable: true,
 			droppable: true,
-			slotDuration: '00:15:00',
+			slotDuration: '00:10:00',
+			minTime: '08:00:00',
+			maxTime: '18:00:00',
 			navLinks: true,
 			eventReceive: function(event){
 				var title = event.title;
