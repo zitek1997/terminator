@@ -55,6 +55,18 @@ draggable();
 			minTime: '08:00:00',
 			maxTime: '18:00:00',
 			navLinks: true,
+			// businessHours: [ // specify an array instead
+    	// 	{
+      //   	dow: [ 1, 2, 3 ], // Monday, Tuesday, Wednesday
+      //   	start: '08:00' // 8am
+      //   	end: '18:00' // 6pm
+    	// 	},
+    	// 	{
+      //   	dow: [ 4, 5 ], // Thursday, Friday
+      //   	start: '10:00', // 10am
+      //   	end: '16:00' // 4pm
+    	// 	}
+			// ]
 			eventReceive: function(event){
 				var title = event.title;
 				var start = event.start.format("YYYY-MM-DD HH:mm");
