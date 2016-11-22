@@ -465,4 +465,5 @@ function reciveHours(){
 			sbc = hours[11];
 		}
 	});
+	alert(pno+"-"+pnc);
 }
