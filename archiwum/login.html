@@ -11,7 +11,7 @@
 <script src="/assets/js/angular-script.js"></script>
 </head>
 <body>
-<div class="container wrapper" ng-controller="DbController">
+<!--<div class="container wrapper" ng-controller="DbController">
 	
 <form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="getInfo(empInfo);">
 <h3 class="text-center">Logowanie do systemu</h3>
@@ -39,6 +39,31 @@
 	</div>
 
 </form>
-</div>
+</div>-->
+    <script src="https://use.typekit.net/ayg4pcz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <div class="container" ng-controller="DbController">
+    <h1 class="welcome text-center">Logowanie do systemu</h1>
+        <div class="card card-container">
+        <h2 class='login_title text-center'>Login</h2>
+        <hr>
+
+            <form class="form-signin" name="empList" id="empForm" ng-submit="getInfo(empInfo);">
+                <span id="reauth-email" class="reauth-email"></span>
+                <p class="input_title">Login</p>
+                <input type="text" id="inputEmail" class="login_box" name="emp_login" ng-model="empInfo.login" placeholder="Wpisz login" required autofocus>
+                <p class="input_title">Hasło</p>
+                <input type="password" id="inputPassword" name="emp_pass" ng-model="empInfo.pass" class="login_box" placeholder="Wpisz hasło" required>
+                <p class="text-danger" ng-show="empList.emp_pass.$invalid && empList.emp_pass.$dirty">Podany login lub hasło są błedne!</p>
+                <div id="remember" class="checkbox">
+                    <label>
+                        
+                    </label>
+                </div>
+                <button ng-disabled="empList.$invalid" class="btn btn-lg btn-primary" type="submit">Login</button>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
 </body>
 </html>
