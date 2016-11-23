@@ -422,9 +422,21 @@ function crservice(id, e = 0){
 }
 
 function saveHours(){
+	pno = document.forms.whours.pno.value;
+	pnc = document.forms.whours.pnc.value;
+	wto = document.forms.whours.wto.value;
+	wtc = document.forms.whours.wtc.value;
+	sro = document.forms.whours.sro.value;
+	src = document.forms.whours.src.value;
+	czo = document.forms.whours.czo.value;
+	czc = document.forms.whours.czc.value;
+	pto = document.forms.whours.pto.value;
+	ptc = document.forms.whours.ptc.value;
+	sbo = document.forms.whours.sbo.value;
+	sbc = document.forms.whours.sbc.value;
 	$.ajax({
 		url: 'ajax/saveHours.php',
-		data: 'id='+id,
+		data: "pno="+pno+"&pnc="+pnc+"&wto="+wto+"&wtc="+wtc+"&sro="+sro+"&src="+src+"&czo="+czo+"&czc="+czc+"&pto="+pto+"&ptc="+ptc+"&sbo="+sbo+"&sbc="+sbc,
 		type: 'POST',
 		success: function(data){
 			$('#calendar').fullCalendar( 'destroy' );
@@ -438,8 +450,21 @@ function setHours(){
 	$.ajax({
 		url: 'ajax/setHours.php',
 		type: 'POST',
+		async: false,
 		success: function(data){
 			$("#workHours").html(data);
+			$('#pno').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#pnc').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#wto').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#wtc').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#sro').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#src').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#czo').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#czc').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#pto').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#ptc').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#sbo').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
+			$('#sbc').bootstrapMaterialDatePicker({ format: "HH:mm", lang : 'pl', date: false});
 		}
 	});
 }
@@ -465,5 +490,4 @@ function reciveHours(){
 			sbc = hours[11];
 		}
 	});
-	alert(pno+"-"+pnc);
 }
