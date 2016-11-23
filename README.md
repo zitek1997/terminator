@@ -9,7 +9,7 @@ http://projekt.itcave.pl/
 ##-dodac menu klientów oczekujacych
 ##-dodać menu listy wolnych terminow
 ##-w opcjach dodać:
--możliwość zmiany godzin pracy
+-możliwość zmiany godzin pracy ✓
 -możliwość dodania pracownika
 -dodawania dni wolnych
 ##-dodać przyciski dodawania klienta
