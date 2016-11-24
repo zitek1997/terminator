@@ -36,6 +36,10 @@ if($type == 'change')
 	$title = $_POST['title'];
 	$startdate = $_POST['startdate'];
 	$enddate = $_POST['enddate'];
+	$startdate = strtotime($startdate);
+	$enddate = strtotime($startdate);
+	$startdate = date("Y-m-d H:i",$startdate);
+	$enddate = date("Y-m-d H:i",$enddate);
 	$opis = $_POST['opis'];
 	$array = array(
 		'title' => $title,
