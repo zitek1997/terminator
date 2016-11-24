@@ -116,8 +116,8 @@ draggable();
 			},
 			eventDrop: function(event, delta, revertFunc) {
 		        var title = event.title;
-		        var start = event.start.format();
-		        var end = (event.end == null) ? start : event.end.format();
+		        var start = event.start.format("YYYY-MM-DD HH:mm");
+		        var end = (event.end == null) ? start : event.end.format("YYYY-MM-DD HH:mm");
 		        $.ajax({
 					url: 'process.php',
 					data: 'type=resetdate&title='+title+'&start='+start+'&end='+end+'&eventid='+event.id,
@@ -146,8 +146,8 @@ draggable();
 			eventResize: function(event, delta, revertFunc) {
 				console.log(event);
 				var title = event.title;
-				var end = event.end.format();
-				var start = event.start.format();
+				var end = event.end.format("YYYY-MM-DD HH:mm");
+				var start = event.start.format("YYYY-MM-DD HH:mm");
 		        $.ajax({
 					url: 'process.php',
 					data: 'type=resetdate&title='+title+'&start='+start+'&end='+end+'&eventid='+event.id,

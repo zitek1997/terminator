@@ -60,6 +60,10 @@ if($type == 'resetdate')
 	$title = $_POST['title'];
 	$startdate = $_POST['start'];
 	$enddate = $_POST['end'];
+	$startdate = strtotime($startdate);
+	$enddate = strtotime($startdate);
+	$startdate = date("Y-m-d H:i",$startdate);
+	$enddate = date("Y-m-d H:i",$enddate);
 	$eventid = $_POST['eventid'];
 	$array = array(
 		'title' => $title,
