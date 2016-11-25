@@ -24,13 +24,13 @@ body, html {
     height: 100%;
     background-repeat: no-repeat;
     background: rgba(15,85,132,1);
-    background: -moz-linear-gradient(-60deg, rgba(15,85,132,1) 0%, rgba(20,126,207,1) 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(15,85,132,1)), color-stop(100%, rgba(20,126,207,1)));
-    background: -webkit-linear-gradient(-60deg, rgba(15,85,132,1) 0%, rgba(20,126,207,1) 100%);
-    background: -o-linear-gradient(-60deg, rgba(15,85,132,1) 0%, rgba(20,126,207,1) 100%);
-    background: -ms-linear-gradient(-60deg, rgba(15,85,132,1) 0%, rgba(20,126,207,1) 100%);
-    background: linear-gradient(60deg, rgba(15,85,132,1) 0%, rgba(20,126,207,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f5584', endColorstr='#147ecf', GradientType=1 )
+    background: -moz-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(22, 138, 103,1)), color-stop(100%, rgba(20,126,207,1)));
+    background: -webkit-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: -o-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: -ms-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: linear-gradient(60deg, rgb(22, 138, 103) 0%, rgba(20,126,207,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f5584', endColorstr='#147ecf', GradientType=1 );
 }
 
 .brandlogo{
