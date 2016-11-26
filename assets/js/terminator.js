@@ -311,7 +311,7 @@ draggable();
 
 function weDel(id)
 {
-	$("#popover-event-content").hide();
+	$(".popover").hide();
 	$.ajax({
 		url: 'process.php',
 		data: 'type=remove&eventid='+id,

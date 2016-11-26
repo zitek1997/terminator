@@ -5626,7 +5626,7 @@ var DayGrid = FC.DayGrid = Grid.extend(DayTableMixin, {
 
 	// Generates the HTML for the <td>s of the "number" row in the DayGrid's content skeleton.
 	// The number row will only exist if either day numbers or week numbers are turned on.
-	renderNumberCellHtml: function(date) {
+	renderNumberCellHtml: function(date,gotoOptions) {
 		var html = '';
 		var classes;
 		var weekCalcFirstDoW;
@@ -5652,8 +5652,27 @@ var DayGrid = FC.DayGrid = Grid.extend(DayTableMixin, {
 				weekCalcFirstDoW = date._locale.firstDayOfWeek();
 			}
 		}
+                
+                var dateto, type, forceOff;
+		var finalOptions;
 
-		html += '<td class="' + classes.join(' ') + '" data-date="' + date.format() + '">';
+		if ($.isPlainObject(gotoOptions)) {
+			dateto = gotoOptions.date;
+			type = gotoOptions.type;
+			forceOff = gotoOptions.forceOff;
+		}
+		else {
+			dateto = gotoOptions; // a single moment input
+		}
+		dateto = FC.moment(dateto); // if a string, parse it
+                
+                finalOptions = { // for serialization into the link
+			date: date,
+			type: type || 'day'
+		};
+
+		html += '<td class="' + classes.join(' ') +
+				'" data-goto="' + htmlEscape(JSON.stringify(finalOptions)) + '" data-date="' + date.format() + '">';
 
 		if (this.view.cellWeekNumbersVisible && (date.day() == weekCalcFirstDoW)) {
 			html += this.view.buildGotoAnchorHtml(
