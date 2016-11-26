@@ -61,7 +61,7 @@ if($type == 'resetdate')
 	$startdate = $_POST['start'];
 	$enddate = $_POST['end'];
 	$startdate = strtotime($startdate);
-	$enddate = strtotime($startdate);
+	$enddate = strtotime($enddate);
 	$startdate = date("Y-m-d H:i",$startdate);
 	$enddate = date("Y-m-d H:i",$enddate);
 	$eventid = $_POST['eventid'];
