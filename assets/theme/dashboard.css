@@ -74,7 +74,6 @@ body{
     border-radius: 3px;
     background-color: #0f5684;
         border-radius: 6px;
-        display: table !important;
 }
 .popover-av-p{
     text-align: center;
@@ -119,7 +118,7 @@ body{
     padding: 0;
 }
 .popover-av-content-in-in{
-    height: 140px;
+/*    height: 140px;*/
 }
 .popover-event-content-in-in{
     height: 140px;

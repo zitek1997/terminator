@@ -11,7 +11,7 @@
 <script src="/assets/js/angular-script.js"></script>
 </head>
 <body>
-<div class="container wrapper" ng-controller="DbController">
+<!--<div class="container wrapper" ng-controller="DbController">
 	
 <form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="getInfo(empInfo);">
 <h3 class="text-center">Logowanie do systemu</h3>
@@ -39,6 +39,19 @@
 	</div>
 
 </form>
-</div>
+</div>-->
+    <div class="card card-container" ng-controller="DbController">
+        <div class="card-content">
+            <img class="brandlogo" src="assets/img/terminator.svg" alt="">
+            <form class="form-signin" name="empList" id="empForm" ng-submit="getInfo(empInfo);">
+                <span id="reauth-email" class="reauth-email"></span>
+                <div class="input-group"><span class="input-group-addon input-icon glyphicon glyphicon-user" id="basic-addon1"></span><input type="text" id="inputEmail" class="login_box" name="emp_login" ng-model="empInfo.login" placeholder="Wpisz login" required autofocus aria-describedby="basic-addon1"></div><br>
+                <div class="input-group"><span class="input-group-addon input-icon glyphicon glyphicon-menu-right" id="basic-addon1"></span><input type="password" id="inputPassword" name="emp_pass" ng-model="empInfo.pass" class="login_box" placeholder="Wpisz hasło" required autofocus aria-describedby="basic-addon1"></div>
+                <div class="login-alert"><p ng-show="empList.emp_pass.$invalid && empList.emp_pass.$dirty">Podany login lub hasło są błedne!</p></div>
+                <button ng-disabled="empList.$invalid" class="btn btn-lg btn-primary" type="submit">Login</button>
+            </form>
+            <div class="login-alert"><p style="text-align: center; color: #b0deff;">Zapomniałeś hasła?</p></div>
+        </div>
+    </div>
 </body>
 </html>

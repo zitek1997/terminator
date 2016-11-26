@@ -3,7 +3,7 @@
 min-height: 960px;
 }
 form#empForm, form#editForm {
-padding: 0 35px 15px;
+padding: 0 25px 20%;
 }
 label.gender {
 padding-top: 0 !important;
@@ -18,4 +18,218 @@ table tr th{
 .wrapper{
     min-width: 340px;
 }   
+}
+
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background: rgba(15,85,132,1);
+    background: -moz-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(22, 138, 103,1)), color-stop(100%, rgba(20,126,207,1)));
+    background: -webkit-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: -o-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: -ms-linear-gradient(-60deg, rgba(22, 138, 103,1) 0%, rgba(20,126,207,1) 100%);
+    background: linear-gradient(60deg, rgb(22, 138, 103) 0%, rgba(20,126,207,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f5584', endColorstr='#147ecf', GradientType=1 );
+}
+
+.brandlogo{
+    display: block;
+    margin: auto;
+}
+
+.input-icon{
+    border-radius: 0px;
+    background: #023d6c;
+    border: 0;
+    top: 0px;
+    color: white;
+}
+
+.card-content{
+    top: 50%;
+    transform: translate(0%,25%);
+}
+
+.login-alert{
+    margin-top: 4%;
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+
+.login-alert > p{
+    color: #ff5d5d;
+}
+
+.login_box{
+    background: #023d6c;
+    border:0;
+    padding-left: 15px;
+    color: white;
+    }
+.input_title{
+    color:rgba(164, 164, 164, 0.9);
+    padding-left:3px;
+        margin-bottom: 2px;
+    }
+
+hr{
+    width:100%;
+}
+    
+.welcome{
+    font-family: "myriad-pro",sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    color:#FFFFFF;
+    margin-bottom:25px;
+    margin-top:50px;
+
+}
+
+.login_title{
+    font-family: "myriad-pro",sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    color:rgba(164, 164, 164, 0.44);
+}
+
+.card-container.card {
+    min-width: 300px;
+    min-height: 500px;
+    width: 25%;
+    height: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.btn {
+    font-weight: 700;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border-radius:0;
+    background:#43A6EB;
+    height: 44px;
+    margin-bottom:10px;
+    -webkit-box-shadow: 0px 0px 41px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 41px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 41px -8px rgba(0,0,0,0.75);
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: rgba(0, 80, 151, 0.5);
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: rgb(104, 145, 162);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
 }
