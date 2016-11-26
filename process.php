@@ -37,7 +37,7 @@ if($type == 'change')
 	$startdate = $_POST['startdate'];
 	$enddate = $_POST['enddate'];
 	$startdate = strtotime($startdate);
-	$enddate = strtotime($startdate);
+	$enddate = strtotime($enddate);
 	$startdate = date("Y-m-d H:i",$startdate);
 	$enddate = date("Y-m-d H:i",$enddate);
 	$opis = $_POST['opis'];
