@@ -93,7 +93,7 @@ draggable();
 				var title = event.title;
 				var start = event.start.format("YYYY-MM-DD HH:mm");
 				var idc = event.idc;
-
+				console.log(event);
 				$.ajax({
 		    		url: 'process.php',
 		    		data: 'type=new&title='+title+'&startdate='+start+'&idc='+idc,
@@ -222,22 +222,23 @@ draggable();
 }
 	$(document).ready(function() {
 		drawCallendar();
+		waitplz();
 		$('#wait').droppable({
 			accept: ".dp-client",
 			tolerance: "touch",
 			drop: function(event, ui){
-					alert("czekaj");
+					idc = ui.draggable[0].id;
 					$.ajax({
 							url: 'ajax/wait.php',
-							data: 'id='+event.idc,
+							data: 'id='+idc,
 							type: 'POST',
 							success: function(response){
-
+								waitplz();
 							}
 						});
 					}
 			});
-			waitplz();
+
 	});
 
 		    function editEvent(ev) {
