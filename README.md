@@ -20,6 +20,10 @@ http://projekt.itcave.pl/
 -edycja avatara
 -edycja maila
 ##-dodać zegar
+##-karta klienta
+-lista usług z jakich skorzystał 
+-lista kiedy z nich korzystał
+-mozliwosc zmiany danych
 ##-i jeszcze fciul innych tasków pobocznych...
 
 O
