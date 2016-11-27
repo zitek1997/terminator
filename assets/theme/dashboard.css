@@ -69,11 +69,29 @@ body{
 /*
  * Global add-ons
  */
+::-webkit-scrollbar {
+width: 6px;
+height: 6px;
+position: fixed;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background: grey; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: whitesmoke;
+}
 .popover{
-        width: 18%;
+    width: 18%;
     border-radius: 3px;
     background-color: #0f5684;
-        border-radius: 6px;
+    border-radius: 6px;
 }
 .popover-av-p{
     text-align: center;
@@ -385,11 +403,15 @@ width: 17%;
     cursor: pointer;
 }
 .head-brand{
-    height:80px;
+    height: 80px;
     background-color: #2980b9;
     width: 85%;
     float: left;
     cursor: pointer;
+    background-image: url(/assets/img/terminator.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .sidebar-menu {
     position: fixed;
