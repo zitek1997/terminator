@@ -15,7 +15,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="/assets/theme/ie-emulation-modes-warning.js"></script>
-<meta charset='utf-8' />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link href="/assets/theme/dashboard.css" rel="stylesheet">
 <link href='assets/css/terminator.css' rel='stylesheet' />
@@ -74,9 +74,13 @@ popoverDetail()
                 <div id="clients">
                     <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
                         <div id="lista" class="list"></div>
+                        <div id="wait" style="width: 100px; height: 100px; background-color: red;"></div>
 		</div>
                 <div id="ctime">
-                    <div class="termlist_in" >Oczekujący klienci</div>
+                    <div class="termlist_in" >
+                      <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
+                      <div id="listaw" class="list"></div>
+                    </div>
 		</div>
                 <div id="terms">
                     <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />

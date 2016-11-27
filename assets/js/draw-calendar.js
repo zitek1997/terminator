@@ -190,7 +190,8 @@ draggable();
 			    		});
 					}
 				}
-			},
+
+				},
         eventAfterRender: function(event, element) {
 					id = event.id;
 					events[id] = event;
@@ -219,7 +220,25 @@ draggable();
 				}
       });
 }
-	$(document).ready(function() {drawCallendar(); });
+	$(document).ready(function() {
+		drawCallendar();
+		$('#wait').droppable({
+			accept: ".dp-client",
+			tolerance: "touch",
+			drop: function(event, ui){
+					alert("czekaj");
+					$.ajax({
+							url: 'ajax/wait.php',
+							data: 'id='+event.idc,
+							type: 'POST',
+							success: function(response){
+
+							}
+						});
+					}
+			});
+			waitplz();
+	});
 
 		    function editEvent(ev) {
 					$("#popover-event-content").hide();

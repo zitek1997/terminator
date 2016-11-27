@@ -13,13 +13,13 @@ for($x=0;$x<$l;$x++)
 print <<<KOD
 
 
-        
+
         <div style="margin-top: 15px; margin-bottom: 8px;" class="row">
             <div class="col-md-2 events">
                 <button onClick="cEdit('$id');" class="btn btn-primary btn-xs">✎</button>
             </div>
         <div class="col-md-10 events">
-                <div class='fc-event' id="$id">
+                <div class='fc-event dp-client' id="$id">
             <div class="name">
             $text
             </div>

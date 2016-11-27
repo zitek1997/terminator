@@ -165,6 +165,22 @@ function isElemOverDiv() {
 			return false;
 	}
 
+function isClientOverDiv(){
+	var wEl = jQuery('#wait');
+	var ofs = wEl.offset();
+	var x1 = ofs.left;
+	var x2 = ofs.left + wEl.outerWidth(true);
+	var y1 = ofs.top;
+	var y2 = ofs.top + wEl.outerHeight(true);
+	if (currentMousePos.x >= x1 && currentMousePos.x <= x2 && currentMousePos.y >= y1 && currentMousePos.y <= y2)
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
 
 function draggable() {
 	$.ajax({
@@ -197,6 +213,39 @@ function draggable() {
 	 }
  });
 }
+
+function waitplz() {
+	$.ajax({
+	 type: "POST",
+	 url: "ajax/recivewaiting.php",
+	 success: function(data){
+		 $('#listaw').html(data);
+		 $('#external-events .fc-event').each(function() {
+
+			 // store data so the calendar knows to render an event upon drop
+			 $(this).data('event', {
+				 title: $.trim($(this).text()), // use the element's text as the event title
+				 idc: $(this).attr("id"),
+				 stick: true // maintain when user navigates (see docs on the renderEvent method)
+			 });
+
+			 // make the event draggable using jQuery UI
+			 $(this).draggable({
+				 revert: true,      // will cause the event to go back to its
+				 revertDuration: 0,  //  original position after the drag
+			 });
+
+		 });
+		 var options = {
+		   valueNames: [ 'name' ]
+		 };
+
+		 var userList = new List('clients', options);
+
+	 }
+ });
+}
+
 function termlist() {
 	$.ajax({
 	 type: "POST",
@@ -251,7 +300,6 @@ function save(){
 		url: 'process.php',
 		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,
 		type: 'POST',
-		dataType: 'json',
 		success: function(response){
 			if(response.status == 'success'){
 	    				$('#calendar').fullCalendar('updateEvent',event);}
