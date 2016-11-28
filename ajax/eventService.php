@@ -5,25 +5,6 @@ $id=$_POST["id"];
 $sql1="SELECT * FROM services ORDER BY name ASC";
 $usl=$db->selecto($sql1);
 print <<<KOD
-<form name="eSvc">
-Usługa:<br>
-<select class="form-control" name="cSvc" onchange="cDesc(this);">
-<option value="new" selected>Nowa usługa</option>
-KOD;
-foreach($usl as $key => $svice)
-{
-  $name=$svice['name'];
-print <<<KOD
-<option value="$name">$name</option>
-KOD;
-}
-
-print <<<KOD
-</select><br>
-<input class="form-control" type="hidden" name="sDesc" id="sDesc" value="" disabled><br>
-<input class="form-control" type="text" name="nName" id="nName" value="" placeholder="Nazwa usługi"><br>
-<input class="form-control" type="textarea" name="nDesc" id="nDesc" value="" placeholder="Opis usługi"><br>
-</form>
 <script>
 function cDesc(s)
 {
@@ -56,5 +37,25 @@ KOD;
 print <<<KOD
 }
 </script>
+<form name="eSvc">
+Usługa:<br>
+<select class="form-control" name="cSvc" onchange="cDesc(this);">
+<option value="new" selected>Nowa usługa</option>
 KOD;
+foreach($usl as $key => $svice)
+{
+  $name=$svice['name'];
+print <<<KOD
+<option value="$name">$name</option>
+KOD;
+}
+
+print <<<KOD
+</select><br>
+<input class="form-control" type="hidden" name="sDesc" id="sDesc" value="" disabled><br>
+<input class="form-control" type="text" name="nName" id="nName" value="" placeholder="Nazwa usługi"><br>
+<input class="form-control" type="textarea" name="nDesc" id="nDesc" value="" placeholder="Opis usługi"><br>
+</form>
+KOD;
+
 ?>
