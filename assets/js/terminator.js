@@ -4,6 +4,7 @@ var currentMousePos = {
 };
 var pno;var pnc;var wto;var wtc;var sro;var src;var czo;var czc;var pto;var ptc;var sbo;var sbc;
 $(document).ready(function(){
+        $("#wait").hide();
         $("#popover-av").clickover({
         global_close: true,
         html : true,
@@ -146,6 +147,7 @@ $(document).ready(function(){
         $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" );
     });
 });
+
 function getFreshEvents(){
 	$('#calendar').fullCalendar('removeEvents');
 	$.ajax({
@@ -199,6 +201,8 @@ function draggable() {
 
 			 // make the event draggable using jQuery UI
 			 $(this).draggable({
+                                start: function( ) {$("#wait").show("slide", 100);},
+                                stop: function( ) {$("#wait").hide("slide", 1000);},
 				 revert: true,      // will cause the event to go back to its
 				 revertDuration: 0,  //  original position after the drag
 			 });

@@ -226,6 +226,8 @@ draggable();
 		$('#wait').droppable({
 			accept: ".dp-client",
 			tolerance: "touch",
+                        over: function() {$("#wait").addClass( "over" );},
+                        out: function() {$("#wait").removeClass( "over" );},
 			drop: function(event, ui){
 					idc = ui.draggable[0].id;
 					$.ajax({

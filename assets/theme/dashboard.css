@@ -46,11 +46,11 @@ body{
                 font-size: 12px;
 	}
 
-	#external-events p {
+/*	#external-events p {
 		margin: 1.5em 0;
 		font-size: 11px;
 		color: #3498db;
-	}
+	}*/
 
 	#external-events p input {
 		margin: 0;
@@ -469,6 +469,31 @@ width: 17%;
 .main {
   padding: 20px;
   float: right;
+}
+#wait{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    left: 0%;
+    z-index: -1;
+    background-color: #0f5684;
+    outline: dashed;
+    outline-offset: -10px;
+}
+.wait_p{
+    position: relative;
+    color: white;
+    font-size: 1em;
+    margin: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+    font-family: montserratR;    
+}
+.over{
+    background-color: #2980b9;
 }
 @media (min-width: 768px) {
   .main {
