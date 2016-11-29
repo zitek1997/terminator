@@ -20,7 +20,10 @@ foreach($evs as $key => $ev)
     $sndo = strtotime($snd);
     if($sndo - $firsto > 0)
     {
-      $freetimes[$key] = $first;
+      if($firsto>$now)
+      {
+        $freetimes[$key] = $first;
+      }      
     }
   }else{
     $first = $nowo;
@@ -36,10 +39,10 @@ foreach($evs as $key => $ev)
 
 foreach($freetimes as $free)
 {
-  $free = strtotime($free);
-  $free = date("Y-m-d H:i", $free);
+  $freeo = strtotime($free);
+  $freez = date("Y-m-d H:i", $freeo);
 print <<<KOD
-<div class="termlist_in" style="background-color:#000000;" onclick="gotofree($free)">$free</div>
+<div class="termlist_in" style="background-color:#000000;" onclick="gotofree('$free')">$freez</div>
 KOD;
 }
 
