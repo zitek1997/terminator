@@ -37,9 +37,9 @@ foreach($evs as $key => $ev)
 foreach($freetimes as $free)
 {
   $free = strtotime($free);
-  $free = strtotime("Y-m-d H:i",$free);
+  $free = date("Y-m-d H:i", $free);
 print <<<KOD
-<div class="termlist_in" style="background-color:#CDDC39;" onclick="gotofree($free)">$free</div>
+<div class="termlist_in" style="background-color:#000000;" onclick="gotofree($free)">$free</div>
 KOD;
 }
 
