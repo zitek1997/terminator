@@ -567,3 +567,17 @@ function reciveHours(){
 		}
 	});
 }
+
+function gotofree(date){
+	$('#calendar').fullCalendar('gotoDate',date);
+	$('#calendar').fullCalendar('changeView','agendaDay');
+}
+
+function seefree(){
+	$.ajax({
+		url: 'ajax/reciveHours.php',
+		type: 'POST',
+		success: function(h){
+			$("#")
+		}
+}
