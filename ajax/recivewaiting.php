@@ -9,8 +9,8 @@ for($x=0;$x<$l;$x++)
   $text = $users[$x]['LNAME']." ".$users[$x]['FNAME'];
 print <<<KOD
         <div style="margin-top: 15px; margin-bottom: 8px;" class="row">
-        <div class="col-md-10 events">
-                <div class='fc-event' id="$id">
+        <div class="col-md-10" style="width:100%">
+                <div class='fc-event pending_customer' id="$id">
             <div class="name">
             $text
             </div>

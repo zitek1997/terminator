@@ -5,6 +5,7 @@ var currentMousePos = {
 var pno;var pnc;var wto;var wtc;var sro;var src;var czo;var czc;var pto;var ptc;var sbo;var sbc;
 $(document).ready(function(){
         $("#wait").hide();
+        $("#wait_delete").hide();
         $("#popover-av").clickover({
         global_close: true,
         html : true,
@@ -33,10 +34,10 @@ $(document).ready(function(){
         $("#tokcircle").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#lista").hasClass("hidden")) {
+        if ($("#external-events").hasClass("hidden")) {
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#lista").removeClass( "hidden" );
+        $("#external-events").removeClass( "hidden" );
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
@@ -53,10 +54,10 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#lista").hasClass("hidden")) {
+        if ($("#external-events").hasClass("hidden")) {
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#lista").removeClass( "hidden" );
+        $("#external-events").removeClass( "hidden" );
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
@@ -73,10 +74,10 @@ $(document).ready(function(){
         $("#tokcircle").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#lista").hasClass("hidden")) {
+        if ($("#external-events").hasClass("hidden")) {
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#lista").removeClass( "hidden" );
+        $("#external-events").removeClass( "hidden" );
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
@@ -93,10 +94,10 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#lista").hasClass("hidden")) {
+        if ($("#external-events").hasClass("hidden")) {
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#lista").removeClass( "hidden" );
+        $("#external-events").removeClass( "hidden" );
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
@@ -113,10 +114,10 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").show();
         $("#options").hide();
-        if ($("#lista").hasClass("hidden")) {
+        if ($("#external-events").hasClass("hidden")) {
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#lista").removeClass( "hidden" );
+        $("#external-events").removeClass( "hidden" );
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
@@ -133,18 +134,28 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").hide();
         $("#options").show();
-        if ($("#lista").hasClass("hidden")) {
+        if ($("#external-events").hasClass("hidden")) {
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#lista").removeClass( "hidden" );
+        $("#external-events").removeClass( "hidden" );
         $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
         }
     });
     $("#menu-toggle").click(function(){
+        if ($("#external-events").hasClass("hidden")) {
+        $.when($("#head-brand-toggle").animate({width: 'toggle'}),
+        $("#sidebar-toggle").animate({width: 'toggle'}),
+        $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" )).then(function() {
+        $("#external-events").removeClass( "hidden" );
+        });
+        }
+        else{
+        $.when($("#external-events").addClass( "hidden" )).then(function() {
         $("#head-brand-toggle").animate({width: 'toggle'});
         $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#lista").toggleClass( "hidden" );
         $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" );
+        });
+        }
     });
 });
 
@@ -205,6 +216,7 @@ function draggable() {
                                 stop: function( ) {$("#wait").hide("slide", 1000);},
 				 revert: true,      // will cause the event to go back to its
 				 revertDuration: 0,  //  original position after the drag
+                                 containment: "body"
 			 });
 
 		 });
@@ -235,6 +247,8 @@ function waitplz() {
 
 			 // make the event draggable using jQuery UI
 			 $(this).draggable({
+//                                start: function( ) {$("#wait-delete").show("slide", 100);},
+//                                stop: function( ) {$("#wait-delete").hide("slide", 1000);},
 				 revert: true,      // will cause the event to go back to its
 				 revertDuration: 0,  //  original position after the drag
 			 });

@@ -31,8 +31,8 @@ body{
 
 	#external-events .fc-event {
 		cursor: pointer;
-                position: fixed;
-                width: 9.8%;
+                position: relative;
+                width: 100%;
                 margin: 0px; 
                 border: 2px solid #3a87ad; 
                 line-height: 2; 
@@ -59,13 +59,19 @@ body{
 
 	#calendar {
                 margin-top: 22px;
-		float: left;
-                max-height: 700px;
-                border-radius: 7px 7px 7px 7px;
+                float: left;
                 background: whitesmoke;
                 box-shadow: 0px 0px 72px -15px rgba(0,0,0,0.78);
+                padding: 20px;
+                font-family: montserratR;
+                font-size: 0.9em;
+                text-transform: uppercase;
 	}
-
+        .fc-content{
+                text-transform: none;
+                font-size: 1.1em;
+        }
+        
 /*
  * Global add-ons
  */
@@ -304,16 +310,19 @@ background: whitesmoke;
     margin-top: 15px;
 }
 .termlist_in{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     height: 28px;
     border-radius: 3px;
     border: 2px solid rgba(255, 255, 255, 0.22);
     cursor: pointer;
     padding: 2px;
     text-align: -webkit-center;
-    font-size: 1vw;
+    font-size: 1em;
     color: white;
     text-shadow: 1px 1px #949494;
+}
+.name{
+    text-align: center;
 }
 .brand {
   padding-left: 0px; 
@@ -338,12 +347,12 @@ background: whitesmoke;
     color: aliceblue;
     margin: 2px;
 }
-.fc-day-top{
+/*.fc-day-top{
     background-color: rgb(234, 242, 255) !important;
 }
 .fc-day-top:hover{
     background-color: rgb(251, 252, 253) !important;
-}
+}*/
 .user-menu {
     width:20%;
     height:100%;
@@ -434,8 +443,8 @@ width: 17%;
     z-index: 1000;
     display: block;
     padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
+/*    overflow-x: hidden;
+    overflow-y: auto;*/
     background: #293A4B;
     width: 14.1666666%;
   }
@@ -483,6 +492,19 @@ width: 17%;
     outline: dashed;
     outline-offset: -10px;
 }
+#wait-delete{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    left: 0%;
+    z-index: -1;
+    background-color: rgb(143, 51, 51);
+    outline: dashed;
+    outline-offset: -10px;
+}
 .wait_p{
     position: relative;
     color: white;
@@ -494,6 +516,27 @@ width: 17%;
 }
 .over{
     background-color: #2980b9;
+}
+
+.menu-title{
+    text-align: center;
+    font-family: montserratR;
+    color: white;
+    font-size: 1.7em;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+.dashbutton{
+    margin-top: 5%;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.dashsearch{
+    border-radius: 2px;
+    margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .main {

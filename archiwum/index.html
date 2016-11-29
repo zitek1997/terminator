@@ -72,36 +72,42 @@ popoverDetail()
 
             <div id='external-events'>
                 <div id="clients">
-                    <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
+                    <div class="menu-title">Klienci</div>
+                    <input class="search form-control serach-sidebar dashsearch" placeholder="Wyszukaj" />
                         <div id="lista" class="list"></div>
+                        <input type="button" class="btn btn-default dashbutton" name="addClient" onclick="" value="Dodaj Klienta"/>
 			<div id="wait">
                             <p class="wait_p">Dodaj do oczekujacych</p></div>
 		</div>
                 <div id="ctime">
-                    <div class="termlist_in" >
-                      <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
+                    <div class="menu-title">Klienci oczekujący</div>
+                    <div>
+                      <input class="search form-control serach-sidebar dashsearch" placeholder="Wyszukaj" />
                       <div id="listaw" class="list"></div>
+                      <div id="wait_delete">
+                            <p class="wait_p">Usuń z listy oczekujących</p></div>
                     </div>
 		</div>
                 <div id="terms">
-                    <input class="search form-control serach-sidebar" placeholder="Wyszukaj" />
+                    <div class="menu-title">Terminarze</div>
+                    <input class="search form-control serach-sidebar dashsearch" placeholder="Wyszukaj" />
                         <div id="termlist" ></div>
+                    <input type="button" class="btn btn-default dashbutton" name="addClient" onclick="" value="Dodaj Terminarz"/>
 		</div>
                 <div id="tokcircle">
-                    <div class="termlist_in" >Wolne terminy</div>
+                    <div class="menu-title">Wolne terminy</div>
 		</div>
                 <div id="notify">
-                    <div class="termlist_in" >Powiadomienia</div>
+                    <div class="menu-title">Powiadomienia</div>
 		</div>
                 <div id="options">
-                    <div class="termlist_in" >Opcje
-                    </div>
-                    <input type="button" class="btn btn-danger" name="sHours" onclick="setHours()" value="Godziny pracy"/>
+                    <div class="menu-title">Opcje</div>
+                    <input type="button" class="btn btn-danger dashbutton" name="sHours" onclick="setHours()" value="Godziny pracy"/>
 		</div>
             </div>
         </div>
         <div id="main-toggle" class="col-sm-9 col-md-10 main">
-                <div id='calendar'></div>
+            <div id='calendar'></div>
         </div>
     </div>
 </div>
