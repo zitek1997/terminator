@@ -4,15 +4,15 @@ http://projekt.itcave.pl/
 
 #TO DO
 
-##-poprawić Jquery dla paska bocznego
+##-poprawić Jquery dla paska bocznego 
 ##-poprawic podział terminarzy
-##-dodac menu klientów oczekujacych
-##-dodać menu listy wolnych terminow
+##-dodac menu klientów oczekujacych 
+##-dodać menu listy wolnych terminow 
 ##-w opcjach dodać:
 -możliwość zmiany godzin pracy ✓
 -możliwość dodania pracownika
 -dodawania dni wolnych
-##-dodać przyciski dodawania klienta
+##-dodać przyciski dodawania klienta ✓
 ##-dodać przyciski dodawania użytkownika
 ##-modal edycji konta
 -edycja hasła
@@ -24,7 +24,6 @@ http://projekt.itcave.pl/
 -lista usług z jakich skorzystał 
 -lista kiedy z nich korzystał
 -mozliwosc zmiany danych
-##-i jeszcze fciul innych tasków pobocznych...
 
 O
 ##-podstawowy bootstrap ✓
