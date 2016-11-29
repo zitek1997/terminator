@@ -264,6 +264,17 @@ function waitplz() {
  });
 }
 
+function endwait(id){
+	$.ajax({
+		type: "POST",
+		 url: "ajax/endwait.php",
+		 data: "id="+id,
+		 success: function(data){
+			 waitplz();
+		 }
+	});
+}
+
 function termlist() {
 	$.ajax({
 	 type: "POST",

@@ -111,6 +111,7 @@ draggable();
 				$('#calendar').fullCalendar('updateEvent',event);
 				console.log(event);
 				id=event.id;
+				endwait(event.idc);
 				pickService(id);
 				getFreshEvents();
 			},
