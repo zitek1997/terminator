@@ -224,6 +224,7 @@ draggable();
 		drawCallendar();
 		waitplz();
 		$('#wait').droppable({
+                        containment: "body",
 			accept: ".dp-client",
 			tolerance: "touch",
                         over: function() {$("#wait").addClass( "over" );},
