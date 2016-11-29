@@ -575,9 +575,10 @@ function gotofree(date){
 
 function seefree(){
 	$.ajax({
-		url: 'ajax/reciveHours.php',
+		url: 'ajax/freeterms.php',
 		type: 'POST',
-		success: function(h){
-			$("#")
+		success: function(data){
+			$("#icanfly").html(data);
 		}
+	});
 }

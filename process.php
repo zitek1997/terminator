@@ -11,8 +11,8 @@ if($type == 'new')
 	$startdate = $_POST['startdate'];
 	$startdate = strtotime($startdate);
 	$enddate = strtotime("+1 hour", $startdate);
-	$startdate = date("Y-m-d H:i",$startdate);
-	$enddate = date("Y-m-d H:i",$enddate);
+	$startdate = date("Y-m-d H:i:s",$startdate);
+	$enddate = date("Y-m-d H:i:s",$enddate);
 	$title = $_POST['title'];
 	$idc = $_POST['idc'];
   $timetab_id = $_SESSION['timetab_id'];
@@ -38,8 +38,8 @@ if($type == 'change')
 	$enddate = $_POST['enddate'];
 	$startdate = strtotime($startdate);
 	$enddate = strtotime($enddate);
-	$startdate = date("Y-m-d H:i",$startdate);
-	$enddate = date("Y-m-d H:i",$enddate);
+	$startdate = date("Y-m-d H:i:s",$startdate);
+	$enddate = date("Y-m-d H:i:s",$enddate);
 	$opis = $_POST['opis'];
 	$array = array(
 		'title' => $title,
@@ -62,8 +62,8 @@ if($type == 'resetdate')
 	$enddate = $_POST['end'];
 	$startdate = strtotime($startdate);
 	$enddate = strtotime($enddate);
-	$startdate = date("Y-m-d H:i",$startdate);
-	$enddate = date("Y-m-d H:i",$enddate);
+	$startdate = date("Y-m-d H:i:s",$startdate);
+	$enddate = date("Y-m-d H:i:s",$enddate);
 	$eventid = $_POST['eventid'];
 	$array = array(
 		'title' => $title,
