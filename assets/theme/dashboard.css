@@ -344,10 +344,8 @@ background: whitesmoke;
     height: 13px;
     width: 95%;
     line-height: 13px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
     background-color: rgb(119, 204, 235);
-    text-align: -webkit-center;
+    text-align: right;
     color: aliceblue;
     margin: 2px;
 }
