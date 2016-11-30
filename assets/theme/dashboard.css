@@ -46,6 +46,11 @@ body{
     overflow: auto;
 }
 
+.fc-basic-view .fc-day-number {
+    padding: 0 !important;
+}
+
+
 @media screen and (min-width: 600px) {
     
 }
@@ -301,9 +306,9 @@ body{
 .serach-sidebar {
   width: 100%;
 }
-.hidden{
+/*.hidden{
     animation: disapear 1s;
-}
+}*/
 .togglemain{
     margin-left: 2.8%;
     margin-right: 2.7%;
@@ -566,7 +571,7 @@ body{
     border-spacing: 4px 0;
     border-style: none;
     border-width: 0px;
-}
+} 
 
 .fc .fc-basic-view > table > thead .fc-row {
     margin-bottom: 0;
@@ -594,13 +599,13 @@ body{
 }
 .fc-day-number{
     display: block;
-    height: 13px;
-    width: 95%;
-    line-height: 13px;
+    height: 20px;
+    width: 100%;
+    line-height: 20px;
     background-color: rgb(119, 204, 235);
     text-align: right;
     color: aliceblue;
-    margin: 2px;
+    margin: 0;
 }
 }
 @media screen and (min-width: 992px) {
@@ -1143,12 +1148,12 @@ body{
 }
 .fc-day-number{
     display: block;
-    height: 13px;
-    width: 95%;
-    line-height: 13px;
+    height: 20px;
+    width: 100%;
+    line-height: 20px;
     background-color: rgb(119, 204, 235);
     text-align: right;
     color: aliceblue;
-    margin: 2px;
+    margin: 0px;
 }
 }

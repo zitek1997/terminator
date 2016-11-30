@@ -14,7 +14,151 @@ $(document).ready(function(){
           return $("#popover-av-content").html();
         }
     });
-        $("#clients-toggle").addClass( "chosen" );
+//        $("#clients-toggle").addClass( "chosen" );
+//        $("#clients").show();
+//        $("#terms").hide();
+//        $("#notify").hide();
+//        $("#options").hide();
+//        $("#ctime").hide();
+//        $("#tokcircle").hide();
+//    $("#clients-toggle").click(function(){
+//        $("#clients-toggle").addClass( "chosen" );
+//        $("#terms-toggle").removeClass( "chosen" );
+//        $("#notify-toggle").removeClass( "chosen" );
+//        $("#options-toggle").removeClass( "chosen" );
+//        $("#ctime-toggle").removeClass( "chosen" );
+//        $("#tokcircle-toggle").removeClass( "chosen" );
+//        $("#clients").show();
+//        $("#terms").hide();
+//        $("#ctime").hide();
+//        $("#tokcircle").hide();
+//        $("#notify").hide();
+//        $("#options").hide();
+//        if ($("#external-events").hasClass("hidden")) {
+//        $("#head-brand-toggle").animate({width: 'toggle'});
+//        $("#sidebar-toggle").animate({width: 'toggle'});
+//        $("#external-events").removeClass( "hidden" );
+//        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+//        }
+//    });
+//    $("#ctime-toggle").click(function(){
+//        $("#clients-toggle").removeClass( "chosen" );
+//        $("#terms-toggle").removeClass( "chosen" );
+//        $("#ctime-toggle").addClass( "chosen" );
+//        $("#tokcircle-toggle").removeClass( "chosen" );
+//        $("#notify-toggle").removeClass( "chosen" );
+//        $("#options-toggle").removeClass( "chosen" );
+//        $("#clients").hide();
+//        $("#ctime").show();
+//        $("#tokcircle").hide();
+//        $("#terms").hide();
+//        $("#notify").hide();
+//        $("#options").hide();
+//        if ($("#external-events").hasClass("hidden")) {
+//        $("#head-brand-toggle").animate({width: 'toggle'});
+//        $("#sidebar-toggle").animate({width: 'toggle'});
+//        $("#external-events").removeClass( "hidden" );
+//        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+//        }
+//    });
+//    $("#terms-toggle").click(function(){
+//        $("#clients-toggle").removeClass( "chosen" );
+//        $("#terms-toggle").addClass( "chosen" );
+//        $("#ctime-toggle").removeClass( "chosen" );
+//        $("#tokcircle-toggle").removeClass( "chosen" );
+//        $("#notify-toggle").removeClass( "chosen" );
+//        $("#options-toggle").removeClass( "chosen" );
+//        $("#clients").hide();
+//        $("#terms").show();
+//        $("#ctime").hide();
+//        $("#tokcircle").hide();
+//        $("#notify").hide();
+//        $("#options").hide();
+//        if ($("#external-events").hasClass("hidden")) {
+//        $("#head-brand-toggle").animate({width: 'toggle'});
+//        $("#sidebar-toggle").animate({width: 'toggle'});
+//        $("#external-events").removeClass( "hidden" );
+//        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+//        }
+//    });
+//    $("#tokcircle-toggle").click(function(){
+//        $("#clients-toggle").removeClass( "chosen" );
+//        $("#terms-toggle").removeClass( "chosen" );
+//        $("#ctime-toggle").removeClass( "chosen" );
+//        $("#tokcircle-toggle").addClass( "chosen" );
+//        $("#notify-toggle").removeClass( "chosen" );
+//        $("#options-toggle").removeClass( "chosen" );
+//        $("#clients").hide();
+//        $("#ctime").hide();
+//        $("#tokcircle").show();
+//        $("#terms").hide();
+//        $("#notify").hide();
+//        $("#options").hide();
+//        if ($("#external-events").hasClass("hidden")) {
+//        $("#head-brand-toggle").animate({width: 'toggle'});
+//        $("#sidebar-toggle").animate({width: 'toggle'});
+//        $("#external-events").removeClass( "hidden" );
+//        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+//        }
+//    });
+//    $("#notify-toggle").click(function(){
+//        $("#clients-toggle").removeClass( "chosen" );
+//        $("#terms-toggle").removeClass( "chosen" );
+//        $("#ctime-toggle").removeClass( "chosen" );
+//        $("#tokcircle-toggle").removeClass( "chosen" );
+//        $("#notify-toggle").addClass( "chosen" );
+//        $("#options-toggle").removeClass( "chosen" );
+//        $("#clients").hide();
+//        $("#ctime").hide();
+//        $("#tokcircle").hide();
+//        $("#terms").hide();
+//        $("#notify").show();
+//        $("#options").hide();
+//        if ($("#external-events").hasClass("hidden")) {
+//        $("#head-brand-toggle").animate({width: 'toggle'});
+//        $("#sidebar-toggle").animate({width: 'toggle'});
+//        $("#external-events").removeClass( "hidden" );
+//        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+//        }
+//    });
+//    $("#options-toggle").click(function(){
+//        $("#clients-toggle").removeClass( "chosen" );
+//        $("#terms-toggle").removeClass( "chosen" );
+//        $("#ctime-toggle").removeClass( "chosen" );
+//        $("#tokcircle-toggle").removeClass( "chosen" );
+//        $("#notify-toggle").removeClass( "chosen" );
+//        $("#options-toggle").addClass( "chosen" );
+//        $("#clients").hide();
+//        $("#ctime").hide();
+//        $("#tokcircle").hide();
+//        $("#terms").hide();
+//        $("#notify").hide();
+//        $("#options").show();
+//        if ($("#external-events").hasClass("hidden")) {
+//        $("#head-brand-toggle").animate({width: 'toggle'});
+//        $("#sidebar-toggle").animate({width: 'toggle'});
+//        $("#external-events").removeClass( "hidden" );
+//        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+//        }
+//    });
+//    $("#menu-toggle").click(function(){
+//        if ($("#external-events").hasClass("hidden")) {
+//        $.when($("#head-brand-toggle").animate({width: 'toggle'}),
+//        $("#sidebar-toggle").animate({width: 'toggle'}),
+//        $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" )).then(function() {
+//        $("#external-events").removeClass( "hidden" );
+//        });
+//        }
+//        else{
+//        $.when($("#external-events").addClass( "hidden" )).then(function() {
+//        $("#head-brand-toggle").animate({width: 'toggle'});
+//        $("#sidebar-toggle").animate({width: 'toggle'});
+//        $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" );
+//        });
+//        }
+//    });
+
+$("#clients-toggle").addClass( "chosen" );
         $("#clients").show();
         $("#terms").hide();
         $("#notify").hide();
@@ -34,11 +178,11 @@ $(document).ready(function(){
         $("#tokcircle").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#external-events").hasClass("hidden")) {
-        $("#head-brand-toggle").animate({width: 'toggle'});
-        $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#external-events").removeClass( "hidden" );
-        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+        if ($("#sidebar-toggle").hasClass("hid")) {
+        $("#head-brand-toggle").show("slide", 550),
+        $("#sidebar-toggle").show("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+        $("#sidebar-toggle").removeClass( "hid" );
         }
     });
     $("#ctime-toggle").click(function(){
@@ -54,11 +198,11 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#external-events").hasClass("hidden")) {
-        $("#head-brand-toggle").animate({width: 'toggle'});
-        $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#external-events").removeClass( "hidden" );
-        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+        if ($("#sidebar-toggle").hasClass("hid")) {
+        $("#head-brand-toggle").show("slide", 550),
+        $("#sidebar-toggle").show("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+        $("#sidebar-toggle").removeClass( "hid" );
         }
     });
     $("#terms-toggle").click(function(){
@@ -74,11 +218,11 @@ $(document).ready(function(){
         $("#tokcircle").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#external-events").hasClass("hidden")) {
-        $("#head-brand-toggle").animate({width: 'toggle'});
-        $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#external-events").removeClass( "hidden" );
-        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+        if ($("#sidebar-toggle").hasClass("hid")) {
+        $("#head-brand-toggle").show("slide", 550),
+        $("#sidebar-toggle").show("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+        $("#sidebar-toggle").removeClass( "hid" );
         }
     });
     $("#tokcircle-toggle").click(function(){
@@ -94,11 +238,11 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").hide();
         $("#options").hide();
-        if ($("#external-events").hasClass("hidden")) {
-        $("#head-brand-toggle").animate({width: 'toggle'});
-        $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#external-events").removeClass( "hidden" );
-        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+        if ($("#sidebar-toggle").hasClass("hid")) {
+        $("#head-brand-toggle").show("slide", 550),
+        $("#sidebar-toggle").show("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+        $("#sidebar-toggle").removeClass( "hid" );
         }
     });
     $("#notify-toggle").click(function(){
@@ -114,11 +258,11 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").show();
         $("#options").hide();
-        if ($("#external-events").hasClass("hidden")) {
-        $("#head-brand-toggle").animate({width: 'toggle'});
-        $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#external-events").removeClass( "hidden" );
-        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+        if ($("#sidebar-toggle").hasClass("hid")) {
+        $("#head-brand-toggle").show("slide", 550),
+        $("#sidebar-toggle").show("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+        $("#sidebar-toggle").removeClass( "hid" );
         }
     });
     $("#options-toggle").click(function(){
@@ -134,27 +278,25 @@ $(document).ready(function(){
         $("#terms").hide();
         $("#notify").hide();
         $("#options").show();
-        if ($("#external-events").hasClass("hidden")) {
-        $("#head-brand-toggle").animate({width: 'toggle'});
-        $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#external-events").removeClass( "hidden" );
-        $("#main-toggle").removeClass( "togglemain", 550, "easeOutSine" );
+        if ($("#sidebar-toggle").hasClass("hid")) {
+        $("#head-brand-toggle").show("slide", 550),
+        $("#sidebar-toggle").show("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+        $("#sidebar-toggle").removeClass( "hid" );
         }
     });
     $("#menu-toggle").click(function(){
-        if ($("#external-events").hasClass("hidden")) {
-        $.when($("#head-brand-toggle").animate({width: 'toggle'}),
-        $("#sidebar-toggle").animate({width: 'toggle'}),
-        $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" )).then(function() {
-        $("#external-events").removeClass( "hidden" );
-        });
+        if ($("#sidebar-toggle").hasClass("hid")) {
+        $("#head-brand-toggle").show("slide", 550),
+        $("#sidebar-toggle").show("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+        $("#sidebar-toggle").removeClass( "hid" );
         }
         else{
-        $.when($("#external-events").addClass( "hidden" )).then(function() {
-        $("#head-brand-toggle").animate({width: 'toggle'});
-        $("#sidebar-toggle").animate({width: 'toggle'});
-        $("#main-toggle").toggleClass( "togglemain", 550, "easeOutSine" );
-        });
+        $("#head-brand-toggle").hide("slide", 550),
+        $("#sidebar-toggle").hide("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" );
+        $("#sidebar-toggle").addClass( "hid" );
         }
     });
 });
