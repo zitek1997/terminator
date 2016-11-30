@@ -709,3 +709,18 @@ function reciveHours(){
 		}
 	});
 }
+
+function gotofree(date){
+	$('#calendar').fullCalendar('gotoDate',date);
+	$('#calendar').fullCalendar('changeView','agendaDay');
+}
+
+function seefree(){
+	$.ajax({
+		url: 'ajax/freeterms.php',
+		type: 'POST',
+		success: function(data){
+			$("#icanfly").html(data);
+		}
+	});
+}

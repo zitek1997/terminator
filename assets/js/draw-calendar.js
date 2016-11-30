@@ -165,7 +165,6 @@ draggable();
 				});
 		    },
 				navLinkDayClick: function(date, jsEvent) {
-
 			$('#calendar').fullCalendar('gotoDate',date);
       $('#calendar').fullCalendar('changeView','agendaDay');
 
