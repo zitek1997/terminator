@@ -103,7 +103,6 @@ body{
 
 #calendar {
     margin-top: 22px;
-    float: left;
     background: whitesmoke;
     box-shadow: 0px 0px 72px -15px rgba(0,0,0,0.78);
     padding: 20px;
@@ -607,6 +606,19 @@ body{
     color: aliceblue;
     margin: 0;
 }
+.timer{
+    float: right;
+    height: 100%;
+}
+.timer_p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3em;
+    font-family: montserratR;
+    user-select: none;
+}
 }
 @media screen and (min-width: 992px) {
         
@@ -652,7 +664,6 @@ body{
 
 #calendar {
     margin-top: 22px;
-    float: left;
     background: whitesmoke;
     box-shadow: 0px 0px 72px -15px rgba(0,0,0,0.78);
     padding: 20px;
@@ -1155,5 +1166,18 @@ body{
     text-align: right;
     color: aliceblue;
     margin: 0px;
+}
+.timer{
+    float: right;
+    height: 100%;
+}
+.timer_p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3em;
+    font-family: montserratR;
+    user-select: none;
 }
 }
