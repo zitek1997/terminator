@@ -2,28 +2,31 @@
 #"Make it work, then make it better"
 http://projekt.itcave.pl/
 
-#TO DO
+#TO DO (Chronologicznie)
+
+##- Wolne terminy (ASAP)
+##- System powiadomień email i sms (ASAP)
+##- Karty klientów (historia wizyt) (ASAP)
+
+##- Custom eventy
+##- Edycja konta + obsługa avatarów
+##- Możliwość dodawania dni wolnych i świąt
+##- Modal dodawania klienta
+##- Podział użytkowników (adminitsrator / zwykły)
+
+##- Mobile CSS (ASAP)
+
+#DONE
 
 ##-poprawić Jquery dla paska bocznego ✓
-##-poprawic podział terminarzy 
 ##-dodac menu klientów oczekujacych ✓
 ##-dodać menu listy wolnych terminow ✓
 ##-w opcjach dodać:
 -możliwość zmiany godzin pracy ✓
 -możliwość dodania pracownika ✓
--dodawania dni wolnych 
 ##-dodać przyciski dodawania klienta ✓
 ##-dodać przyciski dodawania użytkownika ✓
-##-modal edycji konta
--edycja hasła
--edycja telefonu
--edycja avatara
--edycja maila
 ##-dodać zegar ✓
-##-karta klienta
--lista usług z jakich skorzystał 
--lista kiedy z nich korzystał
--mozliwosc zmiany danych
 
 O
 ##-podstawowy bootstrap ✓
@@ -49,8 +52,3 @@ D
 ##-datetime-picker ✓
 ##-widok dnia po kliknięciu na numer dnia ✓
 
-##-opcja dodawania eventów customowych
-(powiązanych z klientami np. pani halinka chce zapisać sobie że w środę ma podlać kwiatki,
-może być jakiś blank event na liście który po dodaniu woła o nazwę)
-
-##-wyszukiwanie w liście terminarzy
