@@ -4,22 +4,22 @@ http://projekt.itcave.pl/
 
 #TO DO
 
-##-poprawić Jquery dla paska bocznego 
-##-poprawic podział terminarzy
-##-dodac menu klientów oczekujacych 
-##-dodać menu listy wolnych terminow 
+##-poprawić Jquery dla paska bocznego ✓
+##-poprawic podział terminarzy 
+##-dodac menu klientów oczekujacych ✓
+##-dodać menu listy wolnych terminow ✓
 ##-w opcjach dodać:
 -możliwość zmiany godzin pracy ✓
--możliwość dodania pracownika
--dodawania dni wolnych
+-możliwość dodania pracownika ✓
+-dodawania dni wolnych 
 ##-dodać przyciski dodawania klienta ✓
-##-dodać przyciski dodawania użytkownika
+##-dodać przyciski dodawania użytkownika ✓
 ##-modal edycji konta
 -edycja hasła
 -edycja telefonu
 -edycja avatara
 -edycja maila
-##-dodać zegar
+##-dodać zegar ✓
 ##-karta klienta
 -lista usług z jakich skorzystał 
 -lista kiedy z nich korzystał
@@ -30,8 +30,8 @@ O
 ##-pasek administratora: dodaj/usuń pracownika, dodaj/usuń terminarz
 ##-podział terminarza - ✓
 ##-opcja long eventów ✓
-##-opis eventu po najechaniu na niego
-##-CSS
+##-opis eventu po najechaniu na niego ✓
+##-CSS ✓
 D
 ##-plan dnia po kliknieciu na dzień ✓
 ##-edycja klienta ✓
