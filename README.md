@@ -3,19 +3,19 @@
 http://projekt.itcave.pl/
 
 #TO DO (Chronologicznie)
-
+==============================
 ##- Wolne terminy (ASAP)
 ##- System powiadomień email i sms (ASAP)
 ##- Karty klientów (historia wizyt) (ASAP)
-
+==============================
 ##- Custom eventy
 ##- Edycja konta + obsługa avatarów
 ##- Możliwość dodawania dni wolnych i świąt
 ##- Modal dodawania klienta
 ##- Podział użytkowników (adminitsrator / zwykły)
-
+==============================
 ##- Mobile CSS (ASAP)
-
+==============================
 #DONE
 
 ##-poprawić Jquery dla paska bocznego ✓
