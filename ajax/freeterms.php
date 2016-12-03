@@ -9,12 +9,13 @@ $array = array(
 $sql = "SELECT * FROM calendar WHERE startdate > :startdate AND timetab_id = :timetab_id ORDER BY startdate ASC";
 $evs=$db->select($sql, $array);
 $freetimes = array();
-foreach($evs as $key => $ev)
+$quo=count($evs);
+for($key=0;$key<$quo;$key++)
 {
-  if($key!=0)
+  if($key!=0 && $key!=$quo-1)
   {
     $first = $evs[$key-1]['enddate'];
-    $snd = $ev['startdate'];
+    $snd = $evs[$key]['startdate'];
     $firsto = strtotime($first);
     $firsto = strtotime("+5minutes", $firsto);
     $sndo = strtotime($snd);
@@ -23,11 +24,14 @@ foreach($evs as $key => $ev)
       if($firsto>$now)
       {
         $freetimes[$key] = $first;
-      }      
+      }
     }
-  }else{
+  }else if($key==$quo-1){
+    $endo = $evs[$key]['enddate'];
+    $freetimes[$key] = $endo;
+  }else if($key==0){
     $first = $nowo;
-    $snd = $ev['startdate'];
+    $snd = $evs[$key]['startdate'];
     $firsto = strtotime("+5minutes", $now);
     $sndo = strtotime($snd);
     if($sndo - $firsto > 0)

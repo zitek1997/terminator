@@ -4,7 +4,7 @@ http://projekt.itcave.pl/
 
 #TO DO (Chronologicznie)
 ==============================
-##- Wolne terminy (ASAP)
+##- Wolne terminy (ASAP) ✓
 ##- System powiadomień email i sms (ASAP)
 ##- Karty klientów (historia wizyt) (ASAP)
 ==============================
@@ -51,4 +51,3 @@ D
 ##-unkcja wylogowania, do użycia przez onClick dla buttona ✓
 ##-datetime-picker ✓
 ##-widok dnia po kliknięciu na numer dnia ✓
-
