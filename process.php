@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('ajax/config.php');
 // include('ajax/confi.php');
 
