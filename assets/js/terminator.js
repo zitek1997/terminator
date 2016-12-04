@@ -4,10 +4,10 @@ var currentMousePos = {
 };
 var pno;var pnc;var wto;var wtc;var sro;var src;var czo;var czc;var pto;var ptc;var sbo;var sbc;
 
-        termlist();
+
         userDetail();
         popoverDetail();
-        userAccess()
+        userAccess();
 window.onload = function() {
         startTime();
 }
@@ -179,7 +179,7 @@ $("#clients-toggle").addClass( "chosen" );
         $("#main-toggle").toggleClass( "togglemain", 550, "linear" );
         $("#sidebar-toggle").addClass( "hid" );
         }
-    });   
+    });
 });
 
 function getFreshEvents(){
@@ -608,7 +608,7 @@ function seefree(){
 function newUser(){
 	$('#modalNewUser').modal('show');
         }
-function userAccess(){        
+function userAccess(){
         $.ajax({
 		url: 'ajax/userAccess.php',
 		type: 'POST',

@@ -103,6 +103,10 @@ draggable();
 		    		success: function(response){
 		    			event.id = response.eventid;
 							event.end = response.enddate;
+							id=event.id;
+							endwait(event.idc);
+							// pickService(id);
+							editEventNew(id);
 						},
 		    		error: function(e){
 		    			console.log(e.responseText);
@@ -110,9 +114,7 @@ draggable();
 		    	});
 				$('#calendar').fullCalendar('updateEvent',event);
 				console.log(event);
-				id=event.id;
-				endwait(event.idc);
-				pickService(id);
+
 				getFreshEvents();
 			},
 			eventDrop: function(event, delta, revertFunc) {
@@ -221,6 +223,7 @@ draggable();
       });
 }
 	$(document).ready(function() {
+		termlist();
 		drawCallendar();
 		waitplz();
 		$('#wait').droppable({
