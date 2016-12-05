@@ -224,7 +224,7 @@ function draggable() {
 	 url: "ajax/draggable.php",
 	 success: function(data){
 		 $('#lista').html(data);
-		 $('#external-events .fc-event').each(function() {
+		 $('.fc-event').each(function() {
 
 			 // store data so the calendar knows to render an event upon drop
 			 $(this).data('event', {
@@ -259,7 +259,7 @@ function waitplz() {
 	 url: "ajax/recivewaiting.php",
 	 success: function(data){
 		 $('#listaw').html(data);
-		 $('#external-events .fc-event').each(function() {
+		 $('.pending_customer').each(function() {
 
 			 // store data so the calendar knows to render an event upon drop
 			 $(this).data('event', {
@@ -270,8 +270,8 @@ function waitplz() {
 
 			 // make the event draggable using jQuery UI
 			 $(this).draggable({
-//                                start: function( ) {$("#wait-delete").show("slide", 100);},
-//                                stop: function( ) {$("#wait-delete").hide("slide", 1000);},
+                               start: function() {$("#wait_delete").show("slide", 100);},
+                               stop: function() {$("#wait_delete").hide("slide", 1000);},
 				 revert: true,      // will cause the event to go back to its
 				 revertDuration: 0,  //  original position after the drag
 			 });
