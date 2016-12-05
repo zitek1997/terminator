@@ -11,7 +11,6 @@ $http.post('/ajax/login.php',{"login":info.login,"pass":info.pass})
   }else{
     info.login="";
     info.pass="";
-    alert("Błędne dane logowania");
   }
 
 });
