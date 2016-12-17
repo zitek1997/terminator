@@ -29,6 +29,7 @@ if($x==1)
     $_SESSION['nazwisko']=$usr['LNAME'];
     $_SESSION['email']=$usr['EMAIL'];
     $_SESSION['phone']=$usr['PHONE'];
+    $_SESSION['timetab_id']=$usr['ID'];
   }
 }else{
   $_SESSION['logerr']=1;

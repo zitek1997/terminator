@@ -105,6 +105,8 @@ draggable();
 							event.end = response.enddate;
 							id=event.id;
 							endwait(event.idc);
+							$('#calendar').fullCalendar('updateEvent',event);
+							console.log(event);
 							// pickService(id);
 							editEventNew(id);
 						},
@@ -112,8 +114,7 @@ draggable();
 		    			console.log(e.responseText);
 		    		}
 		    	});
-				$('#calendar').fullCalendar('updateEvent',event);
-				console.log(event);
+
 
 				getFreshEvents();
 			},
