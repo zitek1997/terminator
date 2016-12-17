@@ -12,12 +12,12 @@ $freetimes = array();
 $quo=count($evs);
 for($key=0;$key<$quo;$key++)
 {
-  if($key!=0 && $key!=$quo-1)
+  if($key!=0)
   {
     $first = $evs[$key-1]['enddate'];
     $snd = $evs[$key]['startdate'];
     $firsto = strtotime($first);
-    $firsto = strtotime("+5minutes", $firsto);
+    $firsto = strtotime("+5 minutes", $firsto);
     $sndo = strtotime($snd);
     if($sndo - $firsto > 0)
     {
@@ -26,13 +26,15 @@ for($key=0;$key<$quo;$key++)
         $freetimes[$key] = $first;
       }
     }
-  }else if($key==$quo-1){
-    $endo = $evs[$key]['enddate'];
-    $freetimes[$key] = $endo;
-  }else if($key==0){
-    $first = $nowo;
+    if($key==$quo-1)
+    {
+      $endo = $evs[$key]['enddate'];
+      $freetimes[$key+1] = $endo;
+    }
+  }else if($key==0)
+  {
     $snd = $evs[$key]['startdate'];
-    $firsto = strtotime("+5minutes", $now);
+    $firsto = strtotime("+5 minutes", $now);
     $sndo = strtotime($snd);
     if($sndo - $firsto > 0)
     {
