@@ -6,7 +6,7 @@ http://projekt.itcave.pl/
 ==============================
 ##- Wolne terminy (ASAP) ✓
 ##- System powiadomień email i sms (ASAP)
-##- Karty klientów (historia wizyt) (ASAP)
+##- Karty klientów (historia wizyt) (ASAP) - zrobiona tabela historii
 ==============================
 ##- Custom eventy
 ##- Edycja konta + obsługa avatarów
