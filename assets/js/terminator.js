@@ -617,3 +617,27 @@ function userAccess(){
 		}
 	});
 }
+
+
+function setDefaults(){
+	$('#defaults').modal('show');
+	$.ajax({
+		url: 'ajax/NOTdefaults.php',
+		type: 'POST',
+		success: function(data){
+			$("#setDefaults").html(data);
+		}
+	});
+}
+
+
+function saveDefaults(){
+	subject = document.getElementById("defTitle").value;
+	message = document.getElementById("defMess").value;
+	headers = document.getElementById("defHead").value;
+	$.ajax({
+		url: 'ajax/NOTdefUP.php',
+		type: 'POST',
+		data: "sub="+subject+"&mes="+message+"&head="+headers,
+	});
+}
