@@ -641,3 +641,12 @@ function saveDefaults(){
 		data: "sub="+subject+"&mes="+message+"&head="+headers,
 	});
 }
+
+function MaddClient(){
+	document.getElementById("empForm").reset();
+	$('#MaddClient').modal('show');
+}
+
+function MaddClientClose(){
+	$('#MaddClient').modal('hide');
+}
