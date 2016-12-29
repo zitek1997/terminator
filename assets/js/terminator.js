@@ -4,10 +4,6 @@ var currentMousePos = {
 };
 var pno;var pnc;var wto;var wtc;var sro;var src;var czo;var czc;var pto;var ptc;var sbo;var sbc;
 
-userDetail();
-popoverDetail();
-userAccess();
-
 window.onload = function() {
         startTime();
 }
@@ -180,6 +176,10 @@ $("#clients-toggle").addClass( "chosen" );
         $("#sidebar-toggle").addClass( "hid" );
         }
     });
+
+		userDetail();
+		popoverDetail();
+		userAccess();
 });
 
 function getFreshEvents(){
@@ -652,5 +652,12 @@ function MaddClientClose(){
 }
 
 function seeTheHistory(){
-	
+	$.ajax({
+		url: "ajax/seeTheHistory.php",
+		type: "POST",
+		success: function(data){
+			$("#seeTheHistory").html(data);
+			$('#sTH').modal('show');
+		}
+	});
 }

@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html ng-app="crudApp">
 <head>
-        <!-- Custom styles for this template -->
-
-        <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/assets/theme/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/assets/theme/ie-emulation-modes-warning.js"></script>
+<!-- Custom styles for this template -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="/assets/theme/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link href="/assets/theme/dashboard.css" rel="stylesheet">
@@ -22,6 +19,7 @@
 <link href='assets/css/fullcalendar.css' rel='stylesheet' />
 <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
 <link href='assets/css/bootstrap-material-datetimepicker.css' rel='stylesheet' />
+<script src="/assets/theme/ie-emulation-modes-warning.js"></script>
 <script src='assets/js/moment.min.js'></script>
 <script src='assets/js/jquery.min.js'></script>
 <script src='assets/js/jquery-ui.min.js'></script>
@@ -121,136 +119,135 @@
 </div>
 
 <div id="modalClient" class="modal fade" role="dialog">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<h4 class="modal-title">Edycja wydarzenia</h4>
-		</div>
-		<div class="modal-body">
-      <form name='modalClient'>
-        ID:<input type="text" name="id" class="form-control" value="" disabled></input><br>
-        Imię:<input type="text" name="imie" class="form-control" value=""></input><br>
-        Nazwisko:<input type="text" class="form-control" name="nazwisko" value=""></input><br>
-        Tel:<input type="text" class="form-control" name="tel" value=""></input><br>
-        e-mail:<input type="email" class="form-control" name="email" value=""></input><br>
-        Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
-      </form>
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-danger" data-dismiss="modal" onClick="cDel()">SKASUJ KLIENTA</button>
-			<button type="button" class="btn btn-success" data-dismiss="modal" onClick="cSave()">Zapisz</button>
-		</div>
-	</div>
-</div>
+  <div class="modal-dialog">
+	 <div class="modal-content">
+		  <div class="modal-header">
+			   <button type="button" class="close" data-dismiss="modal">&times;</button>
+			   <h4 class="modal-title">Edycja wydarzenia</h4>
+		  </div>
+		  <div class="modal-body">
+        <form name='modalClient'>
+          ID:<input type="text" name="id" class="form-control" value="" disabled></input><br>
+          Imię:<input type="text" name="imie" class="form-control" value=""></input><br>
+          Nazwisko:<input type="text" class="form-control" name="nazwisko" value=""></input><br>
+          Tel:<input type="text" class="form-control" name="tel" value=""></input><br>
+          e-mail:<input type="email" class="form-control" name="email" value=""></input><br>
+          Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
+        </form>
+		  </div>
+		  <div class="modal-footer">
+			   <button type="button" class="btn btn-danger" data-dismiss="modal" onClick="cDel()">SKASUJ KLIENTA</button>
+			   <button type="button" class="btn btn-success" data-dismiss="modal" onClick="cSave()">Zapisz</button>
+		  </div>
+	 </div>
+  </div>
 </div>
 
 <div id="modal" class="modal fade" role="dialog">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Edycja wydarzenia</h4>
-    </div>
-    <div class="modal-body" id="eventChange"></div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal" id="sawe" onclick="save();">Zapisz</button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edycja wydarzenia</h4>
+      </div>
+      <div class="modal-body" id="eventChange"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="sawe" onclick="save();">Zapisz</button>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <div id="defaults" class="modal fade" role="dialog">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Edycja domyślnych opcji powiadomień</h4>
-    </div>
-    <div class="modal-body" id="setDefaults"></div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal" id="saveDefaults" onclick="saveDefaults();">Zapisz</button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edycja domyślnych opcji powiadomień</h4>
+      </div>
+      <div class="modal-body" id="setDefaults"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="saveDefaults" onclick="saveDefaults();">Zapisz</button>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <div id="modalService" class="modal fade" role="dialog">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Wybierz usługę</h4>
-    </div>
-    <div class="modal-body" id="eventService"></div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal" id="sservice" onclick="crservice("e");">Zapisz</button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Wybierz usługę</h4>
+      </div>
+      <div class="modal-body" id="eventService"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="sservice" onclick="crservice("e");">Zapisz</button>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <div id="modalWH" class="modal fade" role="dialog">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Godziny pracy</h4>
-    </div>
-    <div class="modal-body" id="workHours"></div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal" id="shours" onclick="saveHours();">Zapisz</button>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Godziny pracy</h4>
+      </div>
+      <div class="modal-body" id="workHours"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="shours" onclick="saveHours();">Zapisz</button>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <div id="MaddClient" class="modal fade" role="dialog">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Dodaj klienta</h4>
-    </div>
-    <div class="modal-body" ng-controller="DbController">
-      <form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="addClient(empInfo);">
-      	<div class="form-group">
-      		<label for="Imie">Imie:</label>
-      		<input type="text" name="emp_fname" class="form-control" placeholder="Wpisz Imię" ng-model="empInfo.fname" autofocus required />
-      	</div>
-      	<div class="form-group">
-      		<p class="text-danger" ng-show="empList.emp_fname.$invalid && empList.emp_fname.$dirty">Błąd</p>
-      	</div>
-      	<div class="form-group">
-      		<label for="Nazwisko">Nazwisko:</label>
-      		<input type="text" name="emp_lname" class="form-control" placeholder="Wpisz Nazwisko" ng-model="empInfo.lname" autofocus required />
-      	</div>
-      	<div class="form-group">
-      		<p class="text-danger" ng-show="empList.emp_lname.$invalid && empList.emp_lname.$dirty">Błąd</p>
-      	</div>
-        <div class="form-group">
-      		<label for="Email">Email:</label>
-      		<input type="email" name="emp_email" class="form-control" placeholder="Wpisz email" ng-model="empInfo.email" autofocus required />
-      	</div>
-      	<div class="form-group">
-      		<p class="text-danger" ng-show="empList.emp_email.$invalid && empList.emp_email.$dirty">Błąd</p>
-      	</div>
-      	<div class="form-group">
-      		<label for="Phone">Telefon:</label>
-      		<input type="text" name="emp_phone" class="form-control" placeholder="Wpisz numer" ng-model="empInfo.phone" autofocus required />
-      	</div>
-      	<div class="form-group">
-      		<p class="text-danger" ng-show="empList.emp_phone.$invalid && empList.emp_phone.$dirty">Błąd</p>
-      	</div>
-      	<div class="form-group">
-          <button class="btn btn-warning" ng-disabled="empList.$invalid" onclick="MaddClientClose();">Dodaj</button>
-      	</div>
-      </form>
-    </div>
-    <div class="modal-footer">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Dodaj klienta</h4>
+      </div>
+      <div class="modal-body" ng-controller="DbController">
+        <form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="addClient(empInfo);">
+          <div class="form-group">
+      		  <label for="Imie">Imie:</label>
+      		  <input type="text" name="emp_fname" class="form-control" placeholder="Wpisz Imię" ng-model="empInfo.fname" autofocus required />
+      	  </div>
+      	  <div class="form-group">
+            <p class="text-danger" ng-show="empList.emp_fname.$invalid && empList.emp_fname.$dirty">Błąd</p>
+          </div>
+          <div class="form-group">
+            <label for="Nazwisko">Nazwisko:</label>
+            <input type="text" name="emp_lname" class="form-control" placeholder="Wpisz Nazwisko" ng-model="empInfo.lname" autofocus required />
+          </div>
+          <div class="form-group">
+            <p class="text-danger" ng-show="empList.emp_lname.$invalid && empList.emp_lname.$dirty">Błąd</p>
+          </div>
+          <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="email" name="emp_email" class="form-control" placeholder="Wpisz email" ng-model="empInfo.email" autofocus required />
+          </div>
+          <div class="form-group">
+            <p class="text-danger" ng-show="empList.emp_email.$invalid && empList.emp_email.$dirty">Błąd</p>
+          </div>
+          <div class="form-group">
+            <label for="Phone">Telefon:</label>
+            <input type="text" name="emp_phone" class="form-control" placeholder="Wpisz numer" ng-model="empInfo.phone" autofocus required />
+          </div>
+          <div class="form-group">
+            <p class="text-danger" ng-show="empList.emp_phone.$invalid && empList.emp_phone.$dirty">Błąd</p>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-warning" ng-disabled="empList.$invalid" onclick="MaddClientClose();">Dodaj</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer"></div>
     </div>
   </div>
-</div>
 </div>
 
 <div id="modalNewUser" class="modal fade" role="dialog">
@@ -322,6 +319,19 @@
       <div class="popover-av-content-in-in"><div class="popover-av-av"></div><p id="popover-detail" class="popover-av-p"></p></div>
       <div class="popover-button-av av left-av" onclick=""><p class="popover_p">Edycja konta</p></div>
       <div class="popover-button-av av right-av" onclick="logOut()"><p class="popover_p">Wyloguj się</p></div>
+  </div>
+</div>
+
+<div id="sTH" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Historia usług</h4>
+      </div>
+      <div class="modal-body" id="seeTheHistory"></div>
+      <div class="modal-footer"></div>
+    </div>
   </div>
 </div>
 
