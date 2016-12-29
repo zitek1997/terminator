@@ -327,10 +327,43 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Historia usług</h4>
+        <button type="button" class="close" data-dismiss="modal" onclick="closeTheHistory();">&times;</button>
+        <h4 class="modal-title">Karty klientów</h4>
       </div>
       <div class="modal-body" id="seeTheHistory"></div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<div id="KKK" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" onclick="">&times;</button>
+        <h4 class="modal-title">Karty klientów</h4>
+      </div>
+      <div class="modal-body" id="ShowMeYourCards">
+        Imię i Nazwisko:<br>
+        <input type="text" class="form-control" value="" id="cardName" disabled/><br>
+        e-mail:<br>
+        <input type="text" class="form-control" value="" id="cardEmail" disabled/><br>
+        Numer telefonu:<br>
+        <input type="text" class="form-control" value="" id="cardTel" disabled/><br>
+        Adres:<br>
+        <input type="text" class="form-control" value="" id="cardAdres" disabled/><br>
+        <table id="cardHistory" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Usługa</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
       <div class="modal-footer"></div>
     </div>
   </div>

@@ -237,7 +237,7 @@ function draggable() {
                                 stop: function( ) {$("#wait").hide("slide", 1000);},
 				 revert: true,      // will cause the event to go back to its
 				 revertDuration: 0,  //  original position after the drag
-                                 containment: "body"
+         containment: "body"
 			 });
 
 		 });
@@ -288,9 +288,9 @@ function waitplz() {
 function endwait(id){
 	$.ajax({
 		type: "POST",
-		 url: "ajax/endwait.php",
-		 data: "id="+id,
-		 success: function(data){
+		url: "ajax/endwait.php",
+		data: "id="+id,
+		success: function(data){
 			 waitplz();
 		 }
 	});
@@ -660,4 +660,44 @@ function seeTheHistory(){
 			$('#sTH').modal('show');
 		}
 	});
+}
+
+function closeTheHistory(){
+	$('#sTH').modal('hide');
+	$("#seeTheHistory").html("Historia HERE");
+}
+
+function makeSomeMagic(tab){
+	len = tab.length;
+	table = document.getElementById("cardHistory").getElementsByTagName('tbody')[0];
+	new_tbody = document.createElement('tbody');
+	table.parentNode.replaceChild(new_tbody, table);
+	table = document.getElementById("cardHistory").getElementsByTagName('tbody')[0];
+	for(x=0;x<len;x++){
+		newRow   = table.insertRow(table.rows.length);
+		newCellS  = newRow.insertCell(0);
+		newCellD  = newRow.insertCell(1);
+		newDate  = document.createTextNode(tab[x]["opis"]);
+		newService  = document.createTextNode(tab[x]["startdate"]);
+		newCellD.appendChild(newDate);
+		newCellS.appendChild(newService);
+	}
+}
+
+function openDir(id){
+	cards = document.getElementById('cards').value;
+	c = JSON.parse(cards);
+	card = c[id];
+	console.log(card);
+	hist = card["history"];
+	name = card["name"];
+	mail = card["poczta"];
+	phone = card["tel"];
+	adres = card["adres"];
+	makeSomeMagic(hist);
+	document.getElementById("cardName").value = name;
+	document.getElementById("cardEmail").value = mail;
+	document.getElementById("cardTel").value = phone;
+	document.getElementById("cardAdres").value = adres;
+	$('#KKK').modal('show');
 }
