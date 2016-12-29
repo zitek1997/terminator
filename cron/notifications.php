@@ -44,6 +44,7 @@ foreach($noti as $ts){
   $headers = $def['headers'];
   // $headers = str_replace("^imie^", $name, $headers);
   // $headers = str_replace("^mail^", $mail, $headers);
+  // $headers .= '\r\n'."From: Nazwa Firmy <itcave@itcave.nazwa.pl>";
   mail($mail,$topic,$msg,$headers);
   $where = "id = $id";
   $array = array("SENT" => 1);

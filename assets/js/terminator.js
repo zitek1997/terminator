@@ -4,18 +4,20 @@ var currentMousePos = {
 };
 var pno;var pnc;var wto;var wtc;var sro;var src;var czo;var czc;var pto;var ptc;var sbo;var sbc;
 
+userDetail();
+popoverDetail();
+userAccess();
 
-        userDetail();
-        popoverDetail();
-        userAccess();
 window.onload = function() {
         startTime();
 }
-    function checkTime(i) {
+
+function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
-    }
-    function startTime() {
+}
+
+function startTime() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -24,9 +26,7 @@ window.onload = function() {
     s = checkTime(s);
     document.getElementById('timer').innerHTML = h + ":" + m + ":" + s;
     var t = setTimeout(startTime, 500);
-    }
-
-
+}
 
 $(document).ready(function(){
         $("#wait").hide();
@@ -216,8 +216,6 @@ function isClientOverDiv(){
 	}
 }
 
-
-
 function draggable() {
 	$.ajax({
 	 type: "POST",
@@ -307,6 +305,7 @@ function termlist() {
 	 }
  });
 }
+
 function userDetail() {
 	$.ajax({
 	 type: "POST",
@@ -316,6 +315,7 @@ function userDetail() {
 	 }
  });
 }
+
 function popoverDetail() {
 	$.ajax({
 	 type: "POST",
@@ -325,6 +325,7 @@ function popoverDetail() {
 	 }
  });
 }
+
 function pickTerm(id){
     	$.ajax({
 	 type: "POST",
@@ -336,6 +337,7 @@ function pickTerm(id){
 	 }
  });
 }
+
 function save(){
 
 			event = evenement;
@@ -381,7 +383,8 @@ document.forms.modalClient.adres.value=user.adres;
 $('#modalClient').modal('show');
 
 }
-});}
+});
+}
 
 function cSave(){
 	id=document.forms.modalClient.id.value;
@@ -409,8 +412,7 @@ draggable();
 // $('#calendar').fullCalendar( 'refetchEvents' );
 }
 
-function weDel(id)
-{
+function weDel(id){
 	$(".popover").hide();
 	$.ajax({
 		url: 'process.php',
@@ -428,6 +430,7 @@ function weDel(id)
 		}
 	});
 }
+
 
 function cDel(){
 	id=document.forms.modalClient.id.value;
@@ -451,12 +454,9 @@ getFreshEvents();
 	document.forms.modalClient.adres.value="";
 draggable();
 
-	}
+}
 
-
-
-function logOut()
-{
+function logOut(){
 	$.ajax({
 		url: 'ajax/logout.php',
 		success: function(data){
@@ -605,9 +605,11 @@ function seefree(){
 		}
 	});
 }
+
 function newUser(){
 	$('#modalNewUser').modal('show');
-        }
+}
+
 function userAccess(){
         $.ajax({
 		url: 'ajax/userAccess.php',
@@ -617,7 +619,6 @@ function userAccess(){
 		}
 	});
 }
-
 
 function setDefaults(){
 	$('#defaults').modal('show');
@@ -629,7 +630,6 @@ function setDefaults(){
 		}
 	});
 }
-
 
 function saveDefaults(){
 	subject = document.getElementById("defTitle").value;
@@ -649,4 +649,8 @@ function MaddClient(){
 
 function MaddClientClose(){
 	$('#MaddClient').modal('hide');
+}
+
+function seeTheHistory(){
+	
 }
