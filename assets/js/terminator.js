@@ -183,18 +183,7 @@ $("#clients-toggle").addClass( "chosen" );
 });
 
 function getFreshEvents(){
-	$('#calendar').fullCalendar('removeEvents');
-	$.ajax({
-		url: 'process.php',
-				type: 'POST', // Send post data
-				data: 'type=fetch',
-				async: false,
-				success: function(s){
-					freshevents = s;
-				}
-	});
-	$('#calendar').fullCalendar('addEventSource', JSON.parse(freshevents));
-	// alert("getFreshEvents");
+	$('#calendar').fullCalendar( 'refetchEvents' );
 }
 
 function isElemOverDiv() {

@@ -35,7 +35,7 @@ function drawCallendar(){
       }
 		},
 		locale: 'pl',
-		events: JSON.parse(json_events),
+		// events: JSON.parse(json_events),
 		//events: [{"id":"14","title":"New Event","start":"2015-01-24T16:00:00+04:00","allDay":false}],
 		utc: true,
 		header: {
@@ -80,6 +80,19 @@ function drawCallendar(){
 				start: sbo,
 				end: sbc
 			},
+		],
+		eventSources: [
+			{
+				url: 'process.php',
+				type: 'POST',
+				data: {type: "fetch"},
+			},
+			{
+				url: 'ajax/holidays.php',
+				type: 'POST',
+				color: 'red',
+				rendering: 'background'
+			}
 		],
 
 		eventReceive: function(event){
@@ -187,8 +200,16 @@ function drawCallendar(){
 			desc = event.opis;
 			if(event.end != null){
 				end = event.end.format("HH:mm");
+			}else if(event.allDay == true){
+				end = "23:59";
 			}else{
 				end = "??:??";
+			}
+			if(desc == null && event.allDay == true && event.end == null){
+				desc = " ";
+				contento = '<div id="popover-event-content"><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p></div></div>'
+			}else{
+				contento = '<div id="popover-event-content"><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p><p class="popover-text-time">'+start+' ••••• '+end+'</p><p class="popover-text-desc">'+desc+'</p><div class="popover-button event left" id="editEvent" onclick="editEventNew('+event.id+')"><p class="popover_p">Edycja</p></div><div class="popover-button event right" onclick="weDel('+event.id+')"><p class="popover_p">Usuń</p></div></div></div>'
 			}
       element.clickover({
         global_close: true,
@@ -201,7 +222,7 @@ function drawCallendar(){
         	$('.popover').css('display','table');
         },
         template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
-        content: '<div id="popover-event-content"><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p><p class="popover-text-time">'+start+' ••••• '+end+'</p><p class="popover-text-desc">'+desc+'</p><div class="popover-button event left" id="editEvent" onclick="editEventNew('+event.id+')"><p class="popover_p">Edycja</p></div><div class="popover-button event right" onclick="weDel('+event.id+')"><p class="popover_p">Usuń</p></div></div></div>'
+        content: contento,
 			});
 		}
 	});
