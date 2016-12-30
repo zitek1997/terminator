@@ -290,7 +290,7 @@ body{
     background: #176e5e;
     cursor: pointer;
 }
-.mnotify:hover{
+.mcards:hover{
     background: #17526e;
     cursor: pointer;
 }
@@ -851,7 +851,7 @@ body{
     background: #176e5e;
     cursor: pointer;
 }
-.mnotify:hover{
+.mcards:hover{
     background: #17526e;
     cursor: pointer;
 }

@@ -38,14 +38,14 @@ $(document).ready(function(){
 $("#clients-toggle").addClass( "chosen" );
         $("#clients").show();
         $("#terms").hide();
-        $("#notify").hide();
         $("#options").hide();
         $("#ctime").hide();
         $("#tokcircle").hide();
+        $("#cards").hide();
     $("#clients-toggle").click(function(){
         $("#clients-toggle").addClass( "chosen" );
         $("#terms-toggle").removeClass( "chosen" );
-        $("#notify-toggle").removeClass( "chosen" );
+        $("#cards-toggle").removeClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
         $("#ctime-toggle").removeClass( "chosen" );
         $("#tokcircle-toggle").removeClass( "chosen" );
@@ -53,7 +53,7 @@ $("#clients-toggle").addClass( "chosen" );
         $("#terms").hide();
         $("#ctime").hide();
         $("#tokcircle").hide();
-        $("#notify").hide();
+        $("#cards").hide();
         $("#options").hide();
         if ($("#sidebar-toggle").hasClass("hid")) {
         $("#head-brand-toggle").show("slide", 550),
@@ -67,13 +67,13 @@ $("#clients-toggle").addClass( "chosen" );
         $("#terms-toggle").removeClass( "chosen" );
         $("#ctime-toggle").addClass( "chosen" );
         $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#notify-toggle").removeClass( "chosen" );
+        $("#cards-toggle").removeClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
         $("#clients").hide();
         $("#ctime").show();
         $("#tokcircle").hide();
         $("#terms").hide();
-        $("#notify").hide();
+        $("#cards").hide();
         $("#options").hide();
         if ($("#sidebar-toggle").hasClass("hid")) {
         $("#head-brand-toggle").show("slide", 550),
@@ -87,13 +87,13 @@ $("#clients-toggle").addClass( "chosen" );
         $("#terms-toggle").addClass( "chosen" );
         $("#ctime-toggle").removeClass( "chosen" );
         $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#notify-toggle").removeClass( "chosen" );
+        $("#cards-toggle").removeClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
         $("#clients").hide();
         $("#terms").show();
         $("#ctime").hide();
         $("#tokcircle").hide();
-        $("#notify").hide();
+        $("#cards").hide();
         $("#options").hide();
         if ($("#sidebar-toggle").hasClass("hid")) {
         $("#head-brand-toggle").show("slide", 550),
@@ -107,13 +107,13 @@ $("#clients-toggle").addClass( "chosen" );
         $("#terms-toggle").removeClass( "chosen" );
         $("#ctime-toggle").removeClass( "chosen" );
         $("#tokcircle-toggle").addClass( "chosen" );
-        $("#notify-toggle").removeClass( "chosen" );
+        $("#cards-toggle").removeClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
         $("#clients").hide();
         $("#ctime").hide();
         $("#tokcircle").show();
         $("#terms").hide();
-        $("#notify").hide();
+        $("#cards").hide();
         $("#options").hide();
         if ($("#sidebar-toggle").hasClass("hid")) {
         $("#head-brand-toggle").show("slide", 550),
@@ -122,18 +122,18 @@ $("#clients-toggle").addClass( "chosen" );
         $("#sidebar-toggle").removeClass( "hid" );
         }
     });
-    $("#notify-toggle").click(function(){
+    $("#cards-toggle").click(function(){
         $("#clients-toggle").removeClass( "chosen" );
         $("#terms-toggle").removeClass( "chosen" );
         $("#ctime-toggle").removeClass( "chosen" );
         $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#notify-toggle").addClass( "chosen" );
+        $("#cards-toggle").addClass( "chosen" );
         $("#options-toggle").removeClass( "chosen" );
         $("#clients").hide();
         $("#ctime").hide();
         $("#tokcircle").hide();
         $("#terms").hide();
-        $("#notify").show();
+        $("#cards").show();
         $("#options").hide();
         if ($("#sidebar-toggle").hasClass("hid")) {
         $("#head-brand-toggle").show("slide", 550),
@@ -147,13 +147,13 @@ $("#clients-toggle").addClass( "chosen" );
         $("#terms-toggle").removeClass( "chosen" );
         $("#ctime-toggle").removeClass( "chosen" );
         $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#notify-toggle").removeClass( "chosen" );
+        $("#cards-toggle").removeClass( "chosen" );
         $("#options-toggle").addClass( "chosen" );
         $("#clients").hide();
         $("#ctime").hide();
         $("#tokcircle").hide();
         $("#terms").hide();
-        $("#notify").hide();
+        $("#cards").hide();
         $("#options").show();
         if ($("#sidebar-toggle").hasClass("hid")) {
         $("#head-brand-toggle").show("slide", 550),
