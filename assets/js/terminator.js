@@ -366,24 +366,24 @@ function save(){
 
 function cEdit(id){
 	$.ajax({
-url: 'ajax/cEdit.php',
-data: 'id='+id,
-type: 'POST',
-dataType: 'json',
-success: function(r){
+		url: 'ajax/cEdit.php',
+		data: 'id='+id,
+		type: 'POST',
+		dataType: 'json',
+		success: function(r){
 
-// user = JSON.parse(r);
-user = r;
-document.forms.modalClient.id.value=user.id;
-document.forms.modalClient.imie.value=user.imie;
-document.forms.modalClient.nazwisko.value=user.nazwisko;
-document.forms.modalClient.tel.value=user.tel;
-document.forms.modalClient.email.value=user.email;
-document.forms.modalClient.adres.value=user.adres;
-$('#modalClient').modal('show');
+			// user = JSON.parse(r);
+			user = r;
+			document.forms.modalClient.id.value=user.id;
+			document.forms.modalClient.imie.value=user.imie;
+			document.forms.modalClient.nazwisko.value=user.nazwisko;
+			document.forms.modalClient.tel.value=user.tel;
+			document.forms.modalClient.email.value=user.email;
+			document.forms.modalClient.adres.value=user.adres;
+			$('#modalClient').modal('show');
 
-}
-});
+		}
+	});
 }
 
 function cSave(){
@@ -394,14 +394,14 @@ function cSave(){
 	em=document.forms.modalClient.email.value;
 	ad=document.forms.modalClient.adres.value;
 	$.ajax({
-url: 'ajax/cSave.php',
-data: 'id='+id+'&imie='+im+'&nazwisko='+na+'&tel='+te+'&email='+em+'&adres='+ad,
-type: 'POST',
-dataType: 'json',
-// success: function(){}
-});
-draggable();
-// $('#modalClient').modal('hide');
+		url: 'ajax/cSave.php',
+		data: 'id='+id+'&imie='+im+'&nazwisko='+na+'&tel='+te+'&email='+em+'&adres='+ad,
+		type: 'POST',
+		dataType: 'json',
+		// success: function(){}
+	});
+	draggable();
+	// $('#modalClient').modal('hide');
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
 	document.forms.modalClient.nazwisko.value="";
@@ -409,7 +409,7 @@ draggable();
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
 	// setTimeout(draggable(), 3000);
-// $('#calendar').fullCalendar( 'refetchEvents' );
+	// $('#calendar').fullCalendar( 'refetchEvents' );
 }
 
 function weDel(id){
@@ -431,20 +431,16 @@ function weDel(id){
 	});
 }
 
-
 function cDel(){
 	id=document.forms.modalClient.id.value;
 	$.ajax({
-url: 'ajax/cDel.php',
-data: 'id='+id+'&idc='+id,
-type: 'POST',
-dataType: 'json',
-// success: function(){}
-});
-
-
-
-getFreshEvents();
+		url: 'ajax/cDel.php',
+		data: 'id='+id+'&idc='+id,
+		type: 'POST',
+		dataType: 'json',
+		// success: function(){}
+	});
+	getFreshEvents();
 	cliid=""
 	document.forms.modalClient.id.value="";
 	document.forms.modalClient.imie.value="";
@@ -452,8 +448,7 @@ getFreshEvents();
 	document.forms.modalClient.tel.value="";
 	document.forms.modalClient.email.value="";
 	document.forms.modalClient.adres.value="";
-draggable();
-
+	draggable();
 }
 
 function logOut(){
