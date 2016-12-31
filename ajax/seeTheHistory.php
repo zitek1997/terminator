@@ -22,5 +22,5 @@ foreach ($clients as $client){
   echo '<input type="button" class="btn btn-success dashbutton" name="showCH" onclick="openDir('.$id.')" value="'.$name.'"/>';
 }
 
-echo "<input type='hidden' id='cards' value='".json_encode($cards)."'/>";
+echo "<input type='hidden' id='cardsOfHistory' value='".json_encode($cards)."'/>";
 ?>

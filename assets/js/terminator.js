@@ -35,7 +35,7 @@ $(document).ready(function(){
           return $("#popover-av-content").html();
         }
     });
-$("#clients-toggle").addClass( "chosen" );
+		$("#clients-toggle").addClass( "chosen" );
         $("#clients").show();
         $("#terms").hide();
         $("#options").hide();
@@ -669,7 +669,7 @@ function makeSomeMagic(tab){
 }
 
 function openDir(id){
-	cards = document.getElementById('cards').value;
+	cards = document.getElementById('cardsOfHistory').value;
 	c = JSON.parse(cards);
 	card = c[id];
 	console.log(card);
