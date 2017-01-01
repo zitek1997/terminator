@@ -640,15 +640,15 @@ function seeTheHistory(){
 		url: "ajax/seeTheHistory.php",
 		type: "POST",
 		success: function(data){
-			$("#seeTheHistory").html(data);
-			$('#sTH').modal('show');
+			$("#cardsb").html(data);
+			// $('#sTH').modal('show');
 		}
 	});
 }
 
 function closeTheHistory(){
-	$('#sTH').modal('hide');
-	$("#seeTheHistory").html("Historia HERE");
+	// $('#sTH').modal('hide');
+	$("#cardsb").html("Historia HERE");
 }
 
 function makeSomeMagic(tab){
