@@ -9,8 +9,8 @@ foreach ($eve as $key => $fetch)
 	if ($repeat == 1){
 		$zero = $fetch['start'];
 		$one = strtotime($zero);
-		$month = date("d", $one);
-		$day = date("m", $one);
+		$month = date("n", $one);
+		$day = date("d", $one);
 		$year = date("Y");
 		$czas = mktime(0, 0, 0, $month, $day, $year);
 		$fetch['start'] = date("Y-m-d", $czas);

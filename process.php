@@ -10,8 +10,10 @@ if($type == 'new')
 	$startdate = $_POST['startdate'];
 	$startdate = strtotime($startdate);
 	$enddate = strtotime("+1 hour", $startdate);
+	$notidate = strtotime("-24 hours", $startdate);
 	$startdate = date("Y-m-d H:i:s",$startdate);
 	$enddate = date("Y-m-d H:i:s",$enddate);
+	$notidate =date("Y-m-d H:i:s",$notidate);
 	$title = $_POST['title'];
 	$idc = $_POST['idc'];
   $timetab_id = $_SESSION['timetab_id'];
@@ -23,6 +25,7 @@ if($type == 'new')
 		"opis" => " ",
     "timetab_id" => $timetab_id,
 		"idc" => $idc,
+		"noti_date" => $notidate,
 	);
 	$db->insert('calendar', $array);
 	$lastId = $db->lastInsertId();
@@ -37,14 +40,17 @@ if($type == 'change')
 	$enddate = $_POST['enddate'];
 	$startdate = strtotime($startdate);
 	$enddate = strtotime($enddate);
+	$notidate = strtotime("-24 hours", $startdate);
 	$startdate = date("Y-m-d H:i:s",$startdate);
 	$enddate = date("Y-m-d H:i:s",$enddate);
+	$notidate =date("Y-m-d H:i:s",$notidate);
 	$opis = $_POST['opis'];
 	$array = array(
 		'title' => $title,
 		'startdate' => $startdate,
 		'enddate' => $enddate,
 		'opis' => $opis,
+		"noti_date" => $notidate,
 	);
 	$where = "id = $eventid";
 	$update = $db->update('calendar', $array, $where);
@@ -61,13 +67,16 @@ if($type == 'resetdate')
 	$enddate = $_POST['end'];
 	$startdate = strtotime($startdate);
 	$enddate = strtotime($enddate);
+	$notidate = strtotime("-24 hours", $startdate);
 	$startdate = date("Y-m-d H:i:s",$startdate);
 	$enddate = date("Y-m-d H:i:s",$enddate);
+	$notidate =date("Y-m-d H:i:s",$notidate);
 	$eventid = $_POST['eventid'];
 	$array = array(
 		'title' => $title,
 		'startdate' => $startdate,
-		'enddate' => $enddate
+		'enddate' => $enddate,
+		"noti_date" => $notidate,
 	);
 	$where = "id = $eventid";
 	$update = $db->update('calendar', $array, $where);
@@ -107,7 +116,7 @@ if($type == 'fetch')
 	    $e['allDay'] = $allday;
 			$e['opis'] = $fetch['opis'];
 			$e['idc'] = $fetch['idc'];
-
+			$e['notidate'] = $fetch['noti_date'];
 	    array_push($events, $e);
 	}
 	echo json_encode($events);

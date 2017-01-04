@@ -336,16 +336,15 @@ function save(){
 			end = document.forms.modal.enddate.value;
 			opis = document.forms.modal.cSvc.value;
 			event.title = title;
-			event.start = start;
-			event.end = end;
+			event.start = moment(start).format("YYYY-MM-DD HH:mm:ss");
+			event.end =  moment(end).format("YYYY-MM-DD HH:mm:ss");
 			event.opis = opis;
 	    $.ajax({
 		url: 'process.php',
 		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,
 		type: 'POST',
 		success: function(response){
-			if(response.status == 'success'){
-	    				$('#calendar').fullCalendar('updateEvent',event);}
+			getFreshEvents();
 		},
 		error: function(e){
 			alert('Error processing your request: '+e.responseText);
@@ -453,9 +452,9 @@ function pickDate(){
 	starto = document.forms.modal.startdate.value;
 	endo = document.forms.modal.enddate.value;
 
-	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm", lang : 'pl'});
+	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm:ss", lang : 'pl'});
 
-	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
+	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm:ss", lang : 'pl'}).on('change', function(e, date)
 	{
 		$('#enddate').bootstrapMaterialDatePicker('setMinDate', date);
 	});
