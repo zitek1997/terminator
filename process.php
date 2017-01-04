@@ -55,7 +55,7 @@ if($type == 'change')
 	$where = "id = $eventid";
 	$update = $db->update('calendar', $array, $where);
 	if($update == 1)
-		{echo json_encode(array('status'=>'success'));}
+		{echo json_encode(array('status'=>'success','title'=>$title,'start'=>$startdate,'end'=>$enddate,'opis'=>$opis,'noti'=>$notidate));}
 	else
 		{echo json_encode(array('status'=>'failed'));}
 }

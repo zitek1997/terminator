@@ -184,6 +184,7 @@ $(document).ready(function(){
 
 function getFreshEvents(){
 	$('#calendar').fullCalendar( 'refetchEvents' );
+	console.log("refetchEvents");
 }
 
 function isElemOverDiv() {
@@ -335,21 +336,28 @@ function save(){
 			start = document.forms.modal.startdate.value;
 			end = document.forms.modal.enddate.value;
 			opis = document.forms.modal.cSvc.value;
-			event.title = title;
-			event.start = moment(start).format("YYYY-MM-DD HH:mm:ss");
-			event.end =  moment(end).format("YYYY-MM-DD HH:mm:ss");
-			event.opis = opis;
+			// event.title = title;
+			// // event.start = start;
+			// // event.end =  end;
+			// event.opis = opis;
 	    $.ajax({
 		url: 'process.php',
 		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,
 		type: 'POST',
-		success: function(response){
-			getFreshEvents();
+		success: function(r){
+			event.title = r.title;
+			event.start = r.start;
+			event.end = r.end;
+			event.opis = r.opis;
+			event.noti = r.noti;
+			$('#calendar').fullCalendar('updateEvent',event);
 		},
 		error: function(e){
 			alert('Error processing your request: '+e.responseText);
 		}
 	});
+
+		getFreshEvents();
 }
 
 function cEdit(id){
@@ -452,9 +460,9 @@ function pickDate(){
 	starto = document.forms.modal.startdate.value;
 	endo = document.forms.modal.enddate.value;
 
-	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm:ss", lang : 'pl'});
+	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm", lang : 'pl'});
 
-	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm:ss", lang : 'pl'}).on('change', function(e, date)
+	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
 	{
 		$('#enddate').bootstrapMaterialDatePicker('setMinDate', date);
 	});
