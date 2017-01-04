@@ -19,7 +19,16 @@ foreach ($clients as $client){
   $c['tel'] = $tel;
   $c['history'] = $history;
   $cards[$id] = $c;
-  echo '<input type="button" class="btn btn-success dashbutton" name="showCH" onclick="openDir('.$id.')" value="'.$name.'"/>';
+  // echo '<input type="button" class="btn btn-success dashbutton clientname" name="showCH" onclick="openDir('.$id.')" value="'.$name.'"/>';
+print <<<KOD
+  <div class="dashbutton">
+    <div class='btn btn-success btn-sm dashbutton' id="$id$name" onclick="openDir($id);">
+      <div class="clientname">
+        $name
+      </div>
+    </div>
+  </div>
+KOD;
 }
 
 echo "<input type='hidden' id='cardsOfHistory' value='".json_encode($cards)."'/>";

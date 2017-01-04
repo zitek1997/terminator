@@ -35,6 +35,9 @@
   <script src="lib/angular/angular.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/angular-script.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.fuzzysearch.js/0.1.0/list.fuzzysearch.js"></script>
+
 </head>
 
 <body>
@@ -104,10 +107,14 @@
         <div class="menu-title">Wolne terminy</div>
         <div id="icanfly"></div>
       </div>
+
       <div id="cards">
         <div class="menu-title">Karty klientów</div>
-          <div id="cardsb"></div>
+        <input type='hidden' id='cardsOfHistoryBU' value=''/>
+        <input class="search form-control serach-sidebar dashsearch" placeholder="Wyszukaj" />
+          <div id="cardsb" class="list"></div>
       </div>
+
       <div id="options">
         <div class="menu-title">Opcje</div>
         <input type="button" class="btn btn-danger dashbutton" name="sHours" onclick="setHours()" value="Godziny pracy"/>

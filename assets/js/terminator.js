@@ -639,9 +639,15 @@ function seeTheHistory(){
 	$.ajax({
 		url: "ajax/seeTheHistory.php",
 		type: "POST",
+		async: false,
 		success: function(data){
 			$("#cardsb").html(data);
 			// $('#sTH').modal('show');
+			$("cardsOfHistoryBU").val($("#cardsOfHistory").val());
+			var	options = {
+				valueNames: [ 'clientname' ]
+			};
+			var	clientList = new List('cards', options);
 		}
 	});
 }
@@ -669,7 +675,7 @@ function makeSomeMagic(tab){
 }
 
 function openDir(id){
-	cards = document.getElementById('cardsOfHistory').value;
+	cards = document.getElementById('cardsOfHistoryBU').value;
 	c = JSON.parse(cards);
 	card = c[id];
 	console.log(card);
