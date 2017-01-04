@@ -72,7 +72,7 @@
     <div id="tokcircle-toggle" class="menu-in mterms" onclick="seefree();">
       <span class="glyphicon glyphicon-ok-circle menu-icon" aria-hidden="true"></span>
     </div>
-    <div id="cards-toggle" class="menu-in mcards">
+    <div onclick="seeTheHistory();" id="cards-toggle" class="menu-in mcards">
       <span class="glyphicon glyphicon-list-alt menu-icon" aria-hidden="true"></span>
     </div>
     <div id="options-toggle" style="position:absolute; bottom: 0.2em;" class="menu-in moptions">
@@ -104,14 +104,14 @@
       </div>
       <div id="cards">
         <div class="menu-title">Karty klientów</div>
-<!--        <div id="seeTheHistory"></div>-->
+          <div id="cardsb"></div>
       </div>
       <div id="options">
         <div class="menu-title">Opcje</div>
         <input type="button" class="btn btn-danger dashbutton" name="sHours" onclick="setHours()" value="Godziny pracy"/>
         <input type="button" class="btn btn-danger dashbutton" name="newUser" onclick="newUser()" value="Dodaj pracownika"/>
         <input type="button" class="btn btn-danger dashbutton" name="sDef" onclick="setDefaults()" value="Opcje powiadomień"/>
-        <input type="button" class="btn btn-danger dashbutton" name="TeNoHistorie" onclick="seeTheHistory()" value="Historie klientów"/>
+        <!-- <input type="button" class="btn btn-danger dashbutton" name="TeNoHistorie" onclick="seeTheHistory()" value="Historie klientów"/> -->
       </div>
     </div>
   </div>

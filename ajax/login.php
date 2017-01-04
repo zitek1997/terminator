@@ -30,6 +30,11 @@ if($x==1)
     $_SESSION['email']=$usr['EMAIL'];
     $_SESSION['phone']=$usr['PHONE'];
     $_SESSION['timetab_id']=$usr['ID'];
+    if($usr['admin']==1){
+      $_SESSION['admin']=TRUE;
+    }else{
+      $_SESSION['admin']=FALSE;
+    }
   }
 }else{
   $_SESSION['logerr']=1;

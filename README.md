@@ -11,7 +11,7 @@ http://projekt.itcave.pl/
 ##- Custom eventy
 ##- Edycja konta + obsługa avatarów
 ##- Możliwość dodawania dni wolnych i świąt ✓
-##- Modal dodawania klienta
+##- Modal dodawania klienta ✓
 ##- Podział użytkowników (adminitsrator / zwykły)
 ==============================
 ##- Mobile CSS (ASAP)
