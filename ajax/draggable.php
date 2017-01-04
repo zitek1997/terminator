@@ -14,15 +14,10 @@ print <<<KOD
 
 
 
-        <div style="margin-top: 15px; margin-bottom: 8px;" class="row">
-            <div class="col-md-2 events">
-                <button onClick="cEdit('$id');" class="btn btn-primary btn-xs">✎</button>
-            </div>
-        <div class="col-md-10 events">
+        <div class="draggable-button">
                 <div class='fc-event dp-client' id="$id">
             <div class="name">
             $text
-            </div>
             </div>
             </div>
         </div>
