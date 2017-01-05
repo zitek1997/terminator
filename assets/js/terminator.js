@@ -223,11 +223,12 @@ function draggable() {
 
 			 // make the event draggable using jQuery UI
 			 $(this).draggable({
-                                start: function( ) {$("#wait").show("slide", 100);},
-                                stop: function( ) {$("#wait").hide("slide", 1000);},
+                                start: function(e, ui) {$("#wait").show("slide", 100),$(this).fadeTo( "slow" , 0.3), $(ui.helper).addClass("fc-event"); },
+                                stop: function( ) {$("#wait").hide("slide", 1000),$(this).fadeTo( "slow" , 1);},
 				 revert: true,      // will cause the event to go back to its
-				 revertDuration: 0,  //  original position after the drag
-         containment: "body"
+				 revertDuration: 600,  //  original position after the drag
+                                 helper: 'clone',
+                                containment: "body",
 			 });
 
 		 });
