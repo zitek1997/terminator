@@ -1,10 +1,16 @@
 <?php
 include("config.php");
-$sql="SELECT * FROM clients";
+$sql="SELECT * FROM clients ORDER BY LNAME ASC";
 $users=$db->selecto($sql);
 $l=count($users);
 print <<<KOD
-
+<div class="draggable-button">
+  <div class='fc-event dp-client' id="customEv">
+    <div class="name">
+      Nowy event
+    </div>
+  </div>
+</div>
 KOD;
 for($x=0;$x<$l;$x++)
 {

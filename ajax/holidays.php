@@ -23,5 +23,5 @@ foreach ($eve as $key => $fetch)
 	$e['allDay'] = $allday;
   array_push($events, $e);
 }
-// echo json_encode($events);
+echo json_encode($events);
 ?>

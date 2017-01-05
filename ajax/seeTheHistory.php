@@ -1,10 +1,10 @@
 <?php
 include("config.php");
-$clients = $db->selecto("SELECT * FROM clients");
+$clients = $db->selecto("SELECT * FROM clients ORDER BY LNAME ASC");
 $cards = array();
 foreach ($clients as $client){
   $id = $client['ID'];
-  $name = $client['FNAME']." ".$client['LNAME'];
+  $name = $client['LNAME']." ".$client['FNAME'];
   $email = $client['EMAIL'];
   $tel = $client['TEL'];
   $array = array(

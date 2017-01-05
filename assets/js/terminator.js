@@ -338,6 +338,9 @@ function save(){
 			start = document.forms.modal.startdate.value;
 			end = document.forms.modal.enddate.value;
 			opis = document.forms.modal.cSvc.value;
+			if (opis == "new"){
+				opis = document.forms.modal.neName.value;
+			}
 			// event.title = title;
 			// // event.start = start;
 			// // event.end =  end;
@@ -347,6 +350,7 @@ function save(){
 		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,
 		type: 'POST',
 		success: function(s){
+			console.log(s);
 			r = JSON.parse(s);
 			event.title = r.title;
 			event.start = r.start;

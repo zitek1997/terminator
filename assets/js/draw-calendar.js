@@ -118,7 +118,7 @@ function drawCallendar(){
 					$('#calendar').fullCalendar('updateEvent',event);
 					// getFreshEvents();
 					// console.log(event);
-					editEventNew(id);
+						editEventNew(id);
 				},
 		    error: function(e){
 		    	console.log(e.responseText);
@@ -257,27 +257,16 @@ $(document).ready(function() {
 	});
 });
 
-function editEvent(ev) {
-	$("#popover-event-content").hide();
-  event = events[ev];
-	$('#modal').modal('show');
-	evenement = event;
-	document.forms.modal.id.value=event.id;
-	document.forms.modal.ev.value=event.title;
-	document.forms.modal.startdate.value=event.start.format("YYYY-MM-DD HH:mm");
-	document.forms.modal.enddate.value=event.end.format("YYYY-MM-DD HH:mm");
-	document.forms.modal.opis.value=event.opis;
-	pickDate();
-}
 
 function editEventNew(ev) {
 	$(".popover").hide();
 	$('#modal').modal('show');
 	event = events[ev];
-	evenement = event;
+	evenement = event
+	ccc = event.idc;
 	$.ajax({
 		url: 'ajax/eventChange.php',
-		data: 'id='+ev,
+		data: 'id='+ev+"&idc="+ccc,
 		type: 'POST',
 		success: function(data){
 			$("#eventChange").html(data);
