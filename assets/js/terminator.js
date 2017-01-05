@@ -183,8 +183,9 @@ $(document).ready(function(){
 });
 
 function getFreshEvents(){
+	$('#calendar').fullCalendar( 'removeEvents' );
 	$('#calendar').fullCalendar( 'refetchEvents' );
-	console.log("refetchEvents");
+	// console.log("refetchEvents");
 }
 
 function isElemOverDiv() {
@@ -345,13 +346,15 @@ function save(){
 		url: 'process.php',
 		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,
 		type: 'POST',
-		success: function(r){
+		success: function(s){
+			r = JSON.parse(s);
 			event.title = r.title;
 			event.start = r.start;
 			event.end = r.end;
 			event.opis = r.opis;
 			event.noti = r.noti;
-			$('#calendar').fullCalendar('updateEvent',event);
+			event.allDay = false;
+			console.log(event);
 		},
 		error: function(e){
 			alert('Error processing your request: '+e.responseText);

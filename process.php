@@ -13,7 +13,7 @@ if($type == 'new')
 	$notidate = strtotime("-24 hours", $startdate);
 	$startdate = date("Y-m-d H:i:s",$startdate);
 	$enddate = date("Y-m-d H:i:s",$enddate);
-	$notidate =date("Y-m-d H:i:s",$notidate);
+	$notidate = date("Y-m-d H:i:s",$notidate);
 	$title = $_POST['title'];
 	$idc = $_POST['idc'];
   $timetab_id = $_SESSION['timetab_id'];
@@ -29,7 +29,7 @@ if($type == 'new')
 	);
 	$db->insert('calendar', $array);
 	$lastId = $db->lastInsertId();
-	echo json_encode(array('status'=>'success','eventid'=>$lastId, 'enddate'=>$enddate));
+	echo json_encode(array('status'=>'success','eventid'=>$lastId, 'enddate'=>$enddate,"allday"=>false));
 }
 
 if($type == 'change')
@@ -98,10 +98,11 @@ if($type == 'remove')
 }
 
 if($type == 'fetch')
-{       if(isset($_SESSION['timetab_id'])){$id=$_SESSION['timetab_id'];}  else {$id = $_SESSION['uid'];}
+{
+	if(isset($_SESSION['timetab_id'])){$id=$_SESSION['timetab_id'];}  else {$id = $_SESSION['uid'];}
 	$events = array();
-        $arr = array("timetab_id" => $id);
-        $sql= "select * from calendar WHERE timetab_id = :timetab_id";
+  $arr = array("timetab_id" => $id);
+  $sql= "SELECT * FROM calendar WHERE timetab_id = :timetab_id";
 	$eve = $db-> select($sql, $arr);
 
 	foreach ($eve as $key => $fetch)

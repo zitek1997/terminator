@@ -109,10 +109,15 @@ function drawCallendar(){
 		  	success: function(response){
 		  		event.id = response.eventid;
 					event.end = response.enddate;
+					event.allDay = response.allday;
+
 					id=event.id;
 					endwait(event.idc);
-					$('#calendar').fullCalendar('updateEvent',event);
 					console.log(event);
+					// console.log(response);
+					$('#calendar').fullCalendar('updateEvent',event);
+					// getFreshEvents();
+					// console.log(event);
 					editEventNew(id);
 				},
 		    error: function(e){

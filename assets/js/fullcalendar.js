@@ -4864,7 +4864,7 @@ Grid.mixin({
 	// Can accept an event "location" as well (which only has start/end and no allDay)
 	eventToRange: function(event) {
 		var calendar = this.view.calendar;
-		console.log(event.start);
+		// console.log(event.start);
 		var start = event.start.clone().stripZone();
 		var end = (
 				event.end ?
