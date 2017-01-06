@@ -658,7 +658,7 @@ function seeTheHistory(){
 		success: function(data){
 			$("#cardsb").html(data);
 			// $('#sTH').modal('show');
-			$("cardsOfHistoryBU").val($("#cardsOfHistory").val());
+			$("#cardsOfHistoryBU").val($("#cardsOfHistory").val());
 			var	options = {
 				valueNames: [ 'clientname' ]
 			};
