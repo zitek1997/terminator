@@ -12,13 +12,16 @@ height: 6px;
 position: fixed;
 }
 
+::-webkit-scrollbar-corner {
+    border: 0px;
+}
 ::-webkit-scrollbar-track {
-
+    display: none;
 }
 
 ::-webkit-scrollbar-thumb {
 border-radius: 10px;
-background: grey; 
+background: rgba(128, 128, 128, 0.5); 
 }
 
 ::-webkit-scrollbar-thumb:hover {
