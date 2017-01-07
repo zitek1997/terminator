@@ -65,7 +65,7 @@ body{
 @media screen and (min-width: 768px) {
 .list{
     overflow: scroll;
-    height: 380px;
+    height: 50vh;
 }
 #wrap {
     width: 1100px;
@@ -87,6 +87,16 @@ body{
 }
 
 #external-events .fc-event {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    margin: 0px; 
+    border: 2px solid #3a87ad; 
+    line-height: 2; 
+    font-size: 12px;
+    z-index: 6;
+}
+#external-events-wait .fc-event {
     cursor: pointer;
     position: relative;
     width: 100%;
@@ -230,7 +240,7 @@ body{
 .av{
     height: 15%;
 }
-.left{
+.left-pop{
     float:left;
         left: 5%;
     background-color: #3498db;
@@ -239,7 +249,7 @@ body{
     -webkit-border-radius: 200px 200px 200px 200px;
     border: 2px solid #ffffff;
 }
-.right{
+.right-pop{
     float:right;
     right: 5%;
     background-color: #db3434;
@@ -628,13 +638,13 @@ body{
     user-select: none;
 }
 .draggable-button{
-    margin-top: 10px; 
+    margin-bottom: 10px; 
 }
 }
 @media screen and (min-width: 992px) {
 .list{
     overflow: scroll;
-    height: 380px;
+    height: 50vh;
 }
 #wrap {
     width: 1100px;
@@ -656,6 +666,16 @@ body{
 }
 
 #external-events .fc-event {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    margin: 0px; 
+    border: 2px solid #3a87ad; 
+    line-height: 2; 
+    font-size: 12px;
+    z-index: 6;
+}
+#external-events-wait .fc-event {
     cursor: pointer;
     position: relative;
     width: 100%;
@@ -799,7 +819,7 @@ body{
 .av{
     height: 15%;
 }
-.left{
+.left-pop{
     float:left;
         left: 5%;
     background-color: #3498db;
@@ -808,7 +828,7 @@ body{
     -webkit-border-radius: 200px 200px 200px 200px;
     border: 2px solid #ffffff;
 }
-.right{
+.right-pop{
     float:right;
     right: 5%;
     background-color: #db3434;
@@ -1062,7 +1082,7 @@ body{
     outline: dashed;
     outline-offset: -10px;
 }
-#wait-delete{
+#wait_delete{
     position: absolute;
     width: 100%;
     height: 100px;

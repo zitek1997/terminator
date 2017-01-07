@@ -260,10 +260,12 @@ function waitplz() {
 
 			 // make the event draggable using jQuery UI
 			 $(this).draggable({
-                               start: function() {$("#wait_delete").show("slide", 100);},
-                               stop: function() {$("#wait_delete").hide("slide", 1000);},
+                               start: function(e, ui) {$("#wait_delete").show("slide", 100);$(this).fadeTo( "slow" , 0.3), $(ui.helper).addClass("pending_customer");},
+                               stop: function() {$("#wait_delete").hide("slide", 1000);$(this).fadeTo( "slow" , 1);},
 				 revert: true,      // will cause the event to go back to its
-				 revertDuration: 0,  //  original position after the drag
+				 revertDuration: 600,  //  original position after the drag
+                                 helper: 'clone',
+                                containment: "body",
 			 });
 
 		 });
