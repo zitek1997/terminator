@@ -343,13 +343,28 @@ function save(){
 			if (opis == "new"){
 				opis = document.forms.modal.neName.value;
 			}
+			if(document.getElementById("someSwitchOptionSuccess").checked){
+				noti = 1;
+			}else{
+				noti = 0;
+			}
+			if(document.getElementById("checkbox3").checked){
+				sms = 1;
+			}else{
+				sms = 0;
+			}
+			if(document.getElementById("checkbox4").checked){
+				email = 1;
+			}else{
+				email = 0;
+			}
 			// event.title = title;
 			// // event.start = start;
 			// // event.end =  end;
 			// event.opis = opis;
 	    $.ajax({
 		url: 'process.php',
-		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis,
+		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis+'&noti='+noti+'&sms='+sms+'&email='+email,
 		type: 'POST',
 		success: function(s){
 			console.log(s);

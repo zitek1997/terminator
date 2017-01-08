@@ -12,6 +12,21 @@ $title = $event['title'];
 $startdate = $event['startdate'];
 $enddate = $event['enddate'];
 $desc = $event['opis'];
+if($event["NOTI"]==1){
+  $NOTI = "checked";
+}else{
+  $NOTI = "";
+}
+if($event["SMS"]==1){
+  $SMS = "checked";
+}else{
+  $SMS = "";
+}
+if($event["EMAIL"]==1){
+  $EMAIL = "checked";
+}else{
+  $EMAIL = "";
+}
 if ($idc == "customEv"){
   $sql1="SELECT * FROM services ORDER BY name ASC";
   $usl=$db->selecto($sql1);
@@ -23,7 +38,7 @@ print <<<KOD
   <input type="button" class="btn btn-success" name="startdate" id="startdate" value="$startdate"></input><br>
   Data zakończenia:<br>
   <input type="button" class="btn btn-success" name="enddate" id="enddate" value="$enddate"></input><br>
-  Usługa:<br>
+  Opis:<br>
   <input class="form-control" type="textarea" name="cSvc" id="cSvc" value="$desc"/><br>
   <input type="hidden" name="id" value="$id"><br>
   </form>
@@ -50,17 +65,17 @@ print <<<KOD
   <div style="border-top: 2px solid #ececec; padding-top: 7%;">
   Powiadomienie:
   <div class="material-switch pull-right">
-  <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" checked>
+  <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" $NOTI>
   <label for="someSwitchOptionSuccess" class="label-success"></label>
   </div>
   <div class="checkbox checkbox-success">
-  <input id="checkbox3" type="checkbox" checked>
+  <input id="checkbox3" type="checkbox" $SMS>
   <label for="checkbox3">
   SMS
   </label>
   </div>
   <div class="checkbox checkbox-success">
-  <input id="checkbox4" type="checkbox" checked>
+  <input id="checkbox4" type="checkbox" $EMAIL>
   <label for="checkbox4">
   E-mail
   </label>

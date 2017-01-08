@@ -27,6 +27,10 @@ if($type == 'new')
 		"idc" => $idc,
 		"noti_date" => $notidate,
 	);
+	if($idc == "customEv"){
+		$array["SMS"] = 0;
+		$array["EMAIL"] = 0;
+	}
 	$db->insert('calendar', $array);
 	$lastId = $db->lastInsertId();
 	echo json_encode(array('status'=>'success','eventid'=>$lastId, 'enddate'=>$enddate,"allday"=>false));
@@ -38,6 +42,9 @@ if($type == 'change')
 	$title = $_POST['title'];
 	$startdate = $_POST['startdate'];
 	$enddate = $_POST['enddate'];
+	$NOTI = $_POST['noti'];
+	$SMS = $_POST['sms'];
+	$EMAIL = $_POST['email'];
 	$startdate = strtotime($startdate);
 	$enddate = strtotime($enddate);
 	$notidate = strtotime("-24 hours", $startdate);
@@ -51,6 +58,9 @@ if($type == 'change')
 		'enddate' => $enddate,
 		'opis' => $opis,
 		"noti_date" => $notidate,
+		'NOTI' => $NOTI,
+		'SMS' => $SMS,
+		'EMAIL' => $EMAIL,
 	);
 	$where = "id = $eventid";
 	$update = $db->update('calendar', $array, $where);

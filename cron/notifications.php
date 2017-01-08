@@ -5,9 +5,10 @@ $now = date("Y-m-d H:i:s", $now);
 $now = "'".$now."'";
 $array = array(
   "SENT" => 0,
-  "idc" => "0",
+  "idc" => "customEv",
+  "tobeSend" => 1
 );
-$sql = "SELECT * FROM notifications WHERE SENT = :SENT AND TIME < $now ABD idc <> :idc";
+$sql = "SELECT * FROM notifications WHERE SENT = :SENT AND TIME < $now ABD idc <> :idc AND tobeSend = :tobeSend";
 $noti = $db->select($sql, $array);
 $def = $db->selecto("SELECT * FROM not_def");
 $def = $def[0];
