@@ -8,7 +8,7 @@ $array = array(
   "idc" => "customEv",
   "tobeSend" => 1
 );
-$sql = "SELECT * FROM notifications WHERE SENT = :SENT AND TIME < $now ABD idc <> :idc AND tobeSend = :tobeSend";
+$sql = "SELECT * FROM notifications WHERE SENT = :SENT AND TIME < $now AND idc <> :idc AND tobeSend = :tobeSend";
 $noti = $db->select($sql, $array);
 $def = $db->selecto("SELECT * FROM not_def");
 $def = $def[0];
@@ -17,6 +17,8 @@ foreach($noti as $ts){
   $id = $ts['id'];
   $idc = $ts['IDC'];
   $ide = $ts['IDE'];
+  $sSMS = $ts['SMS'];
+  $sEMAIL = $ts['EMAIL'];
   //pobranie informacji
   $arra = array("ID" => $idc);
   $arrb = array("id" => $ide);
@@ -31,23 +33,27 @@ foreach($noti as $ts){
   $name = $client['FNAME']." ".$client['LNAME'];
   $service = $event['opis'];
   $date = $event['startdate'];
-  //przygotowanie wiadomości
-  //SMS
-  $sms = $def['message'];
-  $sms = str_replace("^usługa^", $service, $sms);
-  $sms = str_replace("^data^", $date, $sms);
-  //E-MAIL
-  $topic = $def['subject'];
-  $msg = $def['beforem'].$def['message'].$def['afterm'];
-  $servicem = "<br><b>".$service."</b><br>";
-  $datem = "<br><b>".$date."</b><br>";
-  $msg = str_replace("^usługa^", $servicem, $msg);
-  $msg = str_replace("^data^", $datem, $msg);
-  $headers = $def['headers'];
-  // $headers = str_replace("^imie^", $name, $headers);
-  // $headers = str_replace("^mail^", $mail, $headers);
-  // $headers .= '\r\n'."From: Nazwa Firmy <itcave@itcave.nazwa.pl>";
-  mail($mail,$topic,$msg,$headers);
+  if ($sSMS == 1){
+    //przygotowanie wiadomości
+    //SMS
+    $sms = $def['message'];
+    $sms = str_replace("^usługa^", $service, $sms);
+    $sms = str_replace("^data^", $date, $sms);
+  }
+  if ($sEMAIL == 1){
+    //E-MAIL
+    $topic = $def['subject'];
+    $msg = $def['beforem'].$def['message'].$def['afterm'];
+    $servicem = "<br><b>".$service."</b><br>";
+    $datem = "<br><b>".$date."</b><br>";
+    $msg = str_replace("^usługa^", $servicem, $msg);
+    $msg = str_replace("^data^", $datem, $msg);
+    $headers = $def['headers'];
+    // $headers = str_replace("^imie^", $name, $headers);
+    // $headers = str_replace("^mail^", $mail, $headers);
+    // $headers .= '\r\n'."From: Nazwa Firmy <itcave@itcave.nazwa.pl>";
+    mail($mail,$topic,$msg,$headers);
+  }
   $where = "id = $id";
   $array = array("SENT" => 1);
   $db->update("notifications", $array, $where);

@@ -340,22 +340,28 @@ function save(){
 			start = document.forms.modal.startdate.value;
 			end = document.forms.modal.enddate.value;
 			opis = document.forms.modal.cSvc.value;
-			if (opis == "new"){
-				opis = document.forms.modal.neName.value;
-			}
-			if(document.getElementById("someSwitchOptionSuccess").checked){
-				noti = 1;
+			if (event.idc != "customEv"){
+				if (opis == "new"){
+					opis = document.forms.modal.neName.value;
+				}
+				if(document.getElementById("someSwitchOptionSuccess").checked){
+					noti = 1;
+				}else{
+					noti = 0;
+				}
+				if(document.getElementById("checkbox3").checked){
+					sms = 1;
+				}else{
+					sms = 0;
+				}
+				if(document.getElementById("checkbox4").checked){
+					email = 1;
+				}else{
+					email = 0;
+				}
 			}else{
 				noti = 0;
-			}
-			if(document.getElementById("checkbox3").checked){
-				sms = 1;
-			}else{
 				sms = 0;
-			}
-			if(document.getElementById("checkbox4").checked){
-				email = 1;
-			}else{
 				email = 0;
 			}
 			// event.title = title;
