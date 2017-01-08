@@ -729,3 +729,11 @@ function openDir(id){
 	document.getElementById("cardAdres").value = adres;
 	$('#KKK').modal('show');
 }
+
+function SoH(){
+	if(document.getElementById("someSwitchOptionSuccess").checked){
+		document.getElementById("se").style.display = 'block';
+	}else{
+		document.getElementById("se").style.display = 'none';
+	}
+}

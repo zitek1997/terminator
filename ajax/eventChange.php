@@ -14,8 +14,10 @@ $enddate = $event['enddate'];
 $desc = $event['opis'];
 if($event["NOTI"]==1){
   $NOTI = "checked";
+  $DISP = "block";
 }else{
   $NOTI = "";
+  $DISP = "none";
 }
 if($event["SMS"]==1){
   $SMS = "checked";
@@ -65,9 +67,10 @@ print <<<KOD
   <div style="border-top: 2px solid #ececec; padding-top: 7%;">
   Powiadomienie:
   <div class="material-switch pull-right">
-  <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" $NOTI>
+  <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" onclick="SoH();" $NOTI>
   <label for="someSwitchOptionSuccess" class="label-success"></label>
   </div>
+  <div id="se" style="display: $DISP">
   <div class="checkbox checkbox-success">
   <input id="checkbox3" type="checkbox" $SMS>
   <label for="checkbox3">
@@ -79,6 +82,7 @@ print <<<KOD
   <label for="checkbox4">
   E-mail
   </label>
+  </div>
   </div>
   </div>
   </div>
