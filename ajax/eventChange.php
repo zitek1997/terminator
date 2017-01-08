@@ -34,12 +34,41 @@ KOD;
 
 print <<<KOD
   <form name='modal'>
-  Event:<input type="text" name="ev" class="form-control" value="$title"></input><br>
-  Data rozpoczęcia:<br>
-  <input type="button" class="btn btn-success" name="startdate" id="startdate" value="$startdate"></input><br>
-  Data zakończenia:<br>
-  <input type="button" class="btn btn-success" name="enddate" id="enddate" value="$enddate"></input><br>
-  Usługa:<br>
+  <div class="modal-timer">
+  <div class="modal-timer-left">
+  <p class="modal-timer-p" style="float: right;">Data rozpoczęcia:</p>
+  <input style="float: right;" type="button" class="btn btn-success" name="startdate" id="startdate" value="$startdate"></input>
+  </div>
+  <div class="modal-material"></div>
+  <div class="modal-timer-right">
+  <p class="modal-timer-p">Data zakończenia:</p>
+  <input type="button" class="btn btn-success" name="enddate" id="enddate" value="$enddate"></input>
+  </div>
+  </div>
+  <div class="modal-left">
+  <p>Event:</p><input type="text" name="ev" class="form-control" value="$title"></input><br>
+  <div style="border-top: 2px solid #ececec; padding-top: 7%;">
+  Powiadomienie:
+  <div class="material-switch pull-right">
+  <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" checked>
+  <label for="someSwitchOptionSuccess" class="label-success"></label>
+  </div>
+  <div class="checkbox checkbox-success">
+  <input id="checkbox3" type="checkbox" checked>
+  <label for="checkbox3">
+  SMS
+  </label>
+  </div>
+  <div class="checkbox checkbox-success">
+  <input id="checkbox4" type="checkbox" checked>
+  <label for="checkbox4">
+  E-mail
+  </label>
+  </div>
+  </div>
+  </div>
+  <div class="modal-right">
+  <p>Usługa:</p>
   <select class="form-control" name="cSvc" onchange="cDesc(this);">
   <option value="new">Nowa usługa</option>
 KOD;
@@ -64,6 +93,7 @@ print <<<KOD
   <input class="form-control" type="hidden" name="nName" id="neName" value="" placeholder="Nazwa usługi"><br>
   <input class="form-control" type="hidden" name="nDesc" id="neDesc" value="" placeholder="Opis usługi"><br>
   <input type="hidden" name="id" value="$id"><br>
+  </div>
   </form>
   <script>
   function cDesc(s)

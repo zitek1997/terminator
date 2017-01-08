@@ -5,9 +5,9 @@ $users=$db->selecto($sql);
 $l=count($users);
 print <<<KOD
 <div class="draggable-button">
-  <div class='fc-event dp-client' id="customEv">
+  <div class='fc-event custom-event dp-client' id="customEv">
     <div class="name">
-      Nowy event
+      [Wydarzenie własne]
     </div>
   </div>
 </div>

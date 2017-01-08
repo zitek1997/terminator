@@ -6,6 +6,10 @@
     font-family: montserratT;
     src: url(Montserrat-Thin.otf);
 }
+@font-face {
+    font-family: material;
+    src: url(MaterialIcons-Regular.ttf);
+}
 ::-webkit-scrollbar {
 width: 6px;
 height: 6px;
@@ -95,6 +99,10 @@ body{
     line-height: 2; 
     font-size: 12px;
     z-index: 6;
+}
+.custom-event{
+    background-color: #093765 !important;
+    border: 2px solid #154677 !important;
 }
 #external-events-wait .fc-event {
     cursor: pointer;
@@ -204,7 +212,7 @@ body{
 }
 .popover-button{
     position: relative;
-    width: 40%;
+    width: 45.4%;
     text-align: center;
     cursor: pointer;
     margin-bottom: 5%;
@@ -243,19 +251,37 @@ body{
 .left-pop{
     float:left;
         left: 5%;
-    background-color: #3498db;
-    border-radius: 200px 200px 200px 200px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
+    background-color: rgba(52, 152, 219, 0.5);
+    border-radius: 200px 0px 0px 200px;
+    -moz-border-radius: 200px 0px 0px 200px;
+    -webkit-border-radius: 200px 0px 0px 200px;
     border: 2px solid #ffffff;
 }
 .right-pop{
     float:right;
     right: 5%;
-    background-color: #db3434;
-    border-radius: 200px 200px 200px 200px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
+    background-color: rgba(219, 52, 52, 0.5);
+    border-radius: 0px 200px 200px 0px;
+    -moz-border-radius: 0px 200px 200px 0px;
+    -webkit-border-radius: 0px 200px 200px 0px;
+    border: 2px solid #ffffff;
+}
+.left-pop:hover{
+    float:left;
+        left: 5%;
+    background-color: rgba(52, 152, 219, 1);
+    border-radius: 200px 0px 0px 200px;
+    -moz-border-radius: 200px 0px 0px 200px;
+    -webkit-border-radius: 200px 0px 0px 200px;
+    border: 2px solid #ffffff;
+}
+.right-pop:hover{
+    float:right;
+    right: 5%;
+    background-color: rgba(219, 52, 52, 1);
+    border-radius: 0px 200px 200px 0px;
+    -moz-border-radius: 0px 200px 200px 0px;
+    -webkit-border-radius: 0px 200px 200px 0px;
     border: 2px solid #ffffff;
 }
 .left-av{
@@ -273,6 +299,17 @@ body{
     font-family: montserratR;
     margin-top: 0.8em;
     font-size: 0.8em;
+}
+.popover-info{
+    background-color: #0f5684;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    font-size: 42px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    color: whitesmoke;
 }
 .sub-header {
   padding-bottom: 10px;
@@ -650,7 +687,10 @@ body{
     width: 1100px;
     margin: 0 auto;
 }
-
+.custom-event{
+    background-color: #093765 !important;
+    border: 2px solid #154677 !important;
+}
 #external-events {
     float: left;
     width:100%;
@@ -755,6 +795,7 @@ body{
 }
 .popover-content{
     padding: 0;
+    margin-top: 7%;
 }
 .popover-av-content-in-in{
 /*    height: 140px;*/
@@ -783,7 +824,7 @@ body{
 }
 .popover-button{
     position: relative;
-    width: 40%;
+    width: 45.4%;
     text-align: center;
     cursor: pointer;
     margin-bottom: 5%;
@@ -821,20 +862,20 @@ body{
 }
 .left-pop{
     float:left;
-        left: 5%;
-    background-color: #3498db;
-    border-radius: 200px 200px 200px 200px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
+    left: 5%;
+    background-color: rgba(52, 152, 219, 0.5);
+    border-radius: 200px 0px 0px 200px;
+    -moz-border-radius: 200px 0px 0px 200px;
+    -webkit-border-radius: 200px 0px 0px 200px;
     border: 2px solid #ffffff;
 }
 .right-pop{
     float:right;
     right: 5%;
-    background-color: #db3434;
-    border-radius: 200px 200px 200px 200px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
+    background-color: rgba(219, 52, 52, 0.5);
+    border-radius: 0px 200px 200px 0px;
+    -moz-border-radius: 0px 200px 200px 0px;
+    -webkit-border-radius: 0px 200px 200px 0px;
     border: 2px solid #ffffff;
 }
 .left-av{
@@ -1216,4 +1257,280 @@ body{
     font-family: montserratR;
     user-select: none;
 }
+.modal-content{
+    border-radius: 0px;
+}
+.modal-header{
+    border-bottom: 0px;
+}
+.modal-title{
+    text-align: center;
+}
+.modal-footer{
+    background-color: #e5e5e5;
+}
+.modal-left{
+    padding: 2%;
+    position: relative;
+    width: 50%;
+    float: left;
+    border-right: 1px solid #ececec;
+    height: 250px;
+}
+.modal-right{
+    padding: 2%;
+    position: relative;
+    width: 50%;
+    float: right;
+    border-left: 1px solid #ececec;
+    height: 250px;
+}
+.modal-body{
+    overflow: auto;
+    font-family: montserratR;
+}
+.modal-timer{
+    display: inline-block;
+    width: 100%;
+}
+.modal-timer-left{
+    width: 47%;
+    float: left;
+    padding: 2%; 
+}
+.modal-timer-right{
+    width: 47%;
+    float: right;
+    padding: 2%; 
+}
+.modal-material{
+    width: 6%;
+    height: 20px;
+    float: left;
+    margin-top: 7%;
+    background-image: url(/assets/img/remove.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.round{
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+}
+.material-switch > input[type="checkbox"] {
+    display: none;   
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative; 
+    width: 40px;  
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+.checkbox {
+  padding-left: 20px; }
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px; }
+    .checkbox label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      background-color: #fff;
+      -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      transition: border 0.15s ease-in-out, color 0.15s ease-in-out; }
+    .checkbox label::after {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      margin-left: -20px;
+      padding-left: 3px;
+      padding-top: 1px;
+      font-size: 11px;
+      color: #555555; }
+  .checkbox input[type="checkbox"] {
+    opacity: 0; }
+    .checkbox input[type="checkbox"]:focus + label::before {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px; }
+    .checkbox input[type="checkbox"]:checked + label::after {
+      font-family: 'Material Icons';
+      content: "done"; }
+    .checkbox input[type="checkbox"]:disabled + label {
+      opacity: 0.65; }
+      .checkbox input[type="checkbox"]:disabled + label::before {
+        background-color: #eeeeee;
+        cursor: not-allowed; }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%; }
+  .checkbox.checkbox-inline {
+    margin-top: 0; }
+
+.checkbox-primary input[type="checkbox"]:checked + label::before {
+  background-color: #428bca;
+  border-color: #428bca; }
+.checkbox-primary input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-danger input[type="checkbox"]:checked + label::before {
+  background-color: #d9534f;
+  border-color: #d9534f; }
+.checkbox-danger input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-info input[type="checkbox"]:checked + label::before {
+  background-color: #5bc0de;
+  border-color: #5bc0de; }
+.checkbox-info input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-warning input[type="checkbox"]:checked + label::before {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e; }
+.checkbox-warning input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-success input[type="checkbox"]:checked + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c; }
+.checkbox-success input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.radio {
+  padding-left: 20px; }
+  .radio label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px; }
+    .radio label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid #cccccc;
+      border-radius: 50%;
+      background-color: #fff;
+      -webkit-transition: border 0.15s ease-in-out;
+      -o-transition: border 0.15s ease-in-out;
+      transition: border 0.15s ease-in-out; }
+    .radio label::after {
+      display: inline-block;
+      position: absolute;
+      content: " ";
+      width: 11px;
+      height: 11px;
+      left: 3px;
+      top: 3px;
+      margin-left: -20px;
+      border-radius: 50%;
+      background-color: #555555;
+      -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+      -o-transform: scale(0, 0);
+      transform: scale(0, 0);
+      -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+      -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+      -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+      transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33); }
+  .radio input[type="radio"] {
+    opacity: 0; }
+    .radio input[type="radio"]:focus + label::before {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px; }
+    .radio input[type="radio"]:checked + label::after {
+      -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      transform: scale(1, 1); }
+    .radio input[type="radio"]:disabled + label {
+      opacity: 0.65; }
+      .radio input[type="radio"]:disabled + label::before {
+        cursor: not-allowed; }
+  .radio.radio-inline {
+    margin-top: 0; }
+
+.radio-primary input[type="radio"] + label::after {
+  background-color: #428bca; }
+.radio-primary input[type="radio"]:checked + label::before {
+  border-color: #428bca; }
+.radio-primary input[type="radio"]:checked + label::after {
+  background-color: #428bca; }
+
+.radio-danger input[type="radio"] + label::after {
+  background-color: #d9534f; }
+.radio-danger input[type="radio"]:checked + label::before {
+  border-color: #d9534f; }
+.radio-danger input[type="radio"]:checked + label::after {
+  background-color: #d9534f; }
+
+.radio-info input[type="radio"] + label::after {
+  background-color: #5bc0de; }
+.radio-info input[type="radio"]:checked + label::before {
+  border-color: #5bc0de; }
+.radio-info input[type="radio"]:checked + label::after {
+  background-color: #5bc0de; }
+
+.radio-warning input[type="radio"] + label::after {
+  background-color: #f0ad4e; }
+.radio-warning input[type="radio"]:checked + label::before {
+  border-color: #f0ad4e; }
+.radio-warning input[type="radio"]:checked + label::after {
+  background-color: #f0ad4e; }
+
+.radio-success input[type="radio"] + label::after {
+  background-color: #5cb85c; }
+.radio-success input[type="radio"]:checked + label::before {
+  border-color: #5cb85c; }
+.radio-success input[type="radio"]:checked + label::after {
+  background-color: #5cb85c; }
 }

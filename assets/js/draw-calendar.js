@@ -212,9 +212,9 @@ function drawCallendar(){
 			}
 			if(desc == null && event.allDay == true && event.end == null){
 				desc = " ";
-				contento = '<div id="popover-event-content"><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p></div></div>'
+				contento = '<div id="popover-event-content"><i class="material-icons popover-info">info</i><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p></div></div>'
 			}else{
-				contento = '<div id="popover-event-content"><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p><p class="popover-text-time">'+start+' ••••• '+end+'</p><p class="popover-text-desc">'+desc+'</p><div class="popover-button event left-pop" id="editEvent" onclick="editEventNew('+event.id+')"><p class="popover_p">Edycja</p></div><div class="popover-button event right-pop" onclick="weDel('+event.id+')"><p class="popover_p">Usuń</p></div></div></div>'
+				contento = '<div id="popover-event-content"><i class="material-icons popover-info">info</i><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p><p class="popover-text-time">'+start+' ••••• '+end+'</p><p class="popover-text-desc">'+desc+'</p><div class="popover-button event left-pop" id="editEvent" onclick="editEventNew('+event.id+')"><p class="popover_p">Edycja</p></div><div class="popover-button event right-pop" onclick="weDel('+event.id+')"><p class="popover_p">Usuń</p></div></div></div>'
 			}
       element.clickover({
         global_close: true,
