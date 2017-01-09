@@ -5,7 +5,7 @@ $fname = $data->fname;
 $lname = $data->lname;
 $email =  $data->email;
 $phone = $data->phone;
-$adres = $data->adres;
+// $adres = $data->adres;
 
 // $fname = "Damian";
 // $lname = "Majewski";
@@ -30,7 +30,7 @@ else
           'LNAME' => $lname,
           'TEL' => $phone,
           'EMAIL' => $email,
-          'ADRES' => $adres,
+          // 'ADRES' => $adres,
         );
   if($db->insert('clients', $array)!=1)
   {
