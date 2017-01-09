@@ -7,8 +7,8 @@
     src: url(Montserrat-Thin.otf);
 }
 @font-face {
-    font-family: material;
-    src: url(MaterialIcons-Regular.ttf);
+    font-family: istok;
+    src: url(IstokWeb-Regular.ttf);
 }
 ::-webkit-scrollbar {
 width: 6px;
@@ -142,6 +142,7 @@ body{
     border-radius: 3px;
     background-color: #0f5684;
     border-radius: 6px;
+    padding:0;
 }
 .popover-av-p{
     text-align: center;
@@ -208,7 +209,7 @@ body{
   border-bottom-color: #0f5684;
 }
 .popover.top .arrow:after {
-  border-top-color: #0f5684;
+  border-top-color: #ffffff;
 }
 .popover-button{
     position: relative;
@@ -225,22 +226,40 @@ body{
     cursor: pointer;
 }
 .popover-text-title{
+    text-transform: uppercase;
     text-align: center;
     color: white;
     font-family: montserratR;
-    font-size: xx-large;
+    font-size: 26px;
 }
 .popover-text-time{
-    text-align: center;
+    vertical-align: middle;
     color: white;
     font-family: montserratR;
-    font-size: x-large;
+    font-size: 24px;
+    line-height: 54px;
+    margin: 0;
+    text-align: center;
+    background-color: #5B9CFF;
 }
 .popover-text-desc{
     text-align: center;
     color: white;
     font-family: montserratR;
     font-size: large;
+}
+.popover-text-descs{
+    text-align: center;
+    color: white;
+    font-family: montserratT;
+    font-size: large;
+}
+.popover-footer{
+    height: 62px;
+    background-color: white;
+    border-radius: 0px 0px 6px 6px;
+    padding: 11px; 
+    border-bottom: 2px solid white;
 }
 .event{
     height: 15%;
@@ -250,39 +269,35 @@ body{
 }
 .left-pop{
     float:left;
-        left: 5%;
     background-color: rgba(52, 152, 219, 0.5);
     border-radius: 200px 0px 0px 200px;
     -moz-border-radius: 200px 0px 0px 200px;
     -webkit-border-radius: 200px 0px 0px 200px;
-    border: 2px solid #ffffff;
+    /* border: 2px solid #ffffff; */
 }
 .right-pop{
     float:right;
-    right: 5%;
     background-color: rgba(219, 52, 52, 0.5);
     border-radius: 0px 200px 200px 0px;
     -moz-border-radius: 0px 200px 200px 0px;
     -webkit-border-radius: 0px 200px 200px 0px;
-    border: 2px solid #ffffff;
+    /* border: 2px solid #ffffff; */
 }
 .left-pop:hover{
-    float:left;
-        left: 5%;
-    background-color: rgba(52, 152, 219, 1);
+    float: left;
+    height: 100%;
+    background-color: #146caf;
     border-radius: 200px 0px 0px 200px;
     -moz-border-radius: 200px 0px 0px 200px;
     -webkit-border-radius: 200px 0px 0px 200px;
-    border: 2px solid #ffffff;
 }
 .right-pop:hover{
-    float:right;
-    right: 5%;
-    background-color: rgba(219, 52, 52, 1);
+    float: right;
+    height: 100%;
+    background-color: #bf1d34;
     border-radius: 0px 200px 200px 0px;
     -moz-border-radius: 0px 200px 200px 0px;
     -webkit-border-radius: 0px 200px 200px 0px;
-    border: 2px solid #ffffff;
 }
 .left-av{
     left: 0;
@@ -297,11 +312,11 @@ body{
 .popover_p{
     color: white;
     font-family: montserratR;
-    margin-top: 0.8em;
+    /* margin-top: 0.8em; */
     font-size: 0.8em;
 }
 .popover-info{
-    background-color: #0f5684;
+    background-color: #4B93FF;
     border-radius: 200px 200px 200px 200px;
     -moz-border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
@@ -565,6 +580,7 @@ body{
 
 
 .menu-title{
+    height: 50px;
     text-align: center;
     font-family: montserratR;
     color: white;
@@ -751,8 +767,8 @@ body{
 .popover{
     width: 18%;
     border-radius: 3px;
-    background-color: #0f5684;
-    border-radius: 6px;
+    background-color: #4B93FF;
+    border-radius: 7px;
 }
 .popover-av-p{
     text-align: center;
@@ -820,11 +836,12 @@ body{
   border-bottom-color: #0f5684;
 }
 .popover.top .arrow:after {
-  border-top-color: #0f5684;
+  border-top-color: #ffffff;
+  bottom: 2px;
 }
 .popover-button{
     position: relative;
-    width: 45.4%;
+    width: 50%;
     text-align: center;
     cursor: pointer;
     margin-bottom: 5%;
@@ -837,16 +854,21 @@ body{
     cursor: pointer;
 }
 .popover-text-title{
-    text-align: center;
-    color: white;
-    font-family: montserratR;
-    font-size: xx-large;
-}
-.popover-text-time{
+    text-transform: uppercase;
     text-align: center;
     color: white;
     font-family: montserratR;
     font-size: x-large;
+}
+.popover-text-time{
+    vertical-align: middle;
+    color: white;
+    font-family: montserratR;
+    font-size: 24px;
+    line-height: 54px;
+    margin: 0;
+    text-align: center;
+    background-color: #5B9CFF;
 }
 .popover-text-desc{
     text-align: center;
@@ -862,21 +884,21 @@ body{
 }
 .left-pop{
     float:left;
-    left: 5%;
-    background-color: rgba(52, 152, 219, 0.5);
+    height: 100%;
+    background-color: #1F85D2;
     border-radius: 200px 0px 0px 200px;
     -moz-border-radius: 200px 0px 0px 200px;
     -webkit-border-radius: 200px 0px 0px 200px;
-    border: 2px solid #ffffff;
+    /* border: 2px solid #ffffff; */
+    margin: 0;
 }
 .right-pop{
     float:right;
-    right: 5%;
-    background-color: rgba(219, 52, 52, 0.5);
+    height: 100%;
+    background-color: #D22C43;
     border-radius: 0px 200px 200px 0px;
     -moz-border-radius: 0px 200px 200px 0px;
     -webkit-border-radius: 0px 200px 200px 0px;
-    border: 2px solid #ffffff;
 }
 .left-av{
     left: 0;
@@ -891,8 +913,9 @@ body{
 .popover_p{
     color: white;
     font-family: montserratR;
-    margin-top: 0.8em;
-    font-size: 0.8em;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 0;
 }
 .sub-header {
   padding-bottom: 10px;
