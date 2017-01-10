@@ -677,7 +677,7 @@ function addTerm(){
 	$('#addTerm').modal('show');
 }
 
-function addTermClose(){
+function termaddClose(){
 	$('#addTerm').modal('hide');
 }
 

@@ -27,6 +27,7 @@
   <script src='assets/js/jquery-ui.min.js'></script>
   <script src="lib/angular/angular.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/bootstrap-colorpicker.min.js"></script>
   <script src='assets/js/fullcalendar.js'></script>
   <script src='assets/js/locale-all.js'></script>
   <script src="assets/js/list.js"></script>
@@ -268,7 +269,7 @@
   </div>
 </div>
     
-<div id="addTerm" class="modal fade" role="dialog">
+<div id="addTerm" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -279,14 +280,16 @@
         <form class="form-horizontal alert alert-warning" name="termList" id="termForm" ng-submit="addTerm(termInfo);">
           <div class="form-group">
       		  <label for="Nazwa">Nazwa:</label>
-      		  <input type="text" name="term_name" class="form-control" placeholder="Wpisz Nazwę" ng-model="termInfo.fname" autofocus required />
+      		  <input type="text" name="term_name" class="form-control" placeholder="Wpisz Nazwę" ng-model="termInfo.name" autofocus required />
       	  </div>
       	  <div class="form-group">
             <p class="text-danger" ng-show="termList.term_name.$invalid && termList.terem_name.$dirty">Błąd</p>
           </div>
           <div class="form-group">
             <label for="Kolor">Kolor:</label>
-            <input type="text" name="term_color" class="form-control" placeholder="Wybierz Kolor" ng-model="termInfo.color" autofocus required />
+            <div id="cp11" class="input-group colorpicker-component">
+                <input type="text" value="#00AABB" name="term_color" class="form-control" placeholder="Wybierz Kolor" ng-model="termInfo.color" autofocus required /><span class="input-group-addon"><i></i></span>
+            </div>
           </div>
           <div class="form-group">
             <p class="text-danger" ng-show="termList.term_color.$invalid && termList.term_color.$dirty">Błąd</p>
@@ -296,14 +299,20 @@
             <input type="" name="term_access" class="form-control" placeholder="Wpisz Dostęp" ng-model="termInfo.access" autofocus required />
           </div>
           <div class="form-group">
-            <p class="text-danger" ng-show="empList.term_email.$invalid && empList.emp_email.$dirty">Błąd</p>
+            <p class="text-danger" ng-show="termList.term_email.$invalid && termList.term_email.$dirty">Błąd</p>
           </div>
-          <div class="form-group">
-            <button class="btn btn-warning" ng-disabled="empList.$invalid" onclick="termaddClose();">Dodaj</button>
+      </div>
+        <div class="modal-footer">
+            <div class="form-group">
+            <button class="btn btn-warning" ng-disabled="termList.$invalid" onclick="termaddClose();">Dodaj</button>
           </div>
         </form>
-      </div>
-      <div class="modal-footer"></div>
+        </div>
+        <script>
+        $(function() {
+            $('#cp11').colorpicker();
+        });
+    </script>
     </div>
   </div>
 </div>
@@ -360,8 +369,10 @@
     <div class="form-group">
       <p class="text-danger" ng-show="empList.emp_phone.$invalid && empList.emp_phone.$dirty">Błąd</p>
     </div>
-      <div class="form-group" id="newusercontent">
-          
+      <div class="form-group">
+          <label for="Access">Terminarze:</label>
+            <select multiple name="emp_access" class="form-control" ng-model="empInfo.access" id="newusercontent">
+            </select>
       </div>
       
     </div>

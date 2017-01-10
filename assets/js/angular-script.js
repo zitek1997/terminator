@@ -34,8 +34,9 @@ $('#empForm').css('display', 'none');
 }
 
 $scope.addTerm = function(info){
-$http.post('/ajax/addclient.php',{"name":info.name,"color":info.lname,"access":info.access}).success(function(data){
+$http.post('/ajax/addterm.php',{"name":info.name,"color":info.color,"access":info.access}).success(function(data){
 if (data == true) {
+    console.log(data);
 $('#termForm').css('display', 'none');
 }
 });
