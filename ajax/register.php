@@ -8,6 +8,7 @@ $login = $data->login;
 $pass = $data->pass;
 $email =  $data->email;
 $phone = $data->phone;
+$access = $data->access;
 
 if (isset($_POST['przychodnia']))
 {
