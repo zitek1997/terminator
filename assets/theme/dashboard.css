@@ -50,9 +50,19 @@ background: whitesmoke;
 
 body{
     background: #ecf0f1;
-    overflow: auto;
+    overflow: auto;    
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    
 }
-
+.modal{
+        user-select: auto;
+    -moz-user-select: auto;
+    -webkit-user-select: auto;
+    -ms-user-select: auto;
+}
 .fc-basic-view .fc-day-number {
     padding: 0 !important;
 }
@@ -688,7 +698,6 @@ body{
     color: white;
     font-size: 3em;
     font-family: montserratR;
-    user-select: none;
 }
 .draggable-button{
     margin-bottom: 10px; 
