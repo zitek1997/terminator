@@ -295,13 +295,16 @@
             <p class="text-danger" ng-show="termList.term_color.$invalid && termList.term_color.$dirty">Błąd</p>
           </div>
           <div class="form-group">
-            <label for="Dostęp">Dostęp:</label>
-            <input type="" name="term_access" class="form-control" placeholder="Wpisz Dostęp" ng-model="termInfo.access" autofocus required />
+            <div class="form-group">
+                <label for="Dostęp">Dostęp:</label>
+                <select multiple name="term_access" class="form-control" ng-model="termInfo.access" id="term_access">
+                </select>
+            </div>
           </div>
           <div class="form-group">
             <p class="text-danger" ng-show="termList.term_email.$invalid && termList.term_email.$dirty">Błąd</p>
           </div>
-      </div>
+        </div>
         <div class="modal-footer">
             <div class="form-group">
             <button class="btn btn-warning" ng-disabled="termList.$invalid" onclick="termaddClose();">Dodaj</button>
