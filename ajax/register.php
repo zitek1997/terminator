@@ -9,7 +9,8 @@ $pass = $data->pass;
 $email =  $data->email;
 $phone = $data->phone;
 $access = $data->access;
-
+// $color = $data->color;
+$color = "#0f0f0f";
 if (isset($_POST['przychodnia']))
 {
   $idp=$_POST['przychodnia'];
@@ -47,7 +48,33 @@ else
   if($db->insert('users', $array)!=1)
   {
     $_SESSION['regerr']=2;
+  }else{
+    $array=array("LOGIN"=>$login);
+    $sql="SELECT * FROM users WHERE LOGIN = :LOGIN";
+    $usr=$db->select($sql, $array);
+    $id = $usr[0]['ID'];
+    $terms = array();
+    foreach ($access as $a){
+      $arr = array(
+        "user_id" => $id,
+        "timetab_id" => $a,
+      );
+      $db->insert('tt_access', $arr);
+    }
+    $arr = array(
+      "user_id" => $id,
+      "timetab_id" => $id,
+    );
+    $db->insert('tt_access', $arr);
+
+    $arr = array(
+      "title" => $login,
+      "timetab_id" => $id,
+      "color" => $color,
+    );
+    $db->insert('time_tables', $arr);
   }
+
 }
-echo $_SESSION['regerr'];
+// echo $_SESSION['regerr'];
 ?>
