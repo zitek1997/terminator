@@ -11,36 +11,35 @@ include("config.php");
      $sql="SELECT timetab_id FROM tt_access";
      $usr=$db->selecto($sql);
    }
+   $usr1 = "";
+   $usr2 = "";
+   foreach($usr as $u){
+     $nr = $u["timetab_id"];
+     if(is_numeric($nr)){
+       if($usr1 == ""){
+         $usr1 = $nr;
+       }else{
+         $usr1 = $usr1.",".$nr;
+       }
+     }else{
+       if($usr2 == ""){
+         $usr2 = "'".$nr."'";
+       }else{
+         $usr2 = $usr2.",'".$nr."'";
+       }
+     }
+   }
+  $sql1="SELECT * FROM time_tables WHERE timetab_id IN ($usr1)";
+  $usrs1=$db->selecto($sql1);
+  $sql2="SELECT * FROM custom_tables WHERE timetab_id IN ($usr2)";
+  $usrs2=$db->selecto($sql2);
 
-$l0=count($usr);
-if ($l0 != 0)
-{
-  for ($x=0;$x<$l0;$x++)
-  {
-    if($x==0)
-    {
-      $usr1="(".$usr[$x]['timetab_id'];
-    }else{
-      $usr1=$usr1.", ".$usr[$x]['timetab_id'];
-      if($x==$l0-1)
-      {
-        $usr1=$usr1.")";
-      }
-    }
-  }
-  $sql="SELECT * FROM time_tables WHERE timetab_id IN $usr1";
-  $usr=$db->selecto($sql);
+  $usr = array_merge($usrs1,$usrs2);
 
-}
-else
-{
-  $_SESSION['listerr']=1;
-}
+
 
 $l=count($usr);
-print <<<KOD
 
-KOD;
 for($x=0;$x<$l;$x++)
 {
   $id = $usr[$x]['timetab_id'];
@@ -48,13 +47,7 @@ for($x=0;$x<$l;$x++)
   $color = $usr[$x]['color'];
 
 print <<<KOD
-
-    <div class="termlist_in" style="background-color:$color" onClick="pickTerm($id);">$title</div>
-
+<div class="termlist_in" style="background-color:$color" onClick="pickTerm($id);">$title</div>
 KOD;
 }
-print <<<KOD
-
-KOD;
-
 ?>
