@@ -664,6 +664,11 @@ function saveDefaults(){
 	});
 }
 
+function addTerm(){
+        document.getElementById("termForm").reset();
+	$('#addTerm').modal('show');
+}
+
 function MaddClient(){
 	document.getElementById("empForm").reset();
 	$('#MaddClient').modal('show');
