@@ -629,6 +629,14 @@ function seefree(){
 }
 
 function newUser(){
+	$.ajax({
+		url: 'ajax/newusercontent.php',
+		type: 'POST',
+		success: function(data){
+			$("#newusercontent").html(data);
+			$('#modalNewUser').modal('show');
+		}
+	});
 	$('#modalNewUser').modal('show');
 }
 
