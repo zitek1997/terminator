@@ -673,8 +673,15 @@ function saveDefaults(){
 }
 
 function addTerm(){
-        document.getElementById("termForm").reset();
-	$('#addTerm').modal('show');
+  document.getElementById("termForm").reset();
+	$.ajax({
+		url: 'ajax/addTermcontent.php',
+		type: 'POST',
+		success: function(data){
+			$("#term_access").html(data);
+			$('#addTerm').modal('show');
+		}
+	});
 }
 
 function termaddClose(){
