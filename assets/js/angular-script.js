@@ -41,7 +41,6 @@ $('#termForm').css('display', 'none');
 });
 }
 
-
 $scope.regex = '^[0-9]*$';
 
 }]);

@@ -677,6 +677,10 @@ function addTerm(){
 	$('#addTerm').modal('show');
 }
 
+function addTermClose(){
+	$('#addTerm').modal('hide');
+}
+
 function MaddClient(){
 	document.getElementById("empForm").reset();
 	$('#MaddClient').modal('show');

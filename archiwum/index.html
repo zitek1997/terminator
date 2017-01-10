@@ -279,24 +279,24 @@
         <form class="form-horizontal alert alert-warning" name="termList" id="termForm" ng-submit="addTerm(termInfo);">
           <div class="form-group">
       		  <label for="Nazwa">Nazwa:</label>
-      		  <input type="text" name="term_name" class="form-control" placeholder="Wpisz Imię" ng-model="termInfo.fname" autofocus required />
+      		  <input type="text" name="term_name" class="form-control" placeholder="Wpisz Nazwę" ng-model="termInfo.fname" autofocus required />
       	  </div>
       	  <div class="form-group">
             <p class="text-danger" ng-show="termList.term_name.$invalid && termList.terem_name.$dirty">Błąd</p>
           </div>
           <div class="form-group">
             <label for="Kolor">Kolor:</label>
-            <input type="text" name="term_color" class="form-control" placeholder="Wpisz Nazwisko" ng-model="termInfo.color" autofocus required />
+            <input type="text" name="term_color" class="form-control" placeholder="Wybierz Kolor" ng-model="termInfo.color" autofocus required />
           </div>
           <div class="form-group">
             <p class="text-danger" ng-show="termList.term_color.$invalid && termList.term_color.$dirty">Błąd</p>
           </div>
           <div class="form-group">
             <label for="Dostęp">Dostęp:</label>
-            <input type="" name="emp_email" class="form-control" placeholder="Wpisz email" ng-model="empInfo.email" autofocus required />
+            <input type="" name="term_access" class="form-control" placeholder="Wpisz Dostęp" ng-model="termInfo.access" autofocus required />
           </div>
           <div class="form-group">
-            <p class="text-danger" ng-show="empList.emp_email.$invalid && empList.emp_email.$dirty">Błąd</p>
+            <p class="text-danger" ng-show="empList.term_email.$invalid && empList.emp_email.$dirty">Błąd</p>
           </div>
           <div class="form-group">
             <button class="btn btn-warning" ng-disabled="empList.$invalid" onclick="termaddClose();">Dodaj</button>
@@ -315,8 +315,56 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Dodaj pracownika</h4>
       </div>
-      <div class="modal-body" id="newusercontent">
-        <!--ajax-->
+      <div class="modal-body">
+          <div>
+  <form class="form-horizontal alert" name="empList" id="empForm" ng-submit="insertInfo(empInfo);">
+    <div class="form-group">
+      <label for="Imie">Imie:</label>
+      <input type="text" name="emp_fname" class="form-control" placeholder="Wpisz Imię" ng-model="empInfo.fname" autofocus required />
+    </div>
+    <div class="form-group">
+      <p class="text-danger" ng-show="empList.emp_fname.\$invalid && empList.emp_fname.\$dirty">Błąd</p>
+    </div>
+    <div class="form-group">
+      <label for="Nazwisko">Nazwisko:</label>
+      <input type="text" name="emp_lname" class="form-control" placeholder="Wpisz Nazwisko" ng-model="empInfo.lname" autofocus required />
+    </div>
+    <div class="form-group">
+      <p class="text-danger" ng-show="empList.emp_lname.\$invalid && empList.emp_lname.\$dirty">Błąd</p>
+    </div>
+    <div class="form-group">
+      <label for="Login">Login:</label>
+      <input type="text" name="emp_login" class="form-control" placeholder="Wpisz login" ng-model="empInfo.login" autofocus required />
+    </div>
+    <div class="form-group">
+      <p class="text-danger" ng-show="empList.emp_login.\$invalid && empList.emp_login.\$dirty">Błąd</p>
+    </div>
+    <div class="form-group">
+      <label for="Pass">Hasło:</label>
+      <input type="password" name="emp_pass" class="form-control" placeholder="Wpisz hasło" ng-model="empInfo.pass" autofocus required />
+    </div>
+    <div class="form-group">
+      <p class="text-danger" ng-show="empList.emp_pass.\$invalid && empList.emp_pass.\$dirty">Błąd</p>
+    </div>
+    <div class="form-group">
+      <label for="Email">Email:</label>
+      <input type="email" name="emp_email" class="form-control" placeholder="Wpisz email" ng-model="empInfo.email" autofocus required />
+    </div>
+    <div class="form-group">
+      <p class="text-danger" ng-show="empList.emp_email.\$invalid && empList.emp_email.\$dirty">Błąd</p>
+    </div>
+    <div class="form-group">
+      <label for="Phone">Telefon:</label>
+      <input type="text" name="emp_phone" class="form-control" placeholder="Wpisz numer" ng-model="empInfo.phone" autofocus required />
+    </div>
+    <div class="form-group">
+      <p class="text-danger" ng-show="empList.emp_phone.\$invalid && empList.emp_phone.\$dirty">Błąd</p>
+    </div>
+      <div class="form-group" id="newusercontent">
+          
+      </div>
+      </form>
+    </div>
       </div>
       <div class="modal-footer">
         <div class="form-group">
