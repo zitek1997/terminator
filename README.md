@@ -13,6 +13,7 @@ http://projekt.itcave.pl/
 ##- Możliwość dodawania dni wolnych i świąt ✓
 ##- Modal dodawania klienta ✓
 ##- Podział użytkowników (adminitsrator / zwykły)
+
 ==============================
 ##- Mobile CSS (ASAP)
 ==============================
