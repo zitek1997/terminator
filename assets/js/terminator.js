@@ -414,12 +414,12 @@ function cEdit(id){
 }
 
 function cSave(){
-	id=document.forms.modalClient.id.value;
-	im=document.forms.modalClient.imie.value;
-	na=document.forms.modalClient.nazwisko.value;
-	te=document.forms.modalClient.tel.value;
-	em=document.forms.modalClient.email.value;
-	ad=document.forms.modalClient.adres.value;
+	id=document.getElementById('cardId').value;
+	im=document.getElementById('card').value;
+	na=document.getElementById('').value;
+	te=document.getElementById('').value;
+	em=document.getElementById('').value;
+	ad=document.getElementById('').value;
 	$.ajax({
 		url: 'ajax/cSave.php',
 		data: 'id='+id+'&imie='+im+'&nazwisko='+na+'&tel='+te+'&email='+em+'&adres='+ad,
@@ -428,15 +428,6 @@ function cSave(){
 		// success: function(){}
 	});
 	draggable();
-	// $('#modalClient').modal('hide');
-	document.forms.modalClient.id.value="";
-	document.forms.modalClient.imie.value="";
-	document.forms.modalClient.nazwisko.value="";
-	document.forms.modalClient.tel.value="";
-	document.forms.modalClient.email.value="";
-	document.forms.modalClient.adres.value="";
-	// setTimeout(draggable(), 3000);
-	// $('#calendar').fullCalendar( 'refetchEvents' );
 }
 
 function weDel(id){
@@ -747,6 +738,7 @@ function openDir(id){
 	phone = card["tel"];
 	adres = card["adres"];
 	makeSomeMagic(hist);
+	document.getElementById('cardId').value = id;
 	document.getElementById("cardName").value = name;
 	document.getElementById("cardEmail").value = mail;
 	document.getElementById("cardTel").value = phone;
@@ -760,4 +752,26 @@ function SoH(){
 	}else{
 		document.getElementById("se").style.display = 'none';
 	}
+}
+
+function editMode(){
+ if(document.getElementById('editMode').checked){
+	 document.getElementById('cardId').disabled = false;
+	 document.getElementById("cardName").disabled = false;
+	 document.getElementById("cardEmail").disabled = false;
+	 document.getElementById("cardTel").disabled = false;
+	 document.getElementById("cardAdres").disabled = false;
+	 document.getElementById('KASUJ').type = "button";
+	 document.getElementById('ZAPISZ').type = "button";
+	 document.getElementById('historyTable').style.display = "none";
+ }else{
+	 document.getElementById('cardId').disabled = true;
+	 document.getElementById("cardName").disabled = true;
+	 document.getElementById("cardEmail").disabled = true;
+	 document.getElementById("cardTel").disabled = true;
+	 document.getElementById("cardAdres").disabled = true;
+	 document.getElementById('KASUJ').type = "hidden";
+	 document.getElementById('ZAPISZ').type = "hidden";
+	 document.getElementById('historyTable').style.display = "block";
+ }
 }

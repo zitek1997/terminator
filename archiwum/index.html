@@ -137,31 +137,6 @@
   </div>
 </div>
 
-<div id="modalClient" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-	 <div class="modal-content">
-		  <div class="modal-header">
-			   <button type="button" class="close" data-dismiss="modal">&times;</button>
-			   <h4 class="modal-title">Edycja wydarzenia</h4>
-		  </div>
-		  <div class="modal-body">
-        <form name='modalClient'>
-          ID:<input type="text" name="id" class="form-control" value="" disabled></input><br>
-          Imię:<input type="text" name="imie" class="form-control" value=""></input><br>
-          Nazwisko:<input type="text" class="form-control" name="nazwisko" value=""></input><br>
-          Tel:<input type="text" class="form-control" name="tel" value=""></input><br>
-          e-mail:<input type="email" class="form-control" name="email" value=""></input><br>
-          Adres:<br><input type="text" class="form-control" name="adres" value=""></input>
-        </form>
-		  </div>
-		  <div class="modal-footer">
-			   <button type="button" class="btn btn-danger" data-dismiss="modal" onClick="cDel()">SKASUJ KLIENTA</button>
-			   <button type="button" class="btn btn-success" data-dismiss="modal" onClick="cSave()">Zapisz</button>
-		  </div>
-	 </div>
-  </div>
-</div>
-
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -268,7 +243,7 @@
     </div>
   </div>
 </div>
-    
+
 <div id="addTerm" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -377,7 +352,7 @@
             <select multiple name="emp_access" class="form-control" ng-model="empInfo.access" id="newusercontent">
             </select>
       </div>
-      
+
     </div>
       </div>
       <div class="modal-footer">
@@ -416,6 +391,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" onclick="">&times;</button>
+        <div class="material-switch pull-right"><br>
+          Tryb edycji
+          <input id="editMode" name="editMode" type="checkbox" onchange="editMode();">
+          <label for="editMode" class="label-success"></label>
+        </div>
         <h4 class="modal-title">Karty klientów</h4>
       </div>
       <div class="modal-body" id="ShowMeYourCards">
@@ -427,17 +407,22 @@
         <input type="text" class="form-control" value="" id="cardTel" disabled/><br>
         Adres:<br>
         <input type="text" class="form-control" value="" id="cardAdres" disabled/><br>
-        <table id="cardHistory" class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Data</th>
-              <th>Usługa</th>
-            </tr>
-          </thead>
-          <tbody>
+        <input type="hidden" id="cardId" value=""/>
+        <input type="hidden" id="KASUJ" class="btn btn-danger" value="Skasuj klienta" onclick="cDel();"/>
+        <input type="hidden" id="ZAPISZ" class="btn btn-success" value="Zapisz zmiany" onclick="cSave();"/>
+        <div id="historyTable">
+          <table id="cardHistory" class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Usługa</th>
+              </tr>
+            </thead>
+            <tbody>
 
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="modal-footer"></div>
     </div>
