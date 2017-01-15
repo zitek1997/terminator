@@ -479,12 +479,12 @@ function logOut(){
 function pickDate(){
 	starto = document.forms.modal.startdate.value;
 	endo = document.forms.modal.enddate.value;
-	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
+	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm:ss", lang : 'pl'}).on('change', function(e, date)
 	{
 		s=$('#startdate').val();
 		e=$('#enddate').val();
 		if(s>e){
-			end = Date.parse(e);
+			end = moment(e);
 			end = end - 30*60000;
 			end = new Date(end);
 			year = end.getFullYear();
@@ -496,13 +496,12 @@ function pickDate(){
 			day = end.getDate();
 			hour = end.getHours();
 			minute = end.getMinutes();
-			val = year+"-"+month+"-"+day+" "+hour+":"+minute;
-			console.log(val);
+			val = year+"-"+month+"-"+day+" "+hour+":"+minute+":00";
 			$('#startdate').val(val);
 		}
 	});
 
-	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
+	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm:ss", lang : 'pl'}).on('change', function(e, date)
 	{
 		$('#enddate').bootstrapMaterialDatePicker('setMinDate', date);
 	});
