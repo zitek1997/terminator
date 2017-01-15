@@ -496,6 +496,9 @@ function pickDate(){
 			day = end.getDate();
 			hour = end.getHours();
 			minute = end.getMinutes();
+			if(minute < 10){
+				minute = "0"+month;
+			}
 			val = year+"-"+month+"-"+day+" "+hour+":"+minute+":00";
 			$('#startdate').val(val);
 		}
@@ -503,6 +506,27 @@ function pickDate(){
 
 	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm:ss", lang : 'pl'}).on('change', function(e, date)
 	{
+		s=$('#startdate').val();
+		e=$('#enddate').val();
+		if(s>e){
+			end = moment(s);
+			end = end + 30*60000;
+			end = new Date(end);
+			year = end.getFullYear();
+			month = end.getMonth();
+			month++;
+			if(month < 10){
+				month = "0"+month;
+			}
+			day = end.getDate();
+			hour = end.getHours();
+			minute = end.getMinutes();
+			if(minute < 10){
+				minute = "0"+month;
+			}
+			val = year+"-"+month+"-"+day+" "+hour+":"+minute+":00";
+			$('#enddate').val(val);
+		}
 		$('#enddate').bootstrapMaterialDatePicker('setMinDate', date);
 	});
 }
@@ -702,6 +726,7 @@ function MaddClient(){
 }
 
 function MaddClientClose(){
+	draggable();
 	$('#MaddClient').modal('hide');
 }
 
