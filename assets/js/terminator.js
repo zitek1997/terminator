@@ -428,6 +428,8 @@ function cSave(){
 		// success: function(){}
 	});
 	draggable();
+	seeTheHistory();
+	openDir(id);
 }
 
 function weDel(id){
@@ -460,8 +462,9 @@ function cDel(){
 	});
 	getFreshEvents();
 	cliid=""
-
+	seeTheHistory();
 	draggable();
+	$('#KKK').modal('hide');
 }
 
 function logOut(){
@@ -749,15 +752,33 @@ function openDir(id){
 	console.log(card);
 	hist = card["history"];
 	name = card["name"];
+	lname = card["lname"];
+	fname = card['fname'];
 	mail = card["poczta"];
 	phone = card["tel"];
 	adres = card["adres"];
+	document.getElementById('editMode').checked = false;
+	editMode();
 	makeSomeMagic(hist);
 	document.getElementById('cardId').value = id;
 	document.getElementById("cardName").value = name;
-	document.getElementById("cardEmail").value = mail;
-	document.getElementById("cardTel").value = phone;
-	document.getElementById("cardAdres").value = adres;
+	document.getElementById("cardLName").value = lname;
+	document.getElementById("cardFName").value = fname;
+	if(mail == null){
+		document.getElementById("cardEmail").placeholder = "Nie podano";
+	}else{
+		document.getElementById("cardEmail").value = mail;
+	}
+	if(phone == null){
+		document.getElementById("cardTel").placeholder = "Nie podano";
+	}else{
+		document.getElementById("cardTel").value = phone;
+	}
+	if(adres == null){
+		document.getElementById("cardAdres").placeholder = "Nie podano";
+	}else{
+		document.getElementById("cardAdres").value = adres;
+	}
 	$('#KKK').modal('show');
 }
 
@@ -772,13 +793,16 @@ function SoH(){
 function editMode(){
  if(document.getElementById('editMode').checked){
 	 document.getElementById('cardId').disabled = false;
-	 document.getElementById("cardName").disabled = false;
+	 document.getElementById("cardFName").disabled = false;
+	 document.getElementById("cardLName").disabled = false;
 	 document.getElementById("cardEmail").disabled = false;
 	 document.getElementById("cardTel").disabled = false;
 	 document.getElementById("cardAdres").disabled = false;
 	 document.getElementById('KASUJ').type = "button";
 	 document.getElementById('ZAPISZ').type = "button";
 	 document.getElementById('historyTable').style.display = "none";
+	 document.getElementById('editSuabo').style.display = "none";
+	 document.getElementById('editMocno').style.display = "block";
  }else{
 	 document.getElementById('cardId').disabled = true;
 	 document.getElementById("cardName").disabled = true;
@@ -788,5 +812,7 @@ function editMode(){
 	 document.getElementById('KASUJ').type = "hidden";
 	 document.getElementById('ZAPISZ').type = "hidden";
 	 document.getElementById('historyTable').style.display = "block";
+	 document.getElementById('editSuabo').style.display = "block";
+	 document.getElementById('editMocno').style.display = "none";
  }
 }

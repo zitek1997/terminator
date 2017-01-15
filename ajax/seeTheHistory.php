@@ -5,8 +5,11 @@ $cards = array();
 foreach ($clients as $client){
   $id = $client['ID'];
   $name = $client['LNAME']." ".$client['FNAME'];
+  $lname = $client['LNAME'];
+  $fname = $client['FNAME'];
   $email = $client['EMAIL'];
   $tel = $client['TEL'];
+  $adres = $client['ADRES'];
   $array = array(
     "idc" => $id,
   );
@@ -15,8 +18,11 @@ foreach ($clients as $client){
 
   $c = array();
   $c['name'] = $name;
+  $c['lname'] = $lname;
+  $c['fname'] = $fname;
   $c['poczta'] = $email;
   $c['tel'] = $tel;
+  $c['adres'] = $adres;
   $c['history'] = $history;
   $cards[$id] = $c;
   // echo '<input type="button" class="btn btn-success dashbutton clientname" name="showCH" onclick="openDir('.$id.')" value="'.$name.'"/>';
