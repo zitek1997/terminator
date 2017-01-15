@@ -415,11 +415,11 @@ function cEdit(id){
 
 function cSave(){
 	id=document.getElementById('cardId').value;
-	im=document.getElementById('card').value;
-	na=document.getElementById('').value;
-	te=document.getElementById('').value;
-	em=document.getElementById('').value;
-	ad=document.getElementById('').value;
+	im=document.getElementById('cardFName').value;
+	na=document.getElementById('cardLName').value;
+	te=document.getElementById('cardTel').value;
+	em=document.getElementById('cardEmail').value;
+	ad=document.getElementById('cardAdres').value;
 	$.ajax({
 		url: 'ajax/cSave.php',
 		data: 'id='+id+'&imie='+im+'&nazwisko='+na+'&tel='+te+'&email='+em+'&adres='+ad,
@@ -450,7 +450,7 @@ function weDel(id){
 }
 
 function cDel(){
-	id=document.forms.modalClient.id.value;
+	id=document.getElementById('cardId').value;
 	$.ajax({
 		url: 'ajax/cDel.php',
 		data: 'id='+id+'&idc='+id,
@@ -460,12 +460,7 @@ function cDel(){
 	});
 	getFreshEvents();
 	cliid=""
-	document.forms.modalClient.id.value="";
-	document.forms.modalClient.imie.value="";
-	document.forms.modalClient.nazwisko.value="";
-	document.forms.modalClient.tel.value="";
-	document.forms.modalClient.email.value="";
-	document.forms.modalClient.adres.value="";
+
 	draggable();
 }
 
@@ -481,8 +476,28 @@ function logOut(){
 function pickDate(){
 	starto = document.forms.modal.startdate.value;
 	endo = document.forms.modal.enddate.value;
-
-	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm", lang : 'pl'});
+	$('#enddate').bootstrapMaterialDatePicker({ weekStart :  1, currentDate: endo, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
+	{
+		s=$('#startdate').val();
+		e=$('#enddate').val();
+		if(s>e){
+			end = Date.parse(e);
+			end = end - 30*60000;
+			end = new Date(end);
+			year = end.getFullYear();
+			month = end.getMonth();
+			month++;
+			if(month < 10){
+				month = "0"+month;
+			}
+			day = end.getDate();
+			hour = end.getHours();
+			minute = end.getMinutes();
+			val = year+"-"+month+"-"+day+" "+hour+":"+minute;
+			console.log(val);
+			$('#startdate').val(val);
+		}
+	});
 
 	$('#startdate').bootstrapMaterialDatePicker({ weekStart : 1, currentDate: starto, format: "YYYY-MM-DD HH:mm", lang : 'pl'}).on('change', function(e, date)
 	{
