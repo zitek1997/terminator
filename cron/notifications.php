@@ -33,14 +33,14 @@ foreach($noti as $ts){
   $name = $client['FNAME']." ".$client['LNAME'];
   $service = $event['opis'];
   $date = $event['startdate'];
-  if ($sSMS == 1){
+  if ($sSMS == 1 && $tel != null){
     //przygotowanie wiadomości
     //SMS
     $sms = $def['message'];
     $sms = str_replace("^usługa^", $service, $sms);
     $sms = str_replace("^data^", $date, $sms);
   }
-  if ($sEMAIL == 1){
+  if ($sEMAIL == 1 && $mail != null){
     //E-MAIL
     $topic = $def['subject'];
     $msg = $def['beforem'].$def['message'].$def['afterm'];
