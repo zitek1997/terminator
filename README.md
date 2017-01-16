@@ -7,16 +7,16 @@ http://projekt.itcave.pl/
 ##- System powiadomień email i sms (ASAP) +/-
 ##- Edycja konta
 ##- Podział użytkowników (adminitsrator / zwykły)
-##- Modal po przesunięciu klienta do oczekujących z wyborem dogodnej godziny 
+##- Modal po przesunięciu klienta do oczekujących z wyborem dogodnej godziny
 ##- Wyświetlanie dogodnej godziny na liście oczekujących
 ##- Możliwość usuwania terminarzy (administrator)
 ##- Uruchomić usuwanie z listy oczekujących
-##- System autobackup'u bazy danych 
+##- System autobackup'u bazy danych
 ##- Opis usługi w popoverze
 ##- Umożliwić dodanie klienta bez tel i mail
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
 ##- Uruchomić system świąt (modal dodawania świąt)
-##- Informacje z popovera w Planie Tygodnia
+##- Informacje z popovera w Planie Tygodnia ✓
 ##- Mobile CSS (ASAP)
 
 ##BUGI
