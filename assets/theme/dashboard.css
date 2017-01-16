@@ -366,12 +366,35 @@ body{
     background: #17436e;
     cursor: pointer;
 }
+.mwait:hover{
+    background: #17436e;
+    cursor: pointer;
+}
 .mterms:hover{
-    background: #176e5e;
+    background: #17436e;
+    cursor: pointer;
+}
+.mfterms:hover{
+    background: #17436e;
     cursor: pointer;
 }
 .mcards:hover{
-    background: #17526e;
+    background: #17436e;
+    cursor: pointer;
+}
+.mclients{
+    cursor: pointer;
+}
+.mwait{
+    cursor: pointer;
+}
+.mterms{
+    cursor: pointer;
+}
+.mfterms{
+    cursor: pointer;
+}
+.mcards{
     cursor: pointer;
 }
 .moptions:hover{
@@ -956,12 +979,35 @@ body{
     background: #17436e;
     cursor: pointer;
 }
+.mwait:hover{
+    background: #17436e;
+    cursor: pointer;
+}
 .mterms:hover{
-    background: #176e5e;
+    background: #17436e;
+    cursor: pointer;
+}
+.mfterms:hover{
+    background: #17436e;
     cursor: pointer;
 }
 .mcards:hover{
-    background: #17526e;
+    background: #17436e;
+    cursor: pointer;
+}
+.mclients{
+    cursor: pointer;
+}
+.mwait{
+    cursor: pointer;
+}
+.mterms{
+    cursor: pointer;
+}
+.mfterms{
+    cursor: pointer;
+}
+.mcards{
     cursor: pointer;
 }
 .moptions:hover{
