@@ -4,20 +4,32 @@ http://projekt.itcave.pl/
 
 #TO DO (Chronologicznie)
 ==============================
-##- Wolne terminy (ASAP) ✓
 ##- System powiadomień email i sms (ASAP) +/-
-##- Karty klientów (historia wizyt) (ASAP) ✓
-==============================
-##- Custom eventy ✓
 ##- Edycja konta
-##- Możliwość dodawania dni wolnych i świąt ✓
-##- Modal dodawania klienta ✓
 ##- Podział użytkowników (adminitsrator / zwykły)
-==============================
+##- Modal po przesunięciu klienta do oczekujących z wyborem dogodnej godziny 
+##- Wyświetlanie dogodnej godziny na liście oczekujących
+##- Możliwość usuwania terminarzy (administrator)
+##- Uruchomić usuwanie z listy oczekujących
+##- System autobackup'u bazy danych 
+##- Opis usługi w popoverze
+##- Umożliwić dodanie klienta bez tel i mail
+##- Dokończyć system terminarzy (podział na custom terminarze itd.)
+##- Uruchomić system świąt (modal dodawania świąt)
+##- Informacje z popovera w Planie Tygodnia
 ##- Mobile CSS (ASAP)
-==============================
+
+##BUGI
+##-Przełączanie między kartami (problem z jquery karty klientów, na firefoxie działa)
+##-Popovery duchy (po usunięciu pojawia się onclick innego popovera)
+
 #DONE
 
+##- Custom eventy ✓
+##- Możliwość dodawania dni wolnych i świąt ✓
+##- Modal dodawania klienta ✓
+##- Wolne terminy (ASAP) ✓
+##- Karty klientów (historia wizyt) (ASAP) ✓
 ##-poprawić Jquery dla paska bocznego ✓
 ##-dodac menu klientów oczekujacych ✓
 ##-dodać menu listy wolnych terminow ✓
