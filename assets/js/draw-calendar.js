@@ -203,6 +203,10 @@ function drawCallendar(){
 			title = event.title;
 			start = event.start.format("HH:mm");
 			desc = event.opis;
+			descd = event.opisd;
+			if(descd == null){
+				descd = "";
+			}
 			if(event.end != null){
 				end = event.end.format("HH:mm");
 			}else if(event.allDay == true){
@@ -213,8 +217,8 @@ function drawCallendar(){
 			if(desc == null && event.allDay == true && event.end == null){
 				desc = " ";
 				contento = '<div id="popover-event-content"><i class="material-icons popover-info">info</i><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p></div></div>'
-			}else{       
-				contento = '<div id="popover-event-content"><i class="material-icons popover-info">info</i><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p><p class="popover-text-desc">'+desc+'</p><p class="popover-text-descs">[opis uslugi]</p><p class="popover-text-time">'+start+' -- '+end+'</p><div class="popover-footer"><div class="popover-button event left-pop" id="editEvent" onclick="editEventNew('+event.id+')"><p class="popover_p">Edycja</p></div><div class="popover-button event right-pop" onclick="weDel('+event.id+')"><p class="popover_p">Usuń</p></div></div></div></div>'
+			}else{
+				contento = '<div id="popover-event-content"><i class="material-icons popover-info">info</i><div class="popover-event-content-in"><p class="popover-text-title">'+title+'</p><p class="popover-text-desc">'+desc+'</p><p class="popover-text-descs">'+descd+'</p><p class="popover-text-time">'+start+' -- '+end+'</p><div class="popover-footer"><div class="popover-button event left-pop" id="editEvent" onclick="editEventNew('+event.id+')"><p class="popover_p">Edycja</p></div><div class="popover-button event right-pop" onclick="weDel('+event.id+')"><p class="popover_p">Usuń</p></div></div></div></div>'
 			}
       element.clickover({
         global_close: true,

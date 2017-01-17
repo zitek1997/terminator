@@ -340,6 +340,7 @@ function save(){
 			start = document.forms.modal.startdate.value;
 			end = document.forms.modal.enddate.value;
 			opis = document.forms.modal.cSvc.value;
+			opisd = document.forms.modal.sDesc.value;
 			if (event.idc != "customEv"){
 				if (opis == "new"){
 					opis = document.forms.modal.neName.value;
@@ -370,7 +371,7 @@ function save(){
 			// event.opis = opis;
 	    $.ajax({
 		url: 'process.php',
-		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis+'&noti='+noti+'&sms='+sms+'&email='+email,
+		data: 'type=change&title='+title+'&eventid='+id+'&startdate='+start+'&enddate='+end+'&opis='+opis+'&opisd='+opisd+'&noti='+noti+'&sms='+sms+'&email='+email,
 		type: 'POST',
 		success: function(s){
 			console.log(s);

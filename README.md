@@ -12,7 +12,7 @@ http://projekt.itcave.pl/
 ##- Możliwość usuwania terminarzy (administrator)
 ##- Uruchomić usuwanie z listy oczekujących
 ##- System autobackup'u bazy danych
-##- Opis usługi w popoverze
+##- Opis usługi w popoverze ✓
 ##- Disabled email i tel w evencie jeśli brak tel lub mail
 ##- Umożliwić dodanie klienta bez tel i mail
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)

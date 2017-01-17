@@ -22,7 +22,6 @@ if($type == 'new')
 		"startdate" => $startdate,
 		"enddate" => $enddate,
 		"allDay" => "false",
-		"opis" => " ",
     "timetab_id" => $timetab_id,
 		"idc" => $idc,
 		"noti_date" => $notidate,
@@ -52,11 +51,13 @@ if($type == 'change')
 	$enddate = date("Y-m-d H:i:s",$enddate);
 	$notidate =date("Y-m-d H:i:s",$notidate);
 	$opis = $_POST['opis'];
+	$opisd = $_POST['opisd'];
 	$array = array(
 		'title' => $title,
 		'startdate' => $startdate,
 		'enddate' => $enddate,
 		'opis' => $opis,
+		'opisd' => $opisd,
 		"noti_date" => $notidate,
 		'NOTI' => $NOTI,
 		'SMS' => $SMS,
@@ -126,6 +127,7 @@ if($type == 'fetch')
 	    $allday = ($fetch['allDay'] == "true") ? true : false;
 	    $e['allDay'] = $allday;
 			$e['opis'] = $fetch['opis'];
+			$e['opisd'] = $fetch['opisd'];
 			$e['idc'] = $fetch['idc'];
 			$e['notidate'] = $fetch['noti_date'];
 	    array_push($events, $e);
@@ -143,6 +145,7 @@ if ($type== 'update')
 		$ids = $db->select($sql, $array);
 		$end['enddate'] = $ids[0]['enddate'];
 		$end['opis'] = $ids[0]['opis'];
+		$end['opisd'] = $ids[0]['opisd'];
 
 	  echo json_encode($end);
 	}
