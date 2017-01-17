@@ -13,6 +13,7 @@ http://projekt.itcave.pl/
 ##- Uruchomić usuwanie z listy oczekujących
 ##- System autobackup'u bazy danych
 ##- Opis usługi w popoverze
+##- Disabled email i tel w evencie jeśli brak tel lub mail
 ##- Umożliwić dodanie klienta bez tel i mail
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
 ##- Uruchomić system świąt (modal dodawania świąt)
@@ -22,6 +23,7 @@ http://projekt.itcave.pl/
 ##BUGI
 ##-Przełączanie między kartami (problem z jquery karty klientów, na firefoxie działa)
 ##-Popovery duchy (po usunięciu pojawia się onclick innego popovera)
+##-Brak błędu przy poprawnym loginie i błędnym haśle w logowaniu
 
 #DONE
 
