@@ -10,7 +10,7 @@ http://projekt.itcave.pl/
 ##- Modal po przesunięciu klienta do oczekujących z wyborem dogodnej godziny
 ##- Wyświetlanie dogodnej godziny na liście oczekujących
 ##- Możliwość usuwania terminarzy (administrator)
-##- Uruchomić usuwanie z listy oczekujących
+##- Uruchomić usuwanie z listy oczekujących ✓
 ##- System autobackup'u bazy danych
 ##- Opis usługi w popoverze ✓
 ##- Disabled email i tel w evencie jeśli brak tel lub mail

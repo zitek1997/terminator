@@ -22,6 +22,8 @@ if($type == 'new')
 		"startdate" => $startdate,
 		"enddate" => $enddate,
 		"allDay" => "false",
+		"opis" => null,
+		"opisd" => null,
     "timetab_id" => $timetab_id,
 		"idc" => $idc,
 		"noti_date" => $notidate,

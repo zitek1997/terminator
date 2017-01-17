@@ -259,6 +259,18 @@ $(document).ready(function() {
 			});
 		}
 	});
+
+	$('#wait_delete').droppable({
+    containment: "body",
+		accept: ".pending_customer",
+		tolerance: "touch",
+    over: function() {$("#wait_delete").addClass( "over" );},
+    out: function() {$("#wait_delete").removeClass( "over" );},
+		drop: function(event, ui){
+			idc = ui.draggable[0].id;
+			endwait(idc);
+		}
+	});
 });
 
 
