@@ -18,6 +18,7 @@ http://projekt.itcave.pl/
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
 ##- Uruchomić system świąt (modal dodawania świąt)
 ##- Informacje z popovera w Planie Tygodnia ✓
+##- Dodać opcję przesuwania draggable w ekranach dotykowych
 ##- Mobile CSS (ASAP)
 
 ##BUGI
