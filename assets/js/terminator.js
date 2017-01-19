@@ -728,6 +728,7 @@ function MaddClient(){
 
 function MaddClientClose(){
 	draggable();
+	seeTheHistory();
 	$('#MaddClient').modal('hide');
 }
 
