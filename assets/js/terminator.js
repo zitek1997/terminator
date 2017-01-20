@@ -164,12 +164,18 @@ $(document).ready(function(){
     });
     $("#menu-toggle").click(function(){
         if ($("#sidebar-toggle").hasClass("hid")) {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+        $(".nav").css("width", '60%');
+        }
         $("#head-brand-toggle").show("slide", 550),
         $("#sidebar-toggle").show("slide", 550),
         $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
         $("#sidebar-toggle").removeClass( "hid" );
         }
         else{
+        if (window.matchMedia("(max-width: 767px)").matches) {
+        $(".nav").css("width", '94%');
+        }
         $("#head-brand-toggle").hide("slide", 550),
         $("#sidebar-toggle").hide("slide", 550),
         $("#main-toggle").toggleClass( "togglemain", 550, "linear" );
@@ -181,7 +187,14 @@ $(document).ready(function(){
 		popoverDetail();
 		userAccess();
 });
-
+function hidemenu(){
+    if (window.matchMedia("(max-width: 767px)").matches) {
+        $("#head-brand-toggle").hide("slide", 550),
+        $("#sidebar-toggle").hide("slide", 550),
+        $("#main-toggle").toggleClass( "togglemain", 550, "linear" );
+        $("#sidebar-toggle").addClass( "hid" );
+        }
+        };
 function getFreshEvents(){
 	$('#calendar').fullCalendar( 'removeEvents' );
 	$('#calendar').fullCalendar( 'refetchEvents' );
@@ -224,7 +237,7 @@ function draggable() {
 
 			 // make the event draggable using jQuery UI
 			 $(this).draggable({
-                                start: function(e, ui) {$("#wait").show("slide", 100),$(this).fadeTo( "slow" , 0.3), $(ui.helper).addClass("fc-event"); },
+                                start: function(e, ui) {$("#wait").show("slide", 100),$(this).fadeTo( "slow" , 0.3), $(ui.helper).addClass("fc-event");  },
                                 stop: function( ) {$("#wait").hide("slide", 1000),$(this).fadeTo( "slow" , 1);},
 				 revert: true,      // will cause the event to go back to its
 				 revertDuration: 600,  //  original position after the drag
