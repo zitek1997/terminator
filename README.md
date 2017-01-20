@@ -6,7 +6,7 @@ http://projekt.itcave.pl/
 ==============================
 ##- Modal po przesunięciu klienta do oczekujących z wyborem dogodnej godziny (SOBOTA?)
 ##- Wyświetlanie dogodnej godziny na liście oczekujących (SOBOTA?)
-##- System powiadomień email i sms (ASAP) +/-
+##- System powiadomień email i sms (ASAP) ✓
 ##- Edycja konta
 ##- Podział użytkowników (adminitsrator / zwykły)
 ##- Możliwość usuwania terminarzy (administrator)
