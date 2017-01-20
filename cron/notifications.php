@@ -47,6 +47,24 @@ foreach($noti as $ts){
     $sms = $def['message'];
     $sms = str_replace("^usługa^", $service, $sms);
     $sms = str_replace("^data^", $date, $sms);
+
+    // try {
+    //
+    //   $actionSend = $smsapi->actionSend();
+    //
+    //   $actionSend->setTo($tel);
+    //   $actionSend->setText($sms);
+    //   $actionSend->setSender('ECO');
+    //
+    //   $response = $actionSend->execute();
+    //
+    //   foreach( $response->getList() as $status ) {
+    //     echo  $status->getNumber() . ' ' . $status->getPoints() . ' ' . $status->getStatus();
+    //   }
+    // }
+    // catch( \SMSApi\Exception\SmsapiException $e ) {
+    //   echo 'ERROR: ' . $e->getMessage();
+    // }
   }
   if ($sEMAIL == 1 && $mail != null){
     //E-MAIL

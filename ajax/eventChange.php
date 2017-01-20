@@ -20,13 +20,28 @@ $cli = $cli[0];
 $M = $cli['EMAIL'];
 $S = $cli['TEL'];
 
+
+if($event["SMS"]==1){
+  $SMS = "checked";
+}else{
+  $SMS = "";
+}
+if($event["EMAIL"]==1){
+  $EMAIL = "checked";
+}else{
+  $EMAIL = "";
+}
+
+
 if($M == NULL || $M == ""){
   $M = "disabled";
+  $EMAIL = "";
 }else{
   $M = "";
 }
 if($S == NULL || $S == ""){
   $S = "disabled";
+  $SMS = "";
 }else{
   $S = "";
 }
@@ -44,16 +59,6 @@ if($M == "disabled" && $S == "disabled"){
 }
 
 
-if($event["SMS"]==1){
-  $SMS = "checked";
-}else{
-  $SMS = "";
-}
-if($event["EMAIL"]==1){
-  $EMAIL = "checked";
-}else{
-  $EMAIL = "";
-}
 if ($idc == "customEv"){
   $sql1="SELECT * FROM services ORDER BY name ASC";
   $usl=$db->selecto($sql1);
