@@ -12,7 +12,7 @@ http://projekt.itcave.pl/
 ##- Możliwość usuwania terminarzy (administrator)
 ##- Uruchomić usuwanie z listy oczekujących ✓
 ##- System autobackup'u bazy danych
-##- Disabled email i tel w evencie jeśli brak tel lub mail
+##- Disabled email i tel w evencie jeśli brak tel lub mail ✓
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
 ##- Uruchomić system świąt (modal dodawania świąt)
 ##- Mobile CSS (ASAP)
