@@ -24,7 +24,7 @@ http://projekt.itcave.pl/
 ##BUGI
 ##-Przełączanie między kartami (problem z jquery karty klientów, na firefoxie działa)
 ##-Popovery duchy (po usunięciu pojawia się onclick innego popovera)
-##-Brak błędu przy poprawnym loginie i błędnym haśle w logowaniu
+##-Brak błędu przy poprawnym loginie i błędnym haśle w logowaniu ✓
 
 #DONE
 

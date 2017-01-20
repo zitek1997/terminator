@@ -8,8 +8,10 @@ $http.post('/ajax/login.php',{"login":info.login,"pass":info.pass})
   if(data==0)
   {
     window.location.replace("http://projekt.itcave.pl");
-  }else{
+  }else if(data==1){
     info.login="";
+    info.pass="";
+  }else if(data==2){
     info.pass="";
   }
 

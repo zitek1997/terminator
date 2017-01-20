@@ -35,6 +35,8 @@ if($x==1)
     }else{
       $_SESSION['admin']=FALSE;
     }
+  }else{
+    $_SESSION['logerr']=2;
   }
 }else{
   $_SESSION['logerr']=1;
