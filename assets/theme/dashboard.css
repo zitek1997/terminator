@@ -73,6 +73,9 @@ body{
 }
 /* Large desktop */
 @media (min-width: 992px) {
+    .draggable-button{
+    margin-bottom: 10px; 
+}
 .list{
     overflow: scroll;
     height: 50vh;
@@ -215,7 +218,6 @@ body{
 }
 .popover.top .arrow:after {
   border-top-color: #ffffff;
-  bottom: 2px;
 }
 .popover-button{
     position: relative;
@@ -236,7 +238,7 @@ body{
     text-align: center;
     color: white;
     font-family: montserratR;
-    font-size: x-large;
+    font-size: 26px;
 }
 .popover-text-time{
     vertical-align: middle;
@@ -253,6 +255,19 @@ body{
     color: white;
     font-family: montserratR;
     font-size: large;
+}
+.popover-text-descs{
+    text-align: center;
+    color: white;
+    font-family: montserratT;
+    font-size: large;
+}
+.popover-footer{
+    height: 62px;
+    background-color: white;
+    border-radius: 0px 0px 6px 6px;
+    padding: 11px; 
+    border-bottom: 2px solid white;
 }
 .event{
     height: 15%;
@@ -294,6 +309,17 @@ body{
     font-size: 16px;
     line-height: 40px;
     margin: 0;
+}
+.popover-info{
+    background-color: #4B93FF;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    font-size: 42px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    color: whitesmoke;
 }
 .sub-header {
   padding-bottom: 10px;
@@ -1107,7 +1133,7 @@ body{
 }
 .popover-button{
     position: relative;
-    width: 45.4%;
+    width: 50%;
     text-align: center;
     cursor: pointer;
     margin-bottom: 5%;
@@ -1163,32 +1189,18 @@ body{
 }
 .left-pop{
     float:left;
-    background-color: rgba(52, 152, 219, 0.5);
+    height: 100%;
+    background-color: #1F85D2;
     border-radius: 200px 0px 0px 200px;
     -moz-border-radius: 200px 0px 0px 200px;
     -webkit-border-radius: 200px 0px 0px 200px;
     /* border: 2px solid #ffffff; */
+    margin: 0;
 }
 .right-pop{
     float:right;
-    background-color: rgba(219, 52, 52, 0.5);
-    border-radius: 0px 200px 200px 0px;
-    -moz-border-radius: 0px 200px 200px 0px;
-    -webkit-border-radius: 0px 200px 200px 0px;
-    /* border: 2px solid #ffffff; */
-}
-.left-pop:hover{
-    float: left;
     height: 100%;
-    background-color: #146caf;
-    border-radius: 200px 0px 0px 200px;
-    -moz-border-radius: 200px 0px 0px 200px;
-    -webkit-border-radius: 200px 0px 0px 200px;
-}
-.right-pop:hover{
-    float: right;
-    height: 100%;
-    background-color: #bf1d34;
+    background-color: #D22C43;
     border-radius: 0px 200px 200px 0px;
     -moz-border-radius: 0px 200px 200px 0px;
     -webkit-border-radius: 0px 200px 200px 0px;
@@ -1206,8 +1218,9 @@ body{
 .popover_p{
     color: white;
     font-family: montserratR;
-    /* margin-top: 0.8em; */
-    font-size: 0.8em;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 0;
 }
 .popover-info{
     background-color: #4B93FF;
@@ -1889,6 +1902,9 @@ body{
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    .draggable-button{
+    margin-bottom: 10px; 
+}
 #mobile-indicator {
         display: block;
     }
@@ -2040,7 +2056,6 @@ body{
 }
 .popover.top .arrow:after {
   border-top-color: #ffffff;
-  bottom: 2px;
 }
 .popover-button{
     position: relative;
@@ -2061,7 +2076,7 @@ body{
     text-align: center;
     color: white;
     font-family: montserratR;
-    font-size: x-large;
+    font-size: 26px;
 }
 .popover-text-time{
     vertical-align: middle;
@@ -2078,6 +2093,19 @@ body{
     color: white;
     font-family: montserratR;
     font-size: large;
+}
+.popover-text-descs{
+    text-align: center;
+    color: white;
+    font-family: montserratT;
+    font-size: large;
+}
+.popover-footer{
+    height: 62px;
+    background-color: white;
+    border-radius: 0px 0px 6px 6px;
+    padding: 11px; 
+    border-bottom: 2px solid white;
 }
 .event{
     height: 15%;
@@ -2119,6 +2147,17 @@ body{
     font-size: 16px;
     line-height: 40px;
     margin: 0;
+}
+.popover-info{
+    background-color: #4B93FF;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    font-size: 42px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    color: whitesmoke;
 }
 .sub-header {
   padding-bottom: 10px;
@@ -2794,6 +2833,9 @@ body{
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    .draggable-button{
+    margin-bottom: 10px; 
+}
 .list{
     overflow: scroll;
     height: 50vh;
@@ -2936,7 +2978,6 @@ body{
 }
 .popover.top .arrow:after {
   border-top-color: #ffffff;
-  bottom: 2px;
 }
 .popover-button{
     position: relative;
@@ -2957,7 +2998,7 @@ body{
     text-align: center;
     color: white;
     font-family: montserratR;
-    font-size: x-large;
+    font-size: 26px;
 }
 .popover-text-time{
     vertical-align: middle;
@@ -2974,6 +3015,19 @@ body{
     color: white;
     font-family: montserratR;
     font-size: large;
+}
+.popover-text-descs{
+    text-align: center;
+    color: white;
+    font-family: montserratT;
+    font-size: large;
+}
+.popover-footer{
+    height: 62px;
+    background-color: white;
+    border-radius: 0px 0px 6px 6px;
+    padding: 11px; 
+    border-bottom: 2px solid white;
 }
 .event{
     height: 15%;
@@ -3015,6 +3069,17 @@ body{
     font-size: 16px;
     line-height: 40px;
     margin: 0;
+}
+.popover-info{
+    background-color: #4B93FF;
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    font-size: 42px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    color: whitesmoke;
 }
 .sub-header {
   padding-bottom: 10px;
