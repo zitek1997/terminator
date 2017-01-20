@@ -12,13 +12,38 @@ $title = $event['title'];
 $startdate = $event['startdate'];
 $enddate = $event['enddate'];
 $desc = $event['opis'];
-if($event["NOTI"]==1){
-  $NOTI = "checked";
-  $DISP = "block";
+
+$array = array("ID"=>$idc);
+$sql = "SELECT TEL, EMAIL FROM clients WHERE ID = :ID";
+$cli = $db->select($sql,$array);
+$cli = $cli[0];
+$M = $cli['EMAIL'];
+$S = $cli['TEL'];
+
+if($M == NULL || $M == ""){
+  $M = "disabled";
 }else{
-  $NOTI = "";
-  $DISP = "none";
+  $M = "";
 }
+if($S == NULL || $S == ""){
+  $S = "disabled";
+}else{
+  $S = "";
+}
+if($M == "disabled" && $S == "disabled"){
+  $NOTI = "disabled";
+  $DISP = "none";
+}else{
+  if($event["NOTI"]==1){
+    $NOTI = "checked";
+    $DISP = "block";
+  }else{
+    $NOTI = "";
+    $DISP = "none";
+  }
+}
+
+
 if($event["SMS"]==1){
   $SMS = "checked";
 }else{
@@ -72,13 +97,13 @@ print <<<KOD
   </div>
   <div id="se" style="display: $DISP">
   <div class="checkbox checkbox-success">
-  <input id="checkbox3" type="checkbox" $SMS>
+  <input id="checkbox3" type="checkbox" $SMS $S>
   <label for="checkbox3">
   SMS
   </label>
   </div>
   <div class="checkbox checkbox-success">
-  <input id="checkbox4" type="checkbox" $EMAIL>
+  <input id="checkbox4" type="checkbox" $EMAIL $M>
   <label for="checkbox4">
   E-mail
   </label>

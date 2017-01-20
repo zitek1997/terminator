@@ -1,5 +1,13 @@
 <?php
 include('../ajax/config.php');
+include('apiconf.php');
+require_once '../smsapi/Autoload.php';
+$client = new \SMSApi\Client($l);
+$pwd = md5($p);
+$client->setPasswordHash( ($pwd) );
+$smsapi = new \SMSApi\Api\SmsFactory();
+$smsapi->setClient($client);
+
 $now = strtotime("now");
 $now = date("Y-m-d H:i:s", $now);
 $now = "'".$now."'";

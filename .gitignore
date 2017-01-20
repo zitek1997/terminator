@@ -4,3 +4,4 @@
 /ajax/addclient1.php
 /ajax/confi.php
 /ajax/db.php
+/cron/apiconf.php
