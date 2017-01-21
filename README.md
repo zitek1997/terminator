@@ -2,24 +2,23 @@
 #"Make it work, then make it better"
 http://projekt.itcave.pl/
 
-#TO DO (Chronologicznie)
+#TO DO
 ==============================
-##- Modal po przesunięciu klienta do oczekujących z wyborem dogodnej godziny (SOBOTA?)
-##- Wyświetlanie dogodnej godziny na liście oczekujących (SOBOTA?)
-##- System powiadomień email i sms (ASAP) ✓
 ##- Edycja konta
 ##- Podział użytkowników (adminitsrator / zwykły)
 ##- Możliwość usuwania terminarzy (administrator)
-##- Uruchomić usuwanie z listy oczekujących ✓
 ##- System autobackup'u bazy danych
-##- Disabled email i tel w evencie jeśli brak tel lub mail ✓
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
 ##- Uruchomić system świąt (modal dodawania świąt)
 ##- Mobile CSS (ASAP)
+
 ##- Dodać opcję przesuwania draggable w ekranach dotykowych (SOBOTA) ✓
 ##- Umożliwić dodanie klienta bez tel i mail (SOBOTA) ✓
 ##- Informacje z popovera w Planie Tygodnia ✓
 ##- Opis usługi w popoverze ✓
+##- Disabled email i tel w evencie jeśli brak tel lub mail ✓
+##- Uruchomić usuwanie z listy oczekujących ✓
+##- System powiadomień email i sms (ASAP) ✓
 
 ##BUGI
 ##-Przełączanie między kartami (problem z jquery karty klientów, na firefoxie działa)
