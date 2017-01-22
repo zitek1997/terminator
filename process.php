@@ -17,6 +17,13 @@ if($type == 'new')
 	$title = $_POST['title'];
 	$idc = $_POST['idc'];
   $timetab_id = $_SESSION['timetab_id'];
+	$color = $db->selecto("SELECT color FROM time_tables WHERE timetab_id = $timetab_id");
+	if(count($color)==1){
+		$color = $color[0]['color'];
+	}else{
+		$color = $db->selecto("SELECT color FROM custom_tables WHERE timetab_id = $timetab_id");
+		$color = $color[0]['color'];
+	}
 	$array = array(
 		"title" => $title,
 		"startdate" => $startdate,
@@ -27,6 +34,7 @@ if($type == 'new')
     "timetab_id" => $timetab_id,
 		"idc" => $idc,
 		"noti_date" => $notidate,
+		"color" => $color,
 	);
 	if($idc == "customEv"){
 		$array["SMS"] = 0;
@@ -132,6 +140,7 @@ if($type == 'fetch')
 			$e['opisd'] = $fetch['opisd'];
 			$e['idc'] = $fetch['idc'];
 			$e['notidate'] = $fetch['noti_date'];
+			$e['color'] = $fetch['color'];
 	    array_push($events, $e);
 	}
 	echo json_encode($events);

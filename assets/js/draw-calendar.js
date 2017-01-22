@@ -198,6 +198,9 @@ function drawCallendar(){
 		},
 
     eventAfterRender: function(event, element) {
+			if(event.color != null){
+				element[0].style.backgroundColor = event.color;
+			}
 			id = event.id;
 			events[id] = event;
 			title = event.title;
