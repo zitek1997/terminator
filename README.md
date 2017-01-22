@@ -4,13 +4,14 @@ http://projekt.itcave.pl/
 
 #TO DO
 ==============================
-##- Edycja konta
-##- Podział użytkowników (adminitsrator / zwykły)
 ##- Możliwość usuwania terminarzy (administrator)
 ##- System autobackup'u bazy danych
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
 ##- Uruchomić system świąt (modal dodawania świąt)
 ##- Mobile CSS (ASAP)
+
+##- Edycja konta
+##- Podział użytkowników (adminitsrator / zwykły)
 
 ##- Dodać opcję przesuwania draggable w ekranach dotykowych (SOBOTA) ✓
 ##- Umożliwić dodanie klienta bez tel i mail (SOBOTA) ✓
