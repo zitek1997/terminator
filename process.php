@@ -17,6 +17,7 @@ if($type == 'new')
 	$title = $_POST['title'];
 	$idc = $_POST['idc'];
   $timetab_id = $_SESSION['timetab_id'];
+	if($timetab_id == "all"){$timetab_id = 0;}
 	$color = $db->selecto("SELECT color FROM time_tables WHERE timetab_id = $timetab_id");
 	if(count($color)==1){
 		$color = $color[0]['color'];
@@ -120,12 +121,20 @@ if($type == 'remove')
 
 if($type == 'fetch')
 {
-	if(isset($_SESSION['timetab_id'])){$id=$_SESSION['timetab_id'];}  else {$id = $_SESSION['uid'];}
+	if(isset($_SESSION['timetab_id'])){
+		$id=$_SESSION['timetab_id'];
+	}else{
+		$id = $_SESSION['uid'];
+	}
 	$events = array();
-  $arr = array("timetab_id" => $id);
-  $sql= "SELECT * FROM calendar WHERE timetab_id = :timetab_id";
-	$eve = $db-> select($sql, $arr);
-
+	if($id != "all"){
+  	$arr = array("timetab_id" => $id);
+  	$sql= "SELECT * FROM calendar WHERE timetab_id = :timetab_id";
+		$eve = $db-> select($sql, $arr);
+	}else{
+		$sql= "SELECT * FROM calendar";
+		$eve = $db-> selecto($sql);
+	}
 	foreach ($eve as $key => $fetch)
 	{
 		$e = array();

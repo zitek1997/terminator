@@ -335,14 +335,12 @@ function popoverDetail() {
 
 function pickTerm(id){
     	$.ajax({
-	 type: "POST",
-         url: "ajax/pickterm.php",
-         data: 'id='+id,
-         dataType: 'json',
-	 success: function(){
-                    getFreshEvents();
-	 }
- });
+	 			type: "POST",
+        url: "ajax/pickterm.php",
+        data: 'id='+id,
+        dataType: 'json',
+ 		 });
+ 	 getFreshEvents();
 }
 
 function save(){
