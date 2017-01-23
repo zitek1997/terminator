@@ -730,6 +730,7 @@ function addTerm(){
 
 function termaddClose(){
 	$('#addTerm').modal('hide');
+	termlist();
 }
 
 function MaddClient(){

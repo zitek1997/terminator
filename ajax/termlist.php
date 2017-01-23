@@ -47,9 +47,14 @@ for($x=0;$x<$l;$x++)
   $id = $usr[$x]['timetab_id'];
   $title = $usr[$x]['title'];
   $color = $usr[$x]['color'];
-
+  if(is_numeric($id)){
 print <<<KOD
 <div class="termlist_in" style="background-color:$color" onClick="pickTerm($id);">$title</div>
 KOD;
+  }else{
+print <<<KOD
+<div class="termlist_in" style="background-color:$color" onClick="pickTerm('$id');">$title</div>
+KOD;
+  }
 }
 ?>

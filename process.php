@@ -18,7 +18,11 @@ if($type == 'new')
 	$idc = $_POST['idc'];
   $timetab_id = $_SESSION['timetab_id'];
 	if($timetab_id == "all"){$timetab_id = 0;}
-	$color = $db->selecto("SELECT color FROM time_tables WHERE timetab_id = $timetab_id");
+	if(is_numeric($timetab_id)){
+		$color = $db->selecto("SELECT color FROM time_tables WHERE timetab_id = $timetab_id");
+	}else{
+		$color = $db->selecto("SELECT color FROM custom_tables WHERE timetab_id = '$timetab_id'");
+	}
 	if(count($color)==1){
 		$color = $color[0]['color'];
 	}else{
