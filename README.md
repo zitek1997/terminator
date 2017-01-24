@@ -4,15 +4,15 @@ http://projekt.itcave.pl/
 
 #TO DO
 ==============================
-##- Możliwość usuwania terminarzy (administrator)
 ##- System autobackup'u bazy danych
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
-##- Uruchomić system świąt (modal dodawania świąt) ✓
 ##- Mobile CSS (ASAP)
 
 ##- Edycja konta
 ##- Podział użytkowników (adminitsrator / zwykły)
 
+##- Uruchomić system świąt (modal dodawania świąt) ✓
+##- Możliwość usuwania terminarzy (administrator) ✓
 ##- Dodać opcję przesuwania draggable w ekranach dotykowych (SOBOTA) ✓
 ##- Umożliwić dodanie klienta bez tel i mail (SOBOTA) ✓
 ##- Informacje z popovera w Planie Tygodnia ✓

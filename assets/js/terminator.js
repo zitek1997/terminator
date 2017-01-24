@@ -886,6 +886,7 @@ function addHoliday(){
 		url: "ajax/holyadd.php",
 		success: function(){
 			setHolidays();
+			getFreshEvents();
 		}
 	});
 }
@@ -905,4 +906,18 @@ function holDel(){
 	});
 	setHolidays();
 	getFreshEvents();
+}
+
+function termDel(id){
+	if(confirm("Czy na pewno chcesz usunąć ten terminarz?")){
+		$.ajax({
+			data: "id="+id,
+			type: "POST",
+			url: "ajax/termDel.php",
+			success: function(){
+				termlist();
+				getFreshEvents();
+			}
+		});
+	}
 }

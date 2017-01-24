@@ -47,13 +47,24 @@ for($x=0;$x<$l;$x++)
   $id = $usr[$x]['timetab_id'];
   $title = $usr[$x]['title'];
   $color = $usr[$x]['color'];
+  if($_SESSION['admin'] == TRUE){
+    $alldel = "&nbsp<a style=\"color:red;\" onclick=\"termDel('$id');\">✘</a>";
+  }else{
+    $alldel = "";
+  }
   if(is_numeric($id)){
+    if($id != 0){
+print <<<KOD
+<div class="termlist_in" style="background-color:$color" onClick="pickTerm($id);">$title$alldel</div>
+KOD;
+    }else{
 print <<<KOD
 <div class="termlist_in" style="background-color:$color" onClick="pickTerm($id);">$title</div>
 KOD;
+    }
   }else{
 print <<<KOD
-<div class="termlist_in" style="background-color:$color" onClick="pickTerm('$id');">$title</div>
+<div class="termlist_in" style="background-color:$color" onClick="pickTerm('$id');">$title$alldel</div>
 KOD;
   }
 }
