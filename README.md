@@ -4,23 +4,34 @@ http://projekt.itcave.pl/
 
 #TO DO
 ==============================
+MAIN
 ##- System autobackup'u bazy danych
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
-##- Mobile CSS (ASAP)
+##- Notka klienta oczekującego z numerem do niego
 
+D
 ##- Edycja konta
 ##- Podział użytkowników (adminitsrator / zwykły)
-
 ##- Odświezanie listy terminarzy po dodaniu nowego
-##- Popupy zamykane esc i ppm
 ##- Lista pracowników dla adminów z danymi
 ##- Opcja odzyskiwania hasła
-##- Popupy w planie tygodnia
 ##- Możliwość dodania klienta do listy oczekujących kilka razy z różna notką
+##- Wybór terminarzy do wyświetlenia
+
+O
+##- Mobile CSS (ASAP)
+##- Popupy zamykane esc i ppm
+##- Popupy w planie tygodnia
 ##- CSS wolnych terminów
 ##- Zmiana ikonek
-##- Notka klienta oczekującego z numerem do niego
-##- Wybór terminarzy do wyświetlenia
+
+##BUGI
+##-Przełączanie między kartami (problem z jquery karty klientów, na firefoxie działa)
+##-Popovery duchy (po usunięciu pojawia się onclick innego popovera)
+##-Brak błędu przy poprawnym loginie i błędnym haśle w logowaniu ✓
+
+#DONE
+
 ##- Uruchomić system świąt (modal dodawania świąt) ✓
 ##- Możliwość usuwania terminarzy (administrator) ✓
 ##- Dodać opcję przesuwania draggable w ekranach dotykowych (SOBOTA) ✓
@@ -30,14 +41,6 @@ http://projekt.itcave.pl/
 ##- Disabled email i tel w evencie jeśli brak tel lub mail ✓
 ##- Uruchomić usuwanie z listy oczekujących ✓
 ##- System powiadomień email i sms (ASAP) ✓
-
-##BUGI
-##-Przełączanie między kartami (problem z jquery karty klientów, na firefoxie działa)
-##-Popovery duchy (po usunięciu pojawia się onclick innego popovera)
-##-Brak błędu przy poprawnym loginie i błędnym haśle w logowaniu ✓
-
-#DONE
-
 ##- Custom eventy ✓
 ##- Możliwość dodawania dni wolnych i świąt ✓
 ##- Modal dodawania klienta ✓
@@ -52,15 +55,12 @@ http://projekt.itcave.pl/
 ##-dodać przyciski dodawania klienta ✓
 ##-dodać przyciski dodawania użytkownika ✓
 ##-dodać zegar ✓
-
-O
 ##-podstawowy bootstrap ✓
 ##-pasek administratora: dodaj/usuń pracownika, dodaj/usuń terminarz
 ##-podział terminarza - ✓
 ##-opcja long eventów ✓
 ##-opis eventu po najechaniu na niego ✓
 ##-CSS ✓
-D
 ##-plan dnia po kliknieciu na dzień ✓
 ##-edycja klienta ✓
 ##-usuwanie klienta ✓
