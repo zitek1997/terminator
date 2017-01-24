@@ -7,7 +7,7 @@ http://projekt.itcave.pl/
 ##- Możliwość usuwania terminarzy (administrator)
 ##- System autobackup'u bazy danych
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
-##- Uruchomić system świąt (modal dodawania świąt)
+##- Uruchomić system świąt (modal dodawania świąt) ✓
 ##- Mobile CSS (ASAP)
 
 ##- Edycja konta

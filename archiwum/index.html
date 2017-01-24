@@ -129,6 +129,7 @@
         <input type="button" class="btn btn-danger dashbutton" name="sHours" onclick="setHours()" value="Godziny pracy"/>
         <input type="button" class="btn btn-danger dashbutton" name="newUser" onclick="newUser()" value="Dodaj pracownika"/>
         <input type="button" class="btn btn-danger dashbutton" name="sDef" onclick="setDefaults()" value="Opcje powiadomień"/>
+        <input type="button" class="btn btn-danger dashbutton" name="sHol" onclick="setHolidays()" value="Święta i dni wolne"/>
         <!-- <input type="button" class="btn btn-danger dashbutton" name="TeNoHistorie" onclick="seeTheHistory()" value="Historie klientów"/> -->
       </div>
     </div>
@@ -406,6 +407,21 @@
         </div>
       </div>
       <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<div id="hohoholidays" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edycja świąt i dni wolnych</h4>
+      </div>
+      <div class="modal-body" id="setHolidays"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="hohoho">Zamknij</button>
+      </div>
     </div>
   </div>
 </div>

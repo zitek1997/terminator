@@ -854,3 +854,55 @@ function editMode(){
 	 document.getElementById('editMocno').style.display = "none";
  }
 }
+
+function setHolidays(){
+	$.ajax({
+		url: "ajax/setholidays.php",
+		type: "POST",
+		success: function(r){
+			$("#setHolidays").html(r);
+			holyHours();
+		}
+	});
+	$("#hohoholidays").modal('show');
+}
+
+function holyHours(){
+	$('#holidate').bootstrapMaterialDatePicker({ weekStart : 1, format: "YYYY-MM-DD", lang : 'pl', time: false})
+}
+
+function addHoliday(){
+	t = document.getElementById('holiname').value;
+	d = document.getElementById('holidate').value;
+	r = document.getElementById('holirep');
+	if(r.checked){
+		r=1;
+	}else{
+		r=0;
+	}
+	$.ajax({
+		data: "nazwa="+t+"&start="+d+"&rp="+r,
+		type: "POST",
+		url: "ajax/holyadd.php",
+		success: function(){
+			setHolidays();
+		}
+	});
+}
+
+function holDel(){
+	sel = document.getElementById('holToD').options;
+	todel = [];
+	for(i=0;i<sel.length;i++){
+		if(sel[i].selected){
+			todel.push(sel[i].value);
+		}
+	}
+	$.ajax({
+		url: "ajax/delholi.php",
+		type: "POST",
+		data: "ids="+todel
+	});
+	setHolidays();
+	getFreshEvents();
+}
