@@ -5,7 +5,6 @@ http://projekt.itcave.pl/
 #TO DO
 ==============================
 MAIN
-##- System autobackup'u bazy danych
 ##- Dokończyć system terminarzy (podział na custom terminarze itd.)
 ##- Notka klienta oczekującego z numerem do niego
 
@@ -29,6 +28,12 @@ O
 ##-Przełączanie między kartami (problem z jquery karty klientów, na firefoxie działa)
 ##-Popovery duchy (po usunięciu pojawia się onclick innego popovera)
 ##-Brak błędu przy poprawnym loginie i błędnym haśle w logowaniu ✓
+
+ON RELEASE
+##- System autobackup'u bazy danych
+##- Porządek w plikach
+##- Optymalizacja
+##- Generowanie plików dystrybucyjnych
 
 #DONE
 
