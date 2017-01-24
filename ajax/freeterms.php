@@ -29,7 +29,9 @@ for($key=0;$key<$quo;$key++)
     if($key==$quo-1)
     {
       $endo = $evs[$key]['enddate'];
-      $freetimes[$key+1] = $endo;
+      if(strtotime($endo)>strtotime("now")){
+        $freetimes[$key+1] = $endo;
+      }
     }
   }else if($key==0)
   {
