@@ -11,6 +11,16 @@ http://projekt.itcave.pl/
 ##- Edycja konta
 ##- Podział użytkowników (adminitsrator / zwykły)
 
+##- Odświezanie listy terminarzy po dodaniu nowego
+##- Popupy zamykane esc i ppm
+##- Lista pracowników dla adminów z danymi
+##- Opcja odzyskiwania hasła
+##- Popupy w planie tygodnia
+##- Możliwość dodania klienta do listy oczekujących kilka razy z różna notką
+##- CSS wolnych terminów
+##- Zmiana ikonek
+##- Notka klienta oczekującego z numerem do niego
+##- Wybór terminarzy do wyświetlenia
 ##- Uruchomić system świąt (modal dodawania świąt) ✓
 ##- Możliwość usuwania terminarzy (administrator) ✓
 ##- Dodać opcję przesuwania draggable w ekranach dotykowych (SOBOTA) ✓
