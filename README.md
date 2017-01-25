@@ -14,7 +14,6 @@ D
 ##- Lista pracowników dla adminów z danymi
 ##- Opcja odzyskiwania hasła
 ##- Możliwość dodania klienta do listy oczekujących kilka razy z różna notką
-##- Wybór terminarzy do wyświetlenia
 
 O
 ##- Mobile CSS (ASAP)
@@ -36,6 +35,7 @@ ON RELEASE
 
 #DONE
 
+##- Wybór terminarzy do wyświetlenia ✓
 ##- Odświezanie listy terminarzy po dodaniu nowego ✓
 ##- Uruchomić system świąt (modal dodawania świąt) ✓
 ##- Możliwość usuwania terminarzy (administrator) ✓

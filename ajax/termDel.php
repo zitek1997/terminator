@@ -9,5 +9,5 @@ if(is_numeric($id)){
 }
 $db->deleteALL('calendar',$where);
 $db->deleteALL('tt_access',$where);
-$_SESSION['timetab_id'] = 0;
+$_SESSION['timetab_id'] = array(0);
 ?>

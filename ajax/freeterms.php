@@ -2,11 +2,18 @@
 include("config.php");
 $now = strtotime("now");
 $nowo = date("Y-m-d H:i:s", $now);
+$timetabs = "";
+foreach ($_SESSION['timetab_id'] as $key => $value) {
+  if($key == 0){
+    $timetabs = $value;
+  }else{
+    $timetabs +=",".$value;
+  }
+}
 $array = array(
   "startdate" => "'".$nowo."'",
-  "timetab_id" => $_SESSION['timetab_id'],
 );
-$sql = "SELECT * FROM calendar WHERE startdate > :startdate AND timetab_id = :timetab_id ORDER BY startdate ASC";
+$sql = "SELECT * FROM calendar WHERE startdate > :startdate AND timetab_id IN ($timetabs) ORDER BY startdate ASC";
 $evs=$db->select($sql, $array);
 $freetimes = array();
 $quo=count($evs);

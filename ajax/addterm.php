@@ -7,18 +7,18 @@ $access =  $data->access;
 $id=$_SESSION['uid'];
 
   $array=array(
-          'timetab_id' => $id.$name,
+          'timetab_id' => $name.$id,
           'title' => $name,
           'color' => $color,
         );
   $db->insert('custom_tables', $array);
-  
+print_r($array);
   $array2=array(
           'user_id' => $access,
-          'timetab_id' => $id.$name,
+          'timetab_id' => $name.$id,
         );
-  $db->insert('tt_access', $array2)
-          
+  $db->insert('tt_access', $array2);
+print_r($array2);
 
 
 ?>

@@ -333,14 +333,65 @@ function popoverDetail() {
  });
 }
 
-function pickTerm(id){
+function selectTerm(){
+		id = "";
+		terms = document.getElementsByName('terminarzyk');
+		tl = terms.length;
+		for(i=0;i<tl;i++){
+			t = terms[i];
+			if(t.checked){
+				if(id == ""){
+					id = t.value;
+				}else{
+					id += ','+t.value;
+				}
+			}
+		}
     	$.ajax({
 	 			type: "POST",
         url: "ajax/pickterm.php",
-        data: 'id='+id,
+        data: 'ids='+id,
         dataType: 'json',
  		 });
- 	 getFreshEvents();
+		 getFreshEvents();
+		 setTimeout(function(){
+	 		termlist();
+	 	}, 200);
+}
+
+function selectAllTerms(){
+	id = "";
+	terms = document.getElementsByName('terminarzyk');
+	tl = terms.length;
+	check = false;
+	for(i=0;i<tl;i++){
+		t = terms[i];
+		if(t.checked != true){
+			check = true;
+		}
+	}
+	if(check){
+		for(i=0;i<tl;i++){
+			t = terms[i];
+			if(id == ""){
+				id = t.value;
+			}else{
+				id += ','+t.value;
+			}
+		}
+	}else{
+		id = "";
+	}
+	$.ajax({
+		type: "POST",
+		url: "ajax/pickterm.php",
+		data: 'ids='+id,
+		dataType: 'json',
+ 	});
+	getFreshEvents();
+	setTimeout(function(){
+		termlist();
+	}, 200);
 }
 
 function save(){
@@ -732,7 +783,7 @@ function termaddClose(){
 	$('#addTerm').modal('hide');
 	setTimeout(function(){
 		termlist();
-	}, 2000);
+	}, 1000);
 }
 
 function MaddClient(){
