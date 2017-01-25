@@ -730,7 +730,9 @@ function addTerm(){
 
 function termaddClose(){
 	$('#addTerm').modal('hide');
-	termlist();
+	setTimeout(function(){
+		termlist();
+	}, 2000);
 }
 
 function MaddClient(){

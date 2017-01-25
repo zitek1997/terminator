@@ -11,7 +11,6 @@ MAIN
 D
 ##- Edycja konta
 ##- Podział użytkowników (adminitsrator / zwykły)
-##- Odświezanie listy terminarzy po dodaniu nowego
 ##- Lista pracowników dla adminów z danymi
 ##- Opcja odzyskiwania hasła
 ##- Możliwość dodania klienta do listy oczekujących kilka razy z różna notką
@@ -37,6 +36,7 @@ ON RELEASE
 
 #DONE
 
+##- Odświezanie listy terminarzy po dodaniu nowego ✓
 ##- Uruchomić system świąt (modal dodawania świąt) ✓
 ##- Możliwość usuwania terminarzy (administrator) ✓
 ##- Dodać opcję przesuwania draggable w ekranach dotykowych (SOBOTA) ✓
