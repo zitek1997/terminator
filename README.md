@@ -14,7 +14,6 @@ D
 ##- Lista pracowników dla adminów z danymi
 ##- Opcja odzyskiwania hasła
 ##- Możliwość dodania klienta do listy oczekujących kilka razy z różna notką
-<<<<<<< HEAD
 =======
 ##- Wybór terminarzy do wyświetlenia
 ##- Wyszukiwarka w dodanych eventach
