@@ -61,7 +61,10 @@ for($x=0;$x<$l;$x++)
   if(is_numeric($id)){
     if($id != 0){
 print <<<KOD
-<div class="termlist_in" style="background-color:$color"><input type="checkbox" value="$id" name="terminarzyk" onchange="selectTerm();" $ch/>$title</div>
+<div class="termlist_in btn-group"  data-toggle="buttons">
+            <input type="termcheck" value="$id" autocomplete="off" name="terminarzyk" onchange="selectTerm();" $ch/>
+        <p class="termbtn_p">$title</p>
+        </div>
 KOD;
     }else{
 print <<<KOD
