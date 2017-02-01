@@ -974,3 +974,82 @@ function termDel(id){
 		});
 	}
 }
+
+function editMe(){
+	$.ajax({
+			url: "ajax/accedit.php",
+			type: "POST",
+			success: function(resp){
+				$("#editProfile").modal('show');
+				$("#editMe").html(resp);
+			}
+		});
+}
+
+function accUpdate(){
+	id = $("#myId").val();
+	i = $("#myFName").val();
+	n = $("#myLName").val();
+	m = $("#myMail").val();
+	t = $("#myPhone").val();
+	dane = "id="+id+"&fname="+i+"&lname="+n+"&mail="+m+"&phone="+t;
+	console.log(dane);
+	$.ajax({
+		url: "ajax/usrUpdate.php",
+		type: "POST",
+		data: dane,
+		success: function(resp){
+			if(resp == 1){
+				alert("Dane zaktualizowane pomyślnie");
+				$.ajax({
+					url: "ajax/accedit.php",
+					type: "POST",
+					success: function(resp){
+						$("#editMe").html(resp);
+					}
+				});
+			}else{
+				alert("Coś poszło nie tak…");
+			}
+		}
+	});
+}
+
+function passUpdate(){
+	id = $("#myId").val();
+	p = $("#myPass").val();
+	pn = $("#newPass").val();
+	pc = $("#cnewPass").val();
+	check = "id="+id+"&pass="+p;
+	change = "id="+id+"&pass="+pn;
+	if(pn==pc){
+		$.ajax({
+			url: "ajax/pCheck.php",
+			type: "POST",
+			data: check,
+			success: function(resp){
+				if(resp == "ok"){
+					$.ajax({
+						url: "ajax/pChange.php",
+						type: "POST",
+						data: change,
+						success: function(r){
+							if(r == 1){
+								alert("Hasło zmieniono pomyślnie");
+								$("#myPass").val("");
+								$("#newPass").val("");
+								$("#cnewPass").val("");
+							}else{
+								alert("Coś poszło nie tak…");
+							}
+						}
+					});
+				}else{
+					alert("Dotychczasowe hasło jest niepoprawne");
+				}
+			}
+		});
+	}else{
+		alert("Nowe hasła nie są takie same");
+	}
+}
