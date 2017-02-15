@@ -9,14 +9,14 @@ MAIN
 ##- Notka klienta oczekującego z numerem do niego
 
 D
-##- Podział użytkowników (adminitsrator / zwykły)
 ##- Lista pracowników dla adminów z danymi
-##- Opcja odzyskiwania hasła
 ##- Możliwość dodania klienta do listy oczekujących kilka razy z różna notką
-##- Edycja konta ✓
-=======
-##- Wybór terminarzy do wyświetlenia
+##- Opcja odzyskiwania hasła
 ##- Wyszukiwarka w dodanych eventach
+##- Podział użytkowników (adminitsrator / zwykły)
+=======
+##- Edycja konta ✓
+##- Wybór terminarzy do wyświetlenia ✓
 
 O
 ##- Mobile CSS (ASAP)
