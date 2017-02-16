@@ -61,16 +61,16 @@ for($x=0;$x<$l;$x++)
   if(is_numeric($id)){
     if($id != 0){
 print <<<KOD
-<div class="termlist_in" style="background-color:$color" data-toggle="buttons"><input type="checkbox" value="$id" name="terminarzyk" onchange="selectTerm();" $ch/>$title$alldel</div>
+<div class="termlist_in" style="background-color:$color" data-toggle="buttons"><input type="checkbox" style="display:inline" value="$id" name="terminarzyk" onchange="selectTerm();" $ch/>$title$alldel</div>
 KOD;
     }else{
 print <<<KOD
-<div class="termlist_in" style="background-color:$color" data-toggle="buttons"><input type="checkbox" value="$id" name="terminarzyk" onchange="selectTerm();" $ch/>$title</div>
+<div class="termlist_in" style="background-color:$color" data-toggle="buttons"><input type="checkbox" style="display:inline" value="$id" name="terminarzyk" onchange="selectTerm();" $ch/>$title</div>
 KOD;
     }
   }else{
 print <<<KOD
-<div class="termlist_in" style="background-color:$color" data-toggle="buttons"><input type="checkbox" value="$id" name="terminarzyk" onchange="selectTerm();" $ch/>$title$alldel</div>
+<div class="termlist_in" style="background-color:$color" data-toggle="buttons"><input type="checkbox" style="display:inline" value="$id" name="terminarzyk" onchange="selectTerm();" $ch/>$title$alldel</div>
 KOD;
   }
 }

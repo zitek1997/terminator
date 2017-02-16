@@ -234,6 +234,7 @@ function hidemenu(){
         $("#sidebar-toggle").addClass( "hid" );
         }
         };
+
 function getFreshEvents(){
 	$('#calendar').fullCalendar( 'removeEvents' );
 	$('#calendar').fullCalendar( 'refetchEvents' );
@@ -1104,5 +1105,17 @@ function seeWorkers(){
 }
 
 function wEdit(id){
-	console.log(id);
+	$.ajax({
+		url: "ajax/wEdit.php",
+		type: "POST",
+		data: "id="+id,
+		success: function(resp){
+			$("#editWork").html(resp);
+			$("#editWorker").modal('show');
+		}
+	});
+}
+
+function wUpdate(id){
+	console.log("update "+id);
 }
