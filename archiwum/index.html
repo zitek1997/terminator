@@ -79,6 +79,9 @@
     <div onclick="seeTheHistory();" id="cards-toggle" class="menu-in mcards">
       <span class="glyphicon glyphicon-list-alt menu-icon" aria-hidden="true"></span>
     </div>
+    <div id="workers-toggle" class="menu-in mworkers" onclick="seeWorkers();">
+      <span class="glyphicon glyphicon-briefcase menu-icon" aria-hidden="true"></span>
+    </div>
     <div id="options-toggle" style="position:absolute; bottom: 0.2em;" class="menu-in moptions">
       <span class="glyphicon glyphicon-cog menu-icon" aria-hidden="true"></span>
     </div>
@@ -97,16 +100,16 @@
         </div>
       </div>
       <div id='external-events-wait'>
-      <div id="ctime">
-        <div class="menu-title">Klienci oczekujący</div>
+        <div id="ctime">
+          <div class="menu-title">Klienci oczekujący</div>
           <div>
             <input class="search form-control serach-sidebar dashsearch" placeholder="Wyszukaj" />
              <div id="listaw" class="list"></div>
             <div id="wait_delete">
               <p class="wait_p">Usuń z listy oczekujących</p>
             </div>
+          </div>
         </div>
-      </div>
       </div>
       <div id="terms">
         <div class="menu-title">Terminarze</div>
@@ -122,7 +125,11 @@
         <div class="menu-title">Karty klientów</div>
         <input type='hidden' id='cardsOfHistoryBU' value=''/>
         <input class="search form-control serach-sidebar dashsearch" placeholder="Wyszukaj" />
-          <div id="cardsb" class="list"></div>
+        <div id="cardsb" class="list"></div>
+      </div>
+      <div id="workers">
+        <div class="menu-title">Lista pracowników</div>
+        <div id="workersb" class="list"></div>
       </div>
       <div id="options">
         <div class="menu-title">Opcje</div>

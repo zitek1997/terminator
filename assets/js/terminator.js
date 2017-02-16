@@ -25,168 +25,197 @@ function startTime() {
 }
 
 $(document).ready(function(){
-        $("#wait").hide();
-        $("#wait_delete").hide();
-        $("#popover-av").clickover({
-        global_close: true,
-        html : true,
-        container: '.nav',
-        content: function() {
-          return $("#popover-av-content").html();
-        }
-    });
-		$("#clients-toggle").addClass( "chosen" );
-        $("#clients").show();
-        $("#terms").hide();
-        $("#options").hide();
-        $("#ctime").hide();
-        $("#tokcircle").hide();
-        $("#cards").hide();
-    $("#clients-toggle").click(function(){
-        $("#clients-toggle").addClass( "chosen" );
-        $("#terms-toggle").removeClass( "chosen" );
-        $("#cards-toggle").removeClass( "chosen" );
-        $("#options-toggle").removeClass( "chosen" );
-        $("#ctime-toggle").removeClass( "chosen" );
-        $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#clients").show();
-        $("#terms").hide();
-        $("#ctime").hide();
-        $("#tokcircle").hide();
-        $("#cards").hide();
-        $("#options").hide();
-        if ($("#sidebar-toggle").hasClass("hid")) {
-        $("#head-brand-toggle").show("slide", 550),
-        $("#sidebar-toggle").show("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
-        $("#sidebar-toggle").removeClass( "hid" );
-        }
-    });
-    $("#ctime-toggle").click(function(){
-        $("#clients-toggle").removeClass( "chosen" );
-        $("#terms-toggle").removeClass( "chosen" );
-        $("#ctime-toggle").addClass( "chosen" );
-        $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#cards-toggle").removeClass( "chosen" );
-        $("#options-toggle").removeClass( "chosen" );
-        $("#clients").hide();
-        $("#ctime").show();
-        $("#tokcircle").hide();
-        $("#terms").hide();
-        $("#cards").hide();
-        $("#options").hide();
-        if ($("#sidebar-toggle").hasClass("hid")) {
-        $("#head-brand-toggle").show("slide", 550),
-        $("#sidebar-toggle").show("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
-        $("#sidebar-toggle").removeClass( "hid" );
-        }
-    });
-    $("#terms-toggle").click(function(){
-        $("#clients-toggle").removeClass( "chosen" );
-        $("#terms-toggle").addClass( "chosen" );
-        $("#ctime-toggle").removeClass( "chosen" );
-        $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#cards-toggle").removeClass( "chosen" );
-        $("#options-toggle").removeClass( "chosen" );
-        $("#clients").hide();
-        $("#terms").show();
-        $("#ctime").hide();
-        $("#tokcircle").hide();
-        $("#cards").hide();
-        $("#options").hide();
-        if ($("#sidebar-toggle").hasClass("hid")) {
-        $("#head-brand-toggle").show("slide", 550),
-        $("#sidebar-toggle").show("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
-        $("#sidebar-toggle").removeClass( "hid" );
-        }
-    });
-    $("#tokcircle-toggle").click(function(){
-        $("#clients-toggle").removeClass( "chosen" );
-        $("#terms-toggle").removeClass( "chosen" );
-        $("#ctime-toggle").removeClass( "chosen" );
-        $("#tokcircle-toggle").addClass( "chosen" );
-        $("#cards-toggle").removeClass( "chosen" );
-        $("#options-toggle").removeClass( "chosen" );
-        $("#clients").hide();
-        $("#ctime").hide();
-        $("#tokcircle").show();
-        $("#terms").hide();
-        $("#cards").hide();
-        $("#options").hide();
-        if ($("#sidebar-toggle").hasClass("hid")) {
-        $("#head-brand-toggle").show("slide", 550),
-        $("#sidebar-toggle").show("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
-        $("#sidebar-toggle").removeClass( "hid" );
-        }
-    });
-    $("#cards-toggle").click(function(){
-        $("#clients-toggle").removeClass( "chosen" );
-        $("#terms-toggle").removeClass( "chosen" );
-        $("#ctime-toggle").removeClass( "chosen" );
-        $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#cards-toggle").addClass( "chosen" );
-        $("#options-toggle").removeClass( "chosen" );
-        $("#clients").hide();
-        $("#ctime").hide();
-        $("#tokcircle").hide();
-        $("#terms").hide();
-        $("#cards").show();
-        $("#options").hide();
-        if ($("#sidebar-toggle").hasClass("hid")) {
-        $("#head-brand-toggle").show("slide", 550),
-        $("#sidebar-toggle").show("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
-        $("#sidebar-toggle").removeClass( "hid" );
-        }
-    });
-    $("#options-toggle").click(function(){
-        $("#clients-toggle").removeClass( "chosen" );
-        $("#terms-toggle").removeClass( "chosen" );
-        $("#ctime-toggle").removeClass( "chosen" );
-        $("#tokcircle-toggle").removeClass( "chosen" );
-        $("#cards-toggle").removeClass( "chosen" );
-        $("#options-toggle").addClass( "chosen" );
-        $("#clients").hide();
-        $("#ctime").hide();
-        $("#tokcircle").hide();
-        $("#terms").hide();
-        $("#cards").hide();
-        $("#options").show();
-        if ($("#sidebar-toggle").hasClass("hid")) {
-        $("#head-brand-toggle").show("slide", 550),
-        $("#sidebar-toggle").show("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
-        $("#sidebar-toggle").removeClass( "hid" );
-        }
-    });
-    $("#menu-toggle").click(function(){
-        if ($("#sidebar-toggle").hasClass("hid")) {
-        if (window.matchMedia("(max-width: 767px)").matches) {
-        $(".nav").css("width", '60%');
-        }
-        $("#head-brand-toggle").show("slide", 550),
-        $("#sidebar-toggle").show("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
-        $("#sidebar-toggle").removeClass( "hid" );
-        }
-        else{
-        if (window.matchMedia("(max-width: 767px)").matches) {
-        $(".nav").css("width", '94%');
-        }
-        $("#head-brand-toggle").hide("slide", 550),
-        $("#sidebar-toggle").hide("slide", 550),
-        $("#main-toggle").toggleClass( "togglemain", 550, "linear" );
-        $("#sidebar-toggle").addClass( "hid" );
-        }
-    });
+  $("#wait").hide();
+  $("#wait_delete").hide();
+  $("#popover-av").clickover({
+  	global_close: true,
+  	html : true,
+  	container: '.nav',
+  	content: function() {
+    	return $("#popover-av-content").html();
+  	}
+  });
+	$("#clients-toggle").addClass( "chosen" );
+  $("#clients").show();
+  $("#terms").hide();
+  $("#options").hide();
+  $("#ctime").hide();
+  $("#tokcircle").hide();
+  $("#cards").hide();
+	$("#clients-toggle").addClass( "chosen" );
+  $("#terms-toggle").removeClass( "chosen" );
+  $("#cards-toggle").removeClass( "chosen" );
+  $("#options-toggle").removeClass( "chosen" );
+  $("#ctime-toggle").removeClass( "chosen" );
+	$("#workers-toggle").removeClass( "chosen" );
+  $("#tokcircle-toggle").removeClass( "chosen" );
+  $("#clients").show();
+  $("#terms").hide();
+	$("#ctime").hide();
+	$("#workers").hide();
+  $("#tokcircle").hide();
+  $("#cards").hide();
+  $("#options").hide();
+  if ($("#sidebar-toggle").hasClass("hid")) {
+  	$("#head-brand-toggle").show("slide", 550),
+    $("#sidebar-toggle").show("slide", 550),
+    $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+    $("#sidebar-toggle").removeClass( "hid" );
+  }
 
-		userDetail();
-		popoverDetail();
-		userAccess();
+	$("#ctime-toggle").click(function(){
+		$("#clients-toggle").removeClass( "chosen" );
+		$("#terms-toggle").removeClass( "chosen" );
+		$("#ctime-toggle").addClass( "chosen" );
+		$("#tokcircle-toggle").removeClass( "chosen" );
+		$("#cards-toggle").removeClass( "chosen" );
+		$("#options-toggle").removeClass( "chosen" );
+		$("#clients").hide();
+		$("#ctime").show();
+		$("#tokcircle").hide();
+		$("#terms").hide();
+		$("#cards").hide();
+		$("#options").hide();
+		if ($("#sidebar-toggle").hasClass("hid")) {
+			$("#head-brand-toggle").show("slide", 550),
+			$("#sidebar-toggle").show("slide", 550),
+			$("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+			$("#sidebar-toggle").removeClass( "hid" );
+		}
+	});
+
+	$("#terms-toggle").click(function(){
+		$("#clients-toggle").removeClass( "chosen" );
+		$("#terms-toggle").addClass( "chosen" );
+		$("#ctime-toggle").removeClass( "chosen" );
+		$("#tokcircle-toggle").removeClass( "chosen" );
+		$("#cards-toggle").removeClass( "chosen" );
+		$("#options-toggle").removeClass( "chosen" );
+		$("#clients").hide();
+		$("#terms").show();
+		$("#ctime").hide();
+		$("#tokcircle").hide();
+		$("#cards").hide();
+		$("#options").hide();
+		if ($("#sidebar-toggle").hasClass("hid")) {
+			$("#head-brand-toggle").show("slide", 550),
+			$("#sidebar-toggle").show("slide", 550),
+			$("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+			$("#sidebar-toggle").removeClass( "hid" );
+		}
+	});
+
+	$("#tokcircle-toggle").click(function(){
+		$("#clients-toggle").removeClass( "chosen" );
+		$("#terms-toggle").removeClass( "chosen" );
+		$("#ctime-toggle").removeClass( "chosen" );
+		$("#tokcircle-toggle").addClass( "chosen" );
+		$("#cards-toggle").removeClass( "chosen" );
+		$("#options-toggle").removeClass( "chosen" );
+		$("#clients").hide();
+		$("#ctime").hide();
+		$("#tokcircle").show();
+		$("#terms").hide();
+		$("#cards").hide();
+		$("#options").hide();
+		if ($("#sidebar-toggle").hasClass("hid")) {
+			$("#head-brand-toggle").show("slide", 550),
+			$("#sidebar-toggle").show("slide", 550),
+			$("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+			$("#sidebar-toggle").removeClass( "hid" );
+		}
+	});
+
+	$("#cards-toggle").click(function(){
+		$("#clients-toggle").removeClass( "chosen" );
+		$("#terms-toggle").removeClass( "chosen" );
+		$("#ctime-toggle").removeClass( "chosen" );
+		$("#tokcircle-toggle").removeClass( "chosen" );
+		$("#cards-toggle").addClass( "chosen" );
+    $("#options-toggle").removeClass( "chosen" );
+		$("#clients").hide();
+		$("#ctime").hide();
+		$("#tokcircle").hide();
+		$("#terms").hide();
+		$("#cards").show();
+		$("#options").hide();
+		if ($("#sidebar-toggle").hasClass("hid")) {
+			$("#head-brand-toggle").show("slide", 550),
+			$("#sidebar-toggle").show("slide", 550),
+			$("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+			$("#sidebar-toggle").removeClass( "hid" );
+		}
+	});
+
+	$("#options-toggle").click(function(){
+	  $("#clients-toggle").removeClass( "chosen" );
+	  $("#terms-toggle").removeClass( "chosen" );
+	  $("#ctime-toggle").removeClass( "chosen" );
+	  $("#tokcircle-toggle").removeClass( "chosen" );
+	  $("#cards-toggle").removeClass( "chosen" );
+	  $("#options-toggle").addClass( "chosen" );
+	  $("#clients").hide();
+	  $("#ctime").hide();
+	  $("#tokcircle").hide();
+	  $("#terms").hide();
+	  $("#cards").hide();
+	  $("#options").show();
+	  if ($("#sidebar-toggle").hasClass("hid")) {
+	  	$("#head-brand-toggle").show("slide", 550),
+	    $("#sidebar-toggle").show("slide", 550),
+	    $("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+	    $("#sidebar-toggle").removeClass( "hid" );
+	  }
+	});
+
+	$("#menu-toggle").click(function(){
+		if ($("#sidebar-toggle").hasClass("hid")) {
+			if (window.matchMedia("(max-width: 767px)").matches) {
+				$(".nav").css("width", '60%');
+			}
+			$("#head-brand-toggle").show("slide", 550),
+			$("#sidebar-toggle").show("slide", 550),
+			$("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+			$("#sidebar-toggle").removeClass( "hid" );
+		}else{
+			if (window.matchMedia("(max-width: 767px)").matches) {
+				$(".nav").css("width", '94%');
+			}
+			$("#head-brand-toggle").hide("slide", 550),
+			$("#sidebar-toggle").hide("slide", 550),
+			$("#main-toggle").toggleClass( "togglemain", 550, "linear" );
+			$("#sidebar-toggle").addClass( "hid" );
+		}
+	});
+
+	$("#workers-toggle").click(function(){
+		$("#clients-toggle").removeClass( "chosen" );
+		$("#terms-toggle").removeClass( "chosen" );
+		$("#ctime-toggle").removeClass( "chosen" );
+		$("#tokcircle-toggle").removeClass( "chosen" );
+		$("#cards-toggle").removeClass( "chosen" );
+		$("#options-toggle").removeClass( "chosen" );
+		$("#workers-toggle").addClass("chosen");
+		$("#clients").hide();
+		$("#ctime").hide();
+		$("#tokcircle").hide();
+		$("#terms").hide();
+		$("#cards").hide();
+		$("#options").hide();
+		$("#workers").show();
+		if ($("#sidebar-toggle").hasClass("hid")) {
+			$("#head-brand-toggle").show("slide", 550),
+			$("#sidebar-toggle").show("slide", 550),
+			$("#main-toggle").toggleClass( "togglemain", 550, "linear" ),
+			$("#sidebar-toggle").removeClass( "hid" );
+		}
+	});
+
+	userDetail();
+	popoverDetail();
+	userAccess();
 });
+
 function hidemenu(){
     if (window.matchMedia("(max-width: 767px)").matches) {
         $("#head-brand-toggle").hide("slide", 550),
@@ -1052,4 +1081,8 @@ function passUpdate(){
 	}else{
 		alert("Nowe hasła nie są takie same");
 	}
+}
+
+function seeWorkers(){
+
 }
