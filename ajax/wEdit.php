@@ -19,7 +19,7 @@ if($adm == 1){
   $ch = '';
 }
 print <<<KOD
-<div class="material-switch pull-right"><br>Administrator<input id="wAdmin" name="editMode" type="checkbox" $ch><label for="wAdmin" class="label-success"></label></div><br>
+<div class="material-switch pull-right">Administrator&nbsp<input id="wAdmin" name="editMode" type="checkbox" $ch><label for="wAdmin" class="label-success"></label></div><br>
 Login: $login<br>
 Imię:
 <input type="text" class="form-control" id="wFName" value="$imie" placeholder="Wpisz imię"/><br>

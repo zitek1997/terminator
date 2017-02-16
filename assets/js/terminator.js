@@ -1118,4 +1118,32 @@ function wEdit(id){
 
 function wUpdate(id){
 	console.log("update "+id);
+	i = $("#wFName").val();
+	n = $("#wLName").val();
+	m = $("#wMail").val();
+	t = $("#wPhone").val();
+	a = $("#wAdmin").prop("checked");
+	dane = "id="+id+"&fname="+i+"&lname="+n+"&mail="+m+"&phone="+t+"&adm="+a;
+	console.log(dane);
+	$.ajax({
+		url: "ajax/usrUpdate.php",
+		type: "POST",
+		data: dane,
+		success: function(resp){
+			if(resp == 1){
+				alert("Dane zaktualizowane pomyślnie");
+				$.ajax({
+					url: "ajax/wEdit.php",
+					type: "POST",
+					data: "id="+id,
+					success: function(resp){
+						$("#editWork").html(resp);
+						seeWorkers();
+					}
+				});
+			}else{
+				alert("Coś poszło nie tak…");
+			}
+		}
+	});
 }

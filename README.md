@@ -9,12 +9,12 @@ MAIN
 ##- Notka klienta oczekującego z numerem do niego
 
 D
-##- Lista pracowników dla adminów z danymi
 ##- Możliwość dodania klienta do listy oczekujących kilka razy z różna notką
 ##- Opcja odzyskiwania hasła
 ##- Wyszukiwarka w dodanych eventach
 ##- Podział użytkowników (adminitsrator / zwykły)
 =======
+##- Lista pracowników dla adminów z danymi ✓
 ##- Edycja konta ✓
 ##- Wybór terminarzy do wyświetlenia ✓
 
